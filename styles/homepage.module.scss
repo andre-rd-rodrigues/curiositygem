@@ -1,0 +1,16 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.container {
+  h1 {
+    font-family: Italiana, sans-serif;
+    font-size: var(--fs-xxl);
+  }
+  h2 {
+    font-size: var(--fs-xl);
+    margin-bottom: 40px;
+  }
+  h3 {
+    font-weight: 400;
+  }
+}

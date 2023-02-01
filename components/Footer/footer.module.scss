@@ -1,0 +1,33 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  background-color: $dark;
+  padding: 15px var(--padding-y);
+  color: $white;
+  font-size: var(--fs-m);
+  div[class="app-icon"] {
+    margin-right: 20px;
+    position: relative;
+    @include hover_underline($white);
+  }
+  div {
+    font-weight: 300;
+  }
+  div[id="footer-copyright"] {
+    font-size: var(--fs-s);
+  }
+}
+
+//Responsive
+@media only screen and (max-width: $breaking-point-xxs) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+    div[id="footer-social-media"] {
+      margin-bottom: 10px;
+    }
+  }
+}

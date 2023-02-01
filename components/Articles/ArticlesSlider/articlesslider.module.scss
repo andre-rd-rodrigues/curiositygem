@@ -1,0 +1,23 @@
+@import "assets/styles/mixins";
+
+.sliderContainer {
+  button[class="slick-arrow slick-prev"]::before {
+    color: $dark !important;
+    @include fade-in;
+    animation-delay: 0.5s;
+  }
+  button[class="slick-arrow slick-next"]::before {
+    color: $dark !important;
+    @include fade-in;
+    animation-delay: 0.5s;
+  }
+
+  div[id="articles-card-container"] {
+    div {
+      margin: 0 7px;
+    }
+  }
+}
+
+@media only screen and (max-width: $breaking-point-sm) {
+}

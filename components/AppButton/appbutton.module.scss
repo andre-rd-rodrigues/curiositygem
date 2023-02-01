@@ -1,0 +1,14 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.container {
+  @include button($dark);
+}
+
+@media only screen and (max-width: $breaking-point-sm) {
+  .container {
+    @include button($dark);
+    background-color: $dark;
+    color: $white;
+  }
+}

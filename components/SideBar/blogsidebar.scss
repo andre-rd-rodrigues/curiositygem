@@ -1,0 +1,84 @@
+@import "assets/styles/mixins";
+
+.blog-sidebar-section {
+  margin-bottom: 30px;
+}
+
+.bm-burger-button {
+  position: fixed;
+  width: 30px;
+  height: 26px;
+  left: var(--padding-y);
+  top: 18px;
+  z-index: 10;
+  color: $white;
+}
+.bm-burger-bars {
+  background: $white;
+}
+
+/* Color/shape of burger icon bars on hover*/
+.bm-burger-bars-hover {
+  background: $white;
+}
+
+/* Position and sizing of clickable cross button */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+/*
+Sidebar wrapper styles
+Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
+*/
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+  top: 0;
+}
+
+/* General sidebar styles */
+.bm-menu {
+  background: $white;
+  padding: 2.5em 1.5em 0;
+  h5 {
+    font-size: var(--fs-m);
+    margin-bottom: 20px;
+    font-weight: 300;
+  }
+  li {
+    font-weight: lighter;
+    margin-bottom: 10px;
+  }
+  box-shadow: 3px 3px 20px -2px rgba(118, 118, 118, 0.15);
+}
+
+/* Wrapper for item list */
+.bm-item-list {
+  color: $white;
+  padding: 0.8em;
+  color: $dark;
+
+  a {
+    transition: 0.3s ease;
+    color: $dark;
+    &:hover {
+      letter-spacing: 1.5px;
+    }
+  }
+}
+
+/* Individual item */
+.bm-item {
+  display: inline-block;
+}
+
+/* Styling of overlay */
+.bm-overlay {
+  background: none !important;
+}
+
+//Responsive
+@media only screen and (max-width: $breaking-point-md) {
+}

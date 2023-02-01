@@ -1,0 +1,103 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.container {
+  min-height: 340px;
+  max-width: 770px;
+
+  cursor: pointer;
+
+  a,
+  p {
+    color: $dark;
+    font-size: var(--fs-m-s);
+    text-align: justify;
+    text-decoration: none;
+  }
+
+  h5 {
+    display: initial;
+    text-align: start;
+    letter-spacing: 0.5px;
+    background-image: linear-gradient(
+      to right,
+      $green-light,
+      $green-light 100%
+    );
+    background-position: 0px 15px;
+    background-size: 0 100%;
+    background-repeat: no-repeat;
+    transition: background 0.5s;
+  }
+
+  &:hover {
+    & .image {
+      transform: scale(0.95);
+    }
+    & h5 {
+      background-size: 100% 100%;
+    }
+  }
+}
+.wrapper {
+  transition: 0.2s ease;
+}
+.image {
+  min-height: 220px;
+  max-height: 300px;
+  border-radius: 6px;
+  transition: 0.2s ease;
+}
+
+.subtitle {
+  display: flex;
+  font-weight: lighter;
+  justify-content: space-between;
+  margin-bottom: 5px;
+  p {
+    font-size: var(--fs-s);
+    font-weight: 400;
+    margin-top: 15px;
+    margin-bottom: 0;
+    color: $grey;
+    &:first-child {
+      text-transform: uppercase;
+    }
+  }
+}
+
+.body {
+  p {
+    margin-top: 15px;
+  }
+}
+
+.footer {
+  text-align: end;
+}
+
+.readMore {
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 400;
+  color: $dark;
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 400;
+  @include hover_underline($dark);
+  &:hover {
+    letter-spacing: 6px;
+  }
+}
+
+//Responsive
+@media only screen and (max-width: $breaking-point-md) {
+  .container {
+    &:hover {
+      & .wrapper {
+        transform: scale(1);
+      }
+    }
+  }
+}

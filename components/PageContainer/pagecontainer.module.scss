@@ -1,0 +1,11 @@
+@import "assets/styles/mixins";
+
+.container {
+  padding: 90px var(--padding-y) 100px;
+  min-height: 96vh;
+}
+
+.wrapper {
+  max-width: var(--page-max-width);
+  margin: auto;
+}

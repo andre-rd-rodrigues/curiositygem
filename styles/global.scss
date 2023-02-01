@@ -1,0 +1,37 @@
+@import "assets/styles/variables.module.scss";
+@import "assets/styles/mixins";
+@import "assets/fonts/fonts";
+@import "assets/styles/root";
+
+html {
+  scroll-behavior: auto !important;
+}
+
+* {
+  font-family: Jost, sans-serif;
+}
+
+body {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  margin: 0;
+}
+
+h1,
+h2 {
+  font-family: Blacker;
+}
+
+p,
+a {
+  font-weight: 300;
+  font-size: var(--fs-m);
+}
+a {
+  color: $white;
+  text-decoration: none;
+  &:hover {
+    color: inherit;
+  }
+}

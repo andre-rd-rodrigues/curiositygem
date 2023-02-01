@@ -1,0 +1,144 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.nav {
+  top: 0px;
+  padding: 5px var(--padding-y) !important;
+  background-color: $dark;
+  z-index: 9 !important;
+
+  h1,
+  p,
+  a {
+    color: $white !important;
+  }
+
+  button[aria-controls="offcanvas-container"] {
+    border: none;
+  }
+
+  div[class="offcanvas offcanvas-end show"],
+  div[class="offcanvas offcanvas-end offcanvas-toggling"],
+  div[class="offcanvas offcanvas-end offcanvas-toggling show"] {
+    background-color: $light-grey !important;
+    max-width: 320px;
+
+    a > li {
+      transform: translateX(100px);
+      color: $dark;
+      opacity: 0.8;
+      font-weight: 400;
+      font-size: var(--fs-l);
+      text-align: end;
+      font-family: Italiana !important;
+      transition: 0.4s ease;
+      background-image: none;
+      &:hover {
+        color: $yellow;
+        opacity: 1;
+        letter-spacing: 4px;
+      }
+    }
+
+    button[class="btn-close"] {
+      transform: scale(0.7);
+    }
+  }
+  div[class="offcanvas-header"] {
+    justify-content: end;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  margin-left: 70px;
+  div[id="brand_logo"] {
+    background: url("https://images.unsplash.com/photo-1597589827703-f4b68eafa0ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1672&q=80")
+      center center no-repeat;
+    background-size: cover !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+
+  h1,
+  p {
+    margin: 0;
+  }
+  h1 {
+    font-family: Rozha;
+    font-weight: bold;
+    font-size: 32px;
+    margin-left: 15px;
+  }
+  p {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    &::before {
+      content: "";
+      display: flex;
+      height: 1px;
+      width: 50px;
+      background: white;
+      margin: 0 10px;
+    }
+  }
+}
+
+//Offcanvas
+.offcanvasLinks {
+  transform: translate(-100px, 10px);
+  margin-left: -200px;
+  a {
+    @include hover_underline($white);
+  }
+}
+
+.search {
+  color: $white;
+  transform: translate(15px, 9px);
+  svg {
+    stroke-width: 2 !important;
+  }
+
+  input {
+    width: 0;
+    color: $white;
+    background-color: transparent;
+    transition: width 0.4s ease-in-out;
+
+    &:focus {
+      width: 150px;
+      border-bottom: 1px solid $white;
+    }
+    &::placeholder {
+      opacity: 0;
+    }
+  }
+}
+
+//Responsive
+@media only screen and (max-width: $breaking-point-xl) {
+  .logo {
+    p {
+      display: none;
+    }
+  }
+}
+
+//Responsive
+@media only screen and (max-width: $breaking-point-sm) {
+  .offcanvasLinks {
+    div[class="offcanvas offcanvas-end show"],
+    div[class="offcanvas offcanvas-end offcanvas-toggling"],
+    div[class="offcanvas offcanvas-end offcanvas-toggling show"] {
+      width: 250px;
+    }
+  }
+
+  .logo {
+    margin-left: 32vw;
+  }
+}
