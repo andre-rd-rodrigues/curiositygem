@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./appimage.module.scss";
 
 const AppImage = ({ src, height = "30vw", className }) => {

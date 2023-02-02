@@ -1,4 +1,3 @@
-import React from "react";
 import { containerVariant } from "assets/motion/motionVariants";
 import colors from "assets/styles/variables.module.scss";
 import { motion } from "framer-motion";

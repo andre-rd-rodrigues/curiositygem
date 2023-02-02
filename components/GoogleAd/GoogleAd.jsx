@@ -1,7 +1,5 @@
-import React from "react";
 import { useEffect } from "react";
 import { CLIENT_AD } from "utils/googleAds";
-import styles from "./adblock.module.scss";
 
 const GoogleAd = ({ slot }) => {
   useEffect(() => {

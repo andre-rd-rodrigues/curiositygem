@@ -1,12 +1,11 @@
-import React from "react";
-import { useState } from "react";
 import AppIcon from "components/AppIcon/AppIcon";
 import SearchBar from "components/AppSearchBar/AppSearchBar";
 import FeatherIcon from "feather-icons-react";
-import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
+import Link from "next/link";
+import { useState } from "react";
+import { Nav, Navbar, Offcanvas } from "react-bootstrap";
 import ReactGA from "react-ga4";
 import { CATEGORIES } from "utils";
-import Link from "next/link";
 import styles from "./appnavbar.module.scss";
 
 const BREAKING_POINT = "lg";

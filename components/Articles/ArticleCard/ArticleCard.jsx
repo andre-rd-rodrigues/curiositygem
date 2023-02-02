@@ -1,10 +1,8 @@
-import React from "react";
 import { fadeInVariant, motion } from "assets/motion/motionVariants";
 import AppImage from "components/AppImage/AppImage";
-import { READ_MORE_LABEL } from "utils";
+import Link from "next/link";
 import { convertDate } from "utils/helpers/date";
 import styles from "./articlecard.module.scss";
-import Link from "next/link";
 
 const ArticleCard = ({ article }) => {
   return (
@@ -27,7 +25,7 @@ const ArticleCard = ({ article }) => {
             href={`/article/${article.id}`}
             onClick={() => (scrollTop ? window.scrollTo(0, 0) : null)}
           >
-            {READ_MORE_LABEL}
+            Read more
           </Link>
         </div>
       </div>

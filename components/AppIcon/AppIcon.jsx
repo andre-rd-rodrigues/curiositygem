@@ -1,4 +1,3 @@
-import React from "react";
 import colors from "assets/styles/variables.module.scss";
 import FeatherIcon from "feather-icons-react";
 import PropTypes from "prop-types";

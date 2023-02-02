@@ -1,7 +1,6 @@
-import React from "react";
+import Link from "next/link";
 import PropTypes from "prop-types";
 import { getArticleByTitle } from "utils";
-import Link from "next/link";
 
 const ArticleLink = ({ title }) => {
   const article = getArticleByTitle(title);

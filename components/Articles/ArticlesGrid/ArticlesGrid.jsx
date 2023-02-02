@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
 import { containerVariant, motion } from "assets/motion/motionVariants";
 import AppButton from "components/AppButton/AppButton";
+import { useEffect, useState } from "react";
 import { ARTICLES_VISIBLE_LIMIT } from "utils";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import styles from "./articlesgrid.module.scss";

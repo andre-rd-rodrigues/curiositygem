@@ -1,8 +1,6 @@
-import PropTypes from "prop-types";
-import React from "react";
-import { useState } from "react";
 import AppIcon from "components/AppIcon/AppIcon";
-import { useRouter } from "next/router";
+import PropTypes from "prop-types";
+import { useState } from "react";
 import styles from "./appsearchbar.module.scss";
 
 const AppSearchBar = ({ className = "" }) => {

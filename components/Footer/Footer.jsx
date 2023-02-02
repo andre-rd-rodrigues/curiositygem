@@ -1,4 +1,3 @@
-import React from "react";
 import AppIcon from "components/AppIcon/AppIcon";
 import { SOCIAL_MEDIA } from "utils/types";
 import styles from "./footer.module.scss";

@@ -1,11 +1,10 @@
-import React from "react";
 import { Icon } from "@iconify/react";
 import SearchBar from "components/AppSearchBar/AppSearchBar";
+import { useState } from "react";
 import { slide as Menu } from "react-burger-menu";
 import { Link } from "react-router-dom";
-import "./blogsidebar.scss";
 import { CATEGORIES } from "utils";
-import { useState } from "react";
+import "./blogsidebar.scss";
 
 function SideBar() {
   const [show, setShow] = useState(false);
