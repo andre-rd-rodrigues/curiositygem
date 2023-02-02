@@ -15,10 +15,8 @@
   }
 }
 
-//hover
+//Hover
 @mixin hover_underline($color) {
-  margin: 0 14px;
-  padding-bottom: 2px;
   background-image: linear-gradient($color, $color);
   background-position: 0 100%; /*OR bottom left*/
   background-size: 0% 2px;
@@ -43,48 +41,6 @@
 @mixin page_container {
   padding: 90px var(--padding-y) 100px;
   min-height: 96vh;
-}
-
-@mixin date_category_container {
-  display: flex;
-  justify-content: space-between;
-  color: $grey;
-  & p {
-    font-size: var(--fs-s);
-
-    &:first-child {
-      text-transform: uppercase;
-      letter-spacing: 1.4px;
-    }
-  }
-}
-
-//Blog
-@mixin blog_settings {
-  h1 {
-    font-family: Italiana, sans-serif;
-    font-size: var(--fs-xxl);
-  }
-  h2 {
-    font-size: var(--fs-xl);
-    margin-bottom: 40px;
-  }
-  h3 {
-    font-weight: 400;
-  }
-}
-
-//Title
-@mixin title_transparent {
-  @supports (-webkit-text-stroke: 1px white) {
-    .container {
-      h1 {
-        color: transparent;
-        -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: white;
-      }
-    }
-  }
 }
 
 // Animations

@@ -36,11 +36,11 @@ a {
   }
 }
 
-.offcanvasLinks {
-  transform: translate(-100px, 10px);
-  margin-left: -200px;
-  a {
+.nav-link {
+  margin: 0 8px;
+  li {
     @include hover_underline($white);
+    font-weight: 300;
   }
 }
 
