@@ -5,55 +5,21 @@
   top: 0px;
   padding: 5px var(--padding-y) !important;
   background-color: $dark;
-  z-index: 9 !important;
+  display: flex !important;
+  justify-content: space-between !important;
 
   h1,
   p,
   a {
     color: $white !important;
   }
-
-  button[aria-controls="offcanvas-container"] {
-    border: none;
-  }
-
-  div[class="offcanvas offcanvas-end show"],
-  div[class="offcanvas offcanvas-end offcanvas-toggling"],
-  div[class="offcanvas offcanvas-end offcanvas-toggling show"] {
-    background-color: $light-grey !important;
-    max-width: 320px;
-
-    a > li {
-      transform: translateX(100px);
-      color: $dark;
-      opacity: 0.8;
-      font-weight: 400;
-      font-size: var(--fs-l);
-      text-align: end;
-      font-family: Italiana !important;
-      transition: 0.4s ease;
-      background-image: none;
-      &:hover {
-        color: $yellow;
-        opacity: 1;
-        letter-spacing: 4px;
-      }
-    }
-
-    button[class="btn-close"] {
-      transform: scale(0.7);
-    }
-  }
-  div[class="offcanvas-header"] {
-    justify-content: end;
-  }
 }
 
-.logo {
+.brand {
   display: flex;
   align-items: center;
-  margin-left: 70px;
-  div[id="brand_logo"] {
+
+  #logo {
     background: url("https://images.unsplash.com/photo-1597589827703-f4b68eafa0ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1672&q=80")
       center center no-repeat;
     background-size: cover !important;
@@ -87,15 +53,6 @@
   }
 }
 
-//Offcanvas
-.offcanvasLinks {
-  transform: translate(-100px, 10px);
-  margin-left: -200px;
-  a {
-    @include hover_underline($white);
-  }
-}
-
 .search {
   color: $white;
   transform: translate(15px, 9px);
@@ -120,25 +77,16 @@
 }
 
 //Responsive
-@media only screen and (max-width: $breaking-point-xl) {
-  .logo {
-    p {
-      display: none;
-    }
+@media only screen and (max-width: $breaking-point-lg) {
+  .search {
+    display: none;
   }
 }
 
-//Responsive
 @media only screen and (max-width: $breaking-point-sm) {
-  .offcanvasLinks {
-    div[class="offcanvas offcanvas-end show"],
-    div[class="offcanvas offcanvas-end offcanvas-toggling"],
-    div[class="offcanvas offcanvas-end offcanvas-toggling show"] {
-      width: 250px;
+  .brand {
+    p {
+      display: none;
     }
-  }
-
-  .logo {
-    margin-left: 32vw;
   }
 }

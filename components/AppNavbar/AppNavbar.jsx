@@ -3,11 +3,13 @@ import { useState } from "react";
 import AppIcon from "components/AppIcon/AppIcon";
 import SearchBar from "components/AppSearchBar/AppSearchBar";
 import FeatherIcon from "feather-icons-react";
-import { Nav, Navbar, Offcanvas } from "react-bootstrap";
+import { Container, Nav, Navbar, Offcanvas } from "react-bootstrap";
 import ReactGA from "react-ga4";
 import { CATEGORIES } from "utils";
 import Link from "next/link";
 import styles from "./appnavbar.module.scss";
+
+const BREAKING_POINT = "lg";
 
 const AppNavbar = () => {
   const [show, setShow] = useState(false);
@@ -40,10 +42,10 @@ const AppNavbar = () => {
   });
 
   return (
-    <Navbar expand="lg" fixed="top" className={styles.nav}>
+    <Navbar expand={BREAKING_POINT} fixed="top" className={styles.nav}>
       <Navbar.Brand as={Link} href="/">
-        <div className="logo">
-          <div id="brand_logo" />
+        <div className={styles.brand}>
+          <div id={styles.logo} />
           <h1>CG</h1>
           <p>Curiosity Gem</p>
         </div>
@@ -57,17 +59,15 @@ const AppNavbar = () => {
       </Navbar.Toggle>
       <Navbar.Offcanvas
         show={show}
-        responsive="lg"
+        responsive={BREAKING_POINT}
         onHide={() => setShow(false)}
         aria-labelledby="offcanvas-container"
+        className="offcanvas-container"
         placement="end"
       >
         <Offcanvas.Header closeButton />
         <Offcanvas.Body>
-          <Nav
-            onSelect={() => setShow(false)}
-            className={styles.offcanvasLinks}
-          >
+          <Nav onSelect={() => setShow(false)}>
             {navLinks}
             <SearchBar className={styles.search} />
           </Nav>

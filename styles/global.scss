@@ -35,3 +35,42 @@ a {
     color: inherit;
   }
 }
+
+.offcanvasLinks {
+  transform: translate(-100px, 10px);
+  margin-left: -200px;
+  a {
+    @include hover_underline($white);
+  }
+}
+
+//Responsive
+@media only screen and (max-width: $breaking-point-lg) {
+  .offcanvas {
+    width: 250px;
+  }
+
+  .offcanvas-container {
+    background-color: $light-grey !important;
+
+    a > li {
+      color: $dark;
+      opacity: 0.8;
+      font-weight: 400;
+      font-size: var(--fs-l);
+      text-align: end;
+      font-family: Italiana !important;
+      transition: 0.4s ease;
+      background-image: none;
+      &:hover {
+        color: $yellow;
+        opacity: 1;
+        letter-spacing: 4px;
+      }
+    }
+
+    .btn-close {
+      transform: scale(0.8);
+    }
+  }
+}
