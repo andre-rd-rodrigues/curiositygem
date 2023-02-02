@@ -28,11 +28,12 @@ a {
   font-weight: 300;
   font-size: var(--fs-m);
 }
+
 a {
   color: $white;
-  text-decoration: none;
+  text-decoration: none !important;
   &:hover {
-    color: inherit;
+    color: inherit !important;
   }
 }
 
