@@ -14,9 +14,9 @@ export default function Homepage() {
       <PageContainer>
         <Introduction />
         <div className={styles.wrapper}>
-          <CategorySection categoryType={CATEGORY.recent} />
-          <CategorySection categoryType={CATEGORY.tech} />
-          <CategorySection categoryType={CATEGORY.wellbeing} />
+          <CategorySection category={CATEGORY.recent} />
+          <CategorySection category={CATEGORY.tech} />
+          <CategorySection category={CATEGORY.wellbeing} />
         </div>
       </PageContainer>
     </>

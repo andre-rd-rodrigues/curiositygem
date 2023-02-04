@@ -1,5 +1,5 @@
-import ArticlesProvider, { ArticlesContext } from "context/articles-context";
-import React, { useContext, useEffect, useState } from "react";
+import { ArticlesContext } from "context/articles-context";
+import { useContext } from "react";
 import { CATEGORY } from "utils";
 
 function useArticles() {
@@ -22,13 +22,13 @@ function useArticles() {
       return getTopArticles();
     }
 
-    if (category.length) {
-      return articles.filter(
-        (article) => article.category.toLowerCase() === category.toLowerCase()
-      );
+    if (category === CATEGORY.recent) {
+      return articles;
     }
 
-    return null;
+    return articles.filter(
+      (article) => article.category.toLowerCase() === category.toLowerCase()
+    );
   };
 
   /**

@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import { CATEGORIES } from "utils";
 import styles from "./homepageComponents.module.scss";
 
-const CategorySection = ({ categoryType }) => {
+const CategorySection = ({ category }) => {
   const { loading, getArticlesByCategory } = useArticles();
 
   if (loading) {
@@ -13,9 +13,9 @@ const CategorySection = ({ categoryType }) => {
   }
 
   // Create title according to category type
-  const title = CATEGORIES.find(({ type }) => type === categoryType).name;
+  const title = CATEGORIES.find(({ type }) => type === category).name;
 
-  const articles = getArticlesByCategory(categoryType);
+  const articles = getArticlesByCategory(category);
 
   return (
     <motion.div

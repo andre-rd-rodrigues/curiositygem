@@ -1,47 +1,34 @@
 import { containerVariant, motion } from "assets/motion/motionVariants";
-import AppButton from "components/AppButton/AppButton";
-import { useEffect, useState } from "react";
+import Button from "components/AppButton/AppButton";
+import { useState } from "react";
 import { ARTICLES_VISIBLE_LIMIT } from "utils";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import styles from "./articlesgrid.module.scss";
 
-const ArticlesGrid = ({ articles }) => {
+const ArticlesGrid = ({ articles: articlesProps }) => {
   const [articlesState, setArticlesState] = useState({
-    articlesVisible: articles.slice(0, ARTICLES_VISIBLE_LIMIT),
-    visible: ARTICLES_VISIBLE_LIMIT
+    articles: articlesProps.slice(0, ARTICLES_VISIBLE_LIMIT),
+    limit: ARTICLES_VISIBLE_LIMIT
   });
 
-  const isLoadMoreButtonVisible = articles.length > articlesState.visible;
+  const { articles, limit } = articlesState;
+
+  const loadMoreButtonVisible = articlesProps.length > limit;
 
   const handleLoadMoreArticles = () => {
-    const newRenderLimit = articlesState.visible + 4;
+    const newRenderLimit = limit + 4;
 
-    const newVisibleArticles = articles.slice(
-      articlesState.visible,
-      newRenderLimit
-    );
+    const newVisibleArticles = articlesProps.slice(limit, newRenderLimit);
 
     if (newVisibleArticles) {
       setArticlesState((prevState) => {
         return {
-          articlesVisible: [
-            ...prevState.articlesVisible,
-            ...newVisibleArticles
-          ],
-          visible: newRenderLimit
+          articles: [...prevState.articles, ...newVisibleArticles],
+          limit: newRenderLimit
         };
       });
     }
   };
-
-  useEffect(() => {
-    if (articles) {
-      setArticlesState({
-        articlesVisible: articles.slice(0, ARTICLES_VISIBLE_LIMIT),
-        visible: ARTICLES_VISIBLE_LIMIT
-      });
-    }
-  }, [articles]);
 
   return (
     <div className={styles.container}>
@@ -51,12 +38,12 @@ const ArticlesGrid = ({ articles }) => {
         animate="visible"
         className={styles.grid}
       >
-        {articlesState.articlesVisible?.map((article) => (
-          <ArticleCard key={article.id} article={article} />
+        {articles.map((article) => (
+          <ArticleCard key={article.slug} article={article} />
         ))}
       </motion.div>
-      {isLoadMoreButtonVisible && (
-        <AppButton onClick={handleLoadMoreArticles} label="load more" />
+      {loadMoreButtonVisible && (
+        <Button onClick={handleLoadMoreArticles} label="load more" />
       )}
     </div>
   );
