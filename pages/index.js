@@ -3,7 +3,7 @@ import PageContainer from "components/PageContainer/PageContainer";
 import Introduction from "components/Homepage/Introduction";
 import CategorySection from "components/Homepage/CategorySection";
 import styles from "styles/homepage.module.scss";
-import { CATEGORIES_TYPE } from "utils";
+import { CATEGORY } from "utils";
 
 export default function Homepage() {
   return (
@@ -14,9 +14,9 @@ export default function Homepage() {
       <PageContainer>
         <Introduction />
         <div className={styles.wrapper}>
-          <CategorySection categoryType={CATEGORIES_TYPE.recent} />
-          <CategorySection categoryType={CATEGORIES_TYPE.tech} />
-          <CategorySection categoryType={CATEGORIES_TYPE.wellbeing} />
+          <CategorySection categoryType={CATEGORY.recent} />
+          <CategorySection categoryType={CATEGORY.tech} />
+          <CategorySection categoryType={CATEGORY.wellbeing} />
         </div>
       </PageContainer>
     </>

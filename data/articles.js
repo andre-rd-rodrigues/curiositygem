@@ -1,7 +1,7 @@
 import ArticleLink from "components/Articles/ArticleLink/ArticleLink";
 import ContactMe from "components/ContactMe/ContactMe";
 import GoogleAd from "components/GoogleAd/GoogleAd";
-import { CATEGORIES_TYPE } from "utils";
+import { CATEGORY } from "utils";
 
 const articles = [
   // Tech
@@ -11,7 +11,7 @@ const articles = [
       "Transform Your Home into a Smart Home: 5 Ways to Automate Your House",
     description:
       "Are you tired of constantly forgetting to turn off the lights or adjust the thermostat when you leave the house? It might be time to consider automating your home. In this blog post, we&apos;ll give you five ways to transform your home into a smart home, including using smart thermostats, smart lighting, smart appliances, smart security systems, and smart home hubs. Automating your home can make your life easier, save you energy and money, and give you peace of mind. Learn how to get started with home automation today.",
-    category: CATEGORIES_TYPE.tech,
+    category: CATEGORY.tech,
     date: "11/25/2022",
     isTopArticle: false,
     image_src:
@@ -95,7 +95,7 @@ const articles = [
     title: "The Top 5 Cybersecurity Threats of 2023: What You Need to Know",
     description:
       "Stay ahead of the curve and protect yourself and your business from the latest cybersecurity threats. In this blog post, we'll outline the top five threats to watch out for in 2023, including ransomware, cloud security breaches, Internet of Things vulnerabilities, supply chain attacks, and artificial intelligence and machine learning attacks. Stay informed and follow best practices to reduce the risk of a cybersecurity incident.",
-    category: CATEGORIES_TYPE.tech,
+    category: CATEGORY.tech,
     date: "01/03/2023",
     isTopArticle: true,
 
@@ -191,7 +191,7 @@ const articles = [
       "Protecting Your Personal Information Online: A Beginner's Guide to Cybersecurity",
     description:
       "In today's digital age, it's crucial to protect your personal information online. In this blog post, we'll provide a beginner's guide to cybersecurity and give you tips on how to keep your data safe. Learn how to use strong, unique passwords, be cautious about the information you share online, use two-factor authentication, recognize phishing scams, keep your software and systems up to date, and use secure networks and connections. Follow these best practices to reduce the risk of identity theft and other cyber threats.",
-    category: CATEGORIES_TYPE.tech,
+    category: CATEGORY.tech,
     date: "2023-01-05",
     isTopArticle: false,
     meta_tags: [
@@ -327,7 +327,7 @@ const articles = [
       "Don't Let Your Vacation be Ruined by a Cyber Attack: How to Secure Your Devices Before You Go",
     description:
       "In this blog post, we'll provide tips on how to secure your devices before you go, including updating your software and devices, using a virtual private network (VPN), enabling two-factor authentication (2FA), and being aware of phishing scams. Follow these best practices to help protect your data and enjoy your vacation with peace of mind.",
-    category: CATEGORIES_TYPE.tech,
+    category: CATEGORY.tech,
     date: "2023-01-08",
     isTopArticle: false,
 
@@ -454,7 +454,7 @@ const articles = [
     title: "Revolutionizing Healthcare: The Rise of Smart Hospitals",
     description:
       "Discover how the Internet of Things (IoT) is revolutionizing healthcare through the use of Smart Hospitals. Learn about the different ways in which this technology is being used, the potential benefits it offers, and how it can improve patient outcomes and streamline operations in this easy-to-read and engaging article.",
-    category: CATEGORIES_TYPE.tech,
+    category: CATEGORY.tech,
     date: "2023-01-20",
     isTopArticle: false,
     content: (
@@ -549,7 +549,7 @@ const articles = [
       "Build Your Own PC from Scratch: A Step-by-Step Guide to Building Your Own PC",
     description:
       "Unleash your inner tech-savvy and build the PC of your dreams from scratch! Our step-by-step guide makes it easy for anyone to build their own custom PC. From picking out the perfect components to assembling and optimizing your new machine, we've got you covered. Get ready for an exciting journey of discovery and creativity as you take control of your computing experience with our guide to building your own PC.",
-    category: CATEGORIES_TYPE.tech,
+    category: CATEGORY.tech,
     date: "2023-01-21",
     isTopArticle: false,
 
@@ -717,7 +717,7 @@ const articles = [
     title: "How to spot and avoid phishing scams?",
     description:
       "In this article, we'll provide some tips on how to spot and avoid phishing scams, so you can protect yourself and your personal data. We'll cover how to identify suspicious emails, be cautious about sharing personal information, and use two-factor authentication to add an extra layer of security to your online accounts.",
-    category: CATEGORIES_TYPE.tech,
+    category: CATEGORY.tech,
     date: "2023-01-10",
     isTopArticle: false,
 
@@ -830,7 +830,7 @@ const articles = [
       "Navigating Team Conflicts in Programming: Strategies for Maintaining Mental Well-being",
     description:
       "Discover effective strategies for navigating conflicts within a programming team while maintaining mental well-being. Learn the impact of conflicts on mental health and how to overcome it through open communication, active listening, compromise, team building and seeking help when needed.",
-    category: CATEGORIES_TYPE.career,
+    category: CATEGORY.career,
     date: "2022-11-20",
     isTopArticle: false,
     image_src:
@@ -987,7 +987,7 @@ const articles = [
       "Overcoming Imposter Syndrome: The Impact on Programmers Mental Health",
     description:
       "Imposter syndrome is a common experience among programmers. Learn about the impact it can have on mental health and strategies for overcoming it, such as challenging negative thoughts, embracing failure, seeking feedback and seeking support.",
-    category: CATEGORIES_TYPE.career,
+    category: CATEGORY.career,
     date: "2023-01-13",
     isTopArticle: false,
     image_src:
@@ -1096,7 +1096,7 @@ const articles = [
     title: "New Horizons: A Guide to Start a Career in Programming",
     description:
       "Are you considering a career change into programming? Discover the path to a successful career in programming with this comprehensive guide, perfect for aspiring programmers and those looking to advance their current programming skills.",
-    category: CATEGORIES_TYPE.career,
+    category: CATEGORY.career,
     date: "2023-01-18",
     isTopArticle: true,
     image_src:
@@ -1249,7 +1249,7 @@ const articles = [
       "Start Your Journey to Becoming a Web Developer: Free Online Resources to Learn From",
     description:
       "Explore the world of web development and start your journey to becoming a professional with this comprehensive guide to the best free online resources. From coding tutorials and exercises to web development communities, you'll find everything you need to advance your skills and build a strong foundation in web development. Learn from the best and launch your career with our curated list of free online resources.",
-    category: CATEGORIES_TYPE.career,
+    category: CATEGORY.career,
     date: "2023-01-19",
     isTopArticle: true,
     image_src:
@@ -1402,7 +1402,7 @@ const articles = [
       "Defining Your Web Development Roadmap: How to Structure Your Learning Path",
     description:
       "Learn how to structure your web development learning path and achieve your goals with our comprehensive guide. From determining your goals and researching the industry to creating a learning plan and practicing, our article covers all the essential steps to help you define your web development roadmap and become a successful web developer. Discover the secrets to mastering web development and reach your full potential with our expert advice.",
-    category: CATEGORIES_TYPE.career,
+    category: CATEGORY.career,
     date: "2023-01-20",
     isTopArticle: true,
     image_src:
@@ -1516,7 +1516,7 @@ const articles = [
     title: "Passive Income Ideas for Beginners: How to Get Started",
     description:
       "Learn about the different ways to earn passive income as a beginner. From renting out property, to building an online course, to investing in stocks, find the best passive income ideas that align with your skills and resources. Discover how to get started and start earning passive income today!",
-    category: CATEGORIES_TYPE.finance,
+    category: CATEGORY.finance,
     date: "2023-01-23",
     isTopArticle: true,
     image_src:
@@ -1717,7 +1717,7 @@ const articles = [
       "Side Hustles for Stay-at-Home Parents: From Childcare to Online Tutoring",
     description:
       "Explore a variety of side hustle options for stay-at-home parents, including childcare and online tutoring. Learn how to make extra income while balancing family responsibilities.",
-    category: CATEGORIES_TYPE.finance,
+    category: CATEGORY.finance,
     date: "2023-01-23",
     isTopArticle: true,
     image_src:
@@ -1810,7 +1810,7 @@ const articles = [
     title: "10 Side Hustles to Try in 2023: Opportunities for Extra Income",
     description:
       "Find the best ways to earn extra income in 2023 with our comprehensive guide. From online selling to freelancing, and from virtual assistant to podcasting, this article covers 10 side hustle ideas for 2023 that you can try to earn extra income while pursuing your passions and interests",
-    category: CATEGORIES_TYPE.finance,
+    category: CATEGORY.finance,
     date: "2023-01-22",
     isTopArticle: true,
     image_src:
@@ -1924,7 +1924,7 @@ const articles = [
       "From Side Hustles to Passive Income: The Ultimate Guide to Building Multiple Streams of Income",
     description:
       "Learn how to build multiple streams of income and achieve financial freedom with our step-by-step guide. From assessing your skills and interests to researching and exploring different opportunities, this article covers everything you need to know to diversify your income and reach your financial goals.",
-    category: CATEGORIES_TYPE.finance,
+    category: CATEGORY.finance,
     date: "2023-01-22",
     isTopArticle: true,
     image_src:
@@ -2016,7 +2016,7 @@ const articles = [
     title: "Start Smart: The Essential Guide to Saving and Investing",
     description:
       "Learn how to start your journey towards financial stability with this essential guide to saving and investing. Discover the basics of setting financial goals, creating a budget, understanding different types of investments, and building a strong financial future.",
-    category: CATEGORIES_TYPE.finance,
+    category: CATEGORY.finance,
     date: "2023-01-15",
     isTopArticle: false,
     image_src:
@@ -2096,7 +2096,7 @@ const articles = [
       "Breaking the Cycle: Understanding and Mitigating the Effects of Prolonged Screen Time on Mental Health",
     description:
       "Discover the negative impact of prolonged screen time on mental health and learn effective strategies to mitigate it, including setting daily limits, taking regular breaks, using blue light filters, practicing good sleep hygiene and staying active.",
-    category: CATEGORIES_TYPE.wellbeing,
+    category: CATEGORY.wellbeing,
     date: "2022-12-14",
     isTopArticle: true,
     image_src:
@@ -2187,7 +2187,7 @@ const articles = [
       "Programming and Burnout: How to Identify, Prevent, and Recover from Stress and Burnout",
     description:
       "Programming can be a demanding field that can lead to burnout. Learn how to identify the signs of burnout, prevent it from happening and recover from it with this guide. Strategies include setting realistic goals and priorities, regular breaks, healthy lifestyle, good work-life balance and seeking support.",
-    category: CATEGORIES_TYPE.wellbeing,
+    category: CATEGORY.wellbeing,
     date: "2022-11-19",
     isTopArticle: true,
     image_src:
@@ -2363,7 +2363,7 @@ const articles = [
       "Stressed Out? Learn How to Effectively Manage Stress with These Simple Techniques",
     description:
       "Feeling stressed out? Learn how to effectively manage stress with these simple, yet effective techniques. From laughing it off and writing it down to taking a walk and listening to music, our article covers a range of stress management techniques that will have you feeling like a stress-busting ninja in no time. Discover the secrets to managing stress and improve your well-being with our expert advice and engaging approach.",
-    category: CATEGORIES_TYPE.wellbeing,
+    category: CATEGORY.wellbeing,
     date: "2023-01-20",
     isTopArticle: true,
     image_src:
@@ -2495,7 +2495,7 @@ const articles = [
     title: "Become a Pro: Secrets to Dominating in CS:GO",
     description:
       "Learn how to become a pro in Counter-Strike: Global Offensive (CS:GO) with our insider tips and strategies. From aiming and map knowledge to communication and focus, we cover all the essentials you need to dominate the competition. Improve your gameplay and take your CS:GO skills to the next level with our comprehensive guide. Don&apos;t miss out on the secrets to mastering the game.",
-    category: CATEGORIES_TYPE.games,
+    category: CATEGORY.games,
     date: "2022-12-01",
     isTopArticle: false,
 
@@ -2580,7 +2580,7 @@ const articles = [
     title: "From Fun to Fundamentals: The Educational Benefits of Gaming",
     description:
       "Discover how video games are revolutionizing the way we learn. From improving problem-solving skills to enhancing engagement, learn about the fundamentals of gaming in education in this comprehensive article.",
-    category: CATEGORIES_TYPE.games,
+    category: CATEGORY.games,
     date: "2023-01-10",
     isTopArticle: false,
 
@@ -2670,7 +2670,7 @@ const articles = [
     title: "Top 5 Picks for Virtual Reality Headsets in 2023",
     description:
       "Stay ahead of the game with the latest virtual reality technology. Discover the top 5 virtual reality headsets of 2023 and find the perfect one for your needs, whether you're a gamer, a professional or a VR enthusiast. With a wide range of options, from the Oculus Quest 2 to the Lenovo Mirage Solo with Daydream, this article will guide you through the latest virtual reality options available in 2023.",
-    category: CATEGORIES_TYPE.games,
+    category: CATEGORY.games,
     date: "2023-01-17",
     isTopArticle: true,
 
@@ -2752,7 +2752,7 @@ const articles = [
     title: "Mind Games: How Video Games Affect Mental Health and Well-being",
     description:
       "Uncover the truth about the relationship between video games and mental health. From reducing stress to improving mood, discover the good, the bad, and the ugly of gaming's impact on well-being in this informative and engaging article.",
-    category: CATEGORIES_TYPE.games,
+    category: CATEGORY.games,
     date: "2023-01-14",
     isTopArticle: false,
 

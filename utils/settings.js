@@ -1,7 +1,3 @@
-const DOMAIN_URL = "https://www.andrerodrigo.com";
-
-const ARTICLES_VISIBLE_LIMIT = 6;
-
 const SLIDER_SETTINGS = {
   speed: 1000,
   autoplaySpeed: 4000,
@@ -31,4 +27,4 @@ const SLIDER_SETTINGS = {
   ]
 };
 
-export { DOMAIN_URL, ARTICLES_VISIBLE_LIMIT, SLIDER_SETTINGS };
+export { SLIDER_SETTINGS };

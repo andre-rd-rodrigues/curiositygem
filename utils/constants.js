@@ -15,7 +15,7 @@ const SOCIAL_MEDIA = [
   }
 ];
 
-const CATEGORIES_TYPE = {
+const CATEGORY = {
   tech: "technology",
   games: "gaming",
   wellbeing: "wellbeing",
@@ -27,14 +27,22 @@ const CATEGORIES_TYPE = {
 };
 
 const CATEGORIES = [
-  { name: "Top picks", type: CATEGORIES_TYPE.top },
-  { name: "Latest", type: CATEGORIES_TYPE.recent },
-  { name: "Wellbeing", type: CATEGORIES_TYPE.wellbeing },
-  { name: "Finance", type: CATEGORIES_TYPE.finance },
-  { name: "Career", type: CATEGORIES_TYPE.career },
-  { name: "Technology", type: CATEGORIES_TYPE.tech },
-  { name: "Gaming", type: CATEGORIES_TYPE.games },
-  { name: "All", type: CATEGORIES_TYPE.all }
+  { name: "Top picks", type: CATEGORY.top },
+  { name: "Latest", type: CATEGORY.recent },
+  { name: "Wellbeing", type: CATEGORY.wellbeing },
+  { name: "Finance", type: CATEGORY.finance },
+  { name: "Career", type: CATEGORY.career },
+  { name: "Technology", type: CATEGORY.tech },
+  { name: "Gaming", type: CATEGORY.games },
+  { name: "All", type: CATEGORY.all }
 ];
 
-export { SEARCH_TYPE, CATEGORIES, CATEGORIES_TYPE, SOCIAL_MEDIA };
+const ARTICLES_VISIBLE_LIMIT = 6;
+
+export {
+  SEARCH_TYPE,
+  CATEGORIES,
+  CATEGORY,
+  SOCIAL_MEDIA,
+  ARTICLES_VISIBLE_LIMIT
+};

@@ -1,5 +1,5 @@
 import AppIcon from "components/AppIcon/AppIcon";
-import { SOCIAL_MEDIA } from "utils/types";
+import { SOCIAL_MEDIA } from "utils/constants";
 import styles from "./footer.module.scss";
 
 const Footer = () => {

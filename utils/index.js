@@ -1,5 +1,5 @@
 // @index('./**/*.js', f => `export * from '${f.path}'`)
-export * from "./types";
+export * from "./constants";
 export * from "./global-utils";
 export * from "./googleAds";
 export * from "./helpers/articles";

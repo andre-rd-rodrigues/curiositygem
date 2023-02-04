@@ -18,9 +18,7 @@ const getWeeklyArticles = () => {
  *  Function that filters articles and returns the ones with isTopArticle
  */
 const getTopArticles = () => {
-  const filteredArticles = articles.filter((item) => item.isTopArticle);
-
-  return validateSearch(filteredArticles);
+  return articles.filter((item) => item.isTopArticle);
 };
 
 /**
@@ -50,25 +48,12 @@ const getArticlesById = (id) => {
  */
 
 const getArticlesByCategory = (category) => {
-  const sortedArticles = sortArticlesByDate();
-
   switch (category) {
     case "top":
       return getTopArticles();
 
-    case "all":
+    default:
       return articles;
-
-    case "recent":
-      return sortArticlesByDate();
-
-    default: {
-      const filteredArticles = sortedArticles.filter(
-        (article) => article.category.toLowerCase() === category.toLowerCase()
-      );
-
-      return validateSearch(filteredArticles);
-    }
   }
 };
 
