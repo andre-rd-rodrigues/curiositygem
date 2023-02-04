@@ -26,6 +26,10 @@ coverage
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
 
+# Local env
+.env.local
+.env.development
+
 # Dependency directories
 node_modules
 jspm_packages

@@ -1,5 +1,6 @@
 import { fadeInVariant, motion } from "assets/motion/motionVariants";
 import ArticlesGrid from "components/Articles/ArticlesGrid/ArticlesGrid";
+import useArticles from "hooks/useArticles";
 import PropTypes from "prop-types";
 import { CATEGORIES, getArticlesByCategory } from "utils";
 import styles from "./homepageComponents.module.scss";
@@ -9,6 +10,12 @@ const CategorySection = ({ categoryType }) => {
   const title = CATEGORIES.find(({ type }) => type === categoryType).name;
 
   const articles = getArticlesByCategory(categoryType);
+
+  const { loading } = useArticles();
+
+  if (loading) {
+    return <div>Loading skeleton...</div>;
+  }
 
   return (
     <motion.div
