@@ -8,16 +8,22 @@
   padding: 15px var(--padding-y);
   color: $white;
   font-size: var(--fs-m);
-  div[class="app-icon"] {
-    margin-right: 20px;
-    position: relative;
-    @include hover_underline($white);
-  }
+
   div {
     font-weight: 300;
   }
   div[id="footer-copyright"] {
     font-size: var(--fs-s);
+  }
+}
+
+.socialMedia {
+  margin-right: 20px;
+  position: relative;
+  & a {
+    color: $white;
+    padding-bottom: 2px;
+    @include hover_underline($white);
   }
 }
 

@@ -5,17 +5,17 @@ import PropTypes from "prop-types";
 import { CATEGORIES } from "utils";
 import styles from "./homepageComponents.module.scss";
 
-const CategorySection = ({ category }) => {
-  const { loading, getArticlesByCategory } = useArticles();
+const CategorySection = ({ category, articles }) => {
+  const { getArticlesByCategory } = useArticles(articles);
 
-  if (loading) {
+  /*   if (loading) {
     return <div>Loading skeleton...</div>;
-  }
+  } */
 
   // Create title according to category type
   const title = CATEGORIES.find(({ type }) => type === category).name;
 
-  const articles = getArticlesByCategory(category);
+  const articlesByCategory = getArticlesByCategory(category);
 
   return (
     <motion.div
@@ -26,7 +26,7 @@ const CategorySection = ({ category }) => {
       viewport={{ once: true }}
     >
       <motion.h2 className="recent_post">{title}:</motion.h2>
-      <ArticlesGrid articles={articles} />
+      <ArticlesGrid articles={articlesByCategory} />
     </motion.div>
   );
 };

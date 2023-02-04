@@ -8,7 +8,7 @@ const ArticleCard = ({ article }) => {
   return (
     <motion.div variants={fadeInVariant} className={styles.container}>
       <div className={styles.wrapper}>
-        <Link href={`/article/${article.id}`}>
+        <Link href={`/article/${article.slug}`}>
           <AppImage src={article.image_src} className={styles.image} />
           <div className={styles.subtitle}>
             <p>{article.category}</p>
@@ -22,7 +22,7 @@ const ArticleCard = ({ article }) => {
         <div className={styles.footer}>
           <Link
             className={styles.readMore}
-            href={`/article/${article.id}`}
+            href={`/article/${article.slug}`}
             onClick={() => (scrollTop ? window.scrollTo(0, 0) : null)}
           >
             Read more

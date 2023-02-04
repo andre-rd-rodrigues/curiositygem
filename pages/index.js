@@ -5,7 +5,7 @@ import CategorySection from "components/Homepage/CategorySection";
 import styles from "styles/homepage.module.scss";
 import { CATEGORY } from "utils";
 
-export default function Homepage() {
+export default function Homepage({ articles }) {
   return (
     <>
       <Head>
@@ -14,11 +14,20 @@ export default function Homepage() {
       <PageContainer>
         <Introduction />
         <div className={styles.wrapper}>
-          <CategorySection category={CATEGORY.recent} />
-          <CategorySection category={CATEGORY.tech} />
-          <CategorySection category={CATEGORY.wellbeing} />
+          <CategorySection articles={articles} category={CATEGORY.recent} />
+          <CategorySection articles={articles} category={CATEGORY.tech} />
+          <CategorySection articles={articles} category={CATEGORY.wellbeing} />
         </div>
       </PageContainer>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const res = await fetch("http://localhost");
+  const data = await res.json();
+
+  return {
+    props: { articles: data }
+  };
 }

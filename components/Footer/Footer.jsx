@@ -7,7 +7,12 @@ const Footer = () => {
     <footer className={styles.container}>
       <div id="footer-social-media">
         {SOCIAL_MEDIA.map(({ label, ref }, index) => (
-          <AppIcon key={index} href={ref} icon={label} />
+          <AppIcon
+            key={index}
+            href={ref}
+            icon={label}
+            className={styles.socialMedia}
+          />
         ))}
       </div>
       <div id="footer-copyright">&#169; 2022 by André Rodrigo</div>

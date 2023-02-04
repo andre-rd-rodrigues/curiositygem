@@ -7,7 +7,8 @@ const AppIcon = ({
   size = 20,
   color = "primary",
   onClick = () => {},
-  href
+  href,
+  className
 }) => {
   return (
     <div
@@ -16,9 +17,8 @@ const AppIcon = ({
         display: onClick || href ? "inline" : "block"
       }}
       tabIndex="0"
-      onKeyPress={onClick}
       onClick={onClick}
-      className="app-icon"
+      className={className}
       role="button"
     >
       {href ? (

@@ -2,9 +2,7 @@ import { ArticlesContext } from "context/articles-context";
 import { useContext } from "react";
 import { CATEGORY } from "utils";
 
-function useArticles() {
-  const { data: articles, error, loading } = useContext(ArticlesContext);
-
+function useArticles(articles) {
   /**
    *  Function that filters articles and returns the ones with isTopArticle
    */
@@ -42,7 +40,7 @@ function useArticles() {
     )[0];
   };
 
-  return { articles, error, loading, getArticlesByCategory, getArticleByTitle };
+  return { articles, getArticlesByCategory, getArticleByTitle };
 }
 
 export default useArticles;

@@ -1,0 +1,80 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.container {
+  h2 {
+    font-family: Jost, sans-serif;
+    font-size: var(--fs-l-s);
+    font-weight: 500;
+    margin: 50px 0 20px;
+    text-align: start;
+  }
+
+  a {
+    color: $salmon;
+    font-weight: 500;
+    &:hover {
+      opacity: 0.8;
+      color: $salmon;
+    }
+  }
+}
+
+.arrowBack {
+  & svg {
+    margin-bottom: 25px;
+    &:hover {
+      color: $dark;
+    }
+  }
+}
+
+.headerImage {
+  min-height: 200px;
+  max-height: 300px;
+}
+
+.title {
+  font-family: Jost, sans-serif;
+  font-size: var(--fs-l);
+  font-weight: 500;
+}
+
+.subtitle {
+  display: flex;
+  color: $grey;
+  margin: 13px 0 20px;
+
+  span {
+    margin: 0 15px;
+    opacity: 0.7;
+  }
+
+  & p:last-child {
+    text-transform: uppercase;
+  }
+  a,
+  span,
+  p {
+    font-size: var(--fs-m-s);
+    font-weight: 400;
+  }
+}
+
+.content {
+  max-width: 840px;
+  text-align: justify;
+  margin: auto;
+  margin-top: 60px;
+}
+
+//Responsive
+@media only screen and (max-width: $breaking-point-md) {
+  .subtitle {
+    margin-bottom: 10px;
+  }
+
+  .container {
+    margin-top: 40px;
+  }
+}
