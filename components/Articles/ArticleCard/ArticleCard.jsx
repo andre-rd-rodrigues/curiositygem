@@ -9,7 +9,7 @@ const ArticleCard = ({ article }) => {
     <motion.div variants={fadeInVariant} className={styles.container}>
       <div className={styles.wrapper}>
         <Link href={`/article/${article.slug}`}>
-          <AppImage src={article.image_src} className={styles.image} />
+          <AppImage src={article.coverPhoto.url} className={styles.image} />
           <div className={styles.subtitle}>
             <p>{article.category}</p>
             <p>{convertDate(article.date)}</p>

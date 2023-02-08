@@ -1,18 +1,19 @@
+import { ARTICLES_QUERY } from "pages/api/graphQL/main";
 import PropTypes from "prop-types";
-import { createContext } from "react";
-import { useFetch } from "use-http";
+import { createContext, useEffect, useState } from "react";
+import { Provider, useFetch } from "use-http";
 
-export const ArticlesContext = createContext(null);
+const INITIAL_CONTEXT = {
+  data: null,
+  loading: undefined,
+  error: undefined
+};
+
+export const ArticlesContext = createContext({ ...INITIAL_CONTEXT });
 
 function ArticlesProvider({ children }) {
-  const { data, loading, error } = useFetch(
-    process.env.NEXT_PUBLIC_BASE_URL,
-    {},
-    []
-  );
-
   return (
-    <ArticlesContext.Provider value={{ data, loading, error }}>
+    <ArticlesContext.Provider value={{ ...INITIAL_CONTEXT }}>
       {children}
     </ArticlesContext.Provider>
   );

@@ -5,8 +5,14 @@ import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import AppImage from "components/AppImage/AppImage";
 import AppIcon from "components/AppIcon/AppIcon";
+import {
+  ARTICLES_QUERY,
+  ARTICLE_QUERY,
+  graphcms,
+  SLUGLIST
+} from "pages/api/graphQL/main";
 
-function Article({ article }) {
+function Article({ post: article }) {
   if (!article) {
     return <p>Not found</p>;
   }
@@ -25,26 +31,15 @@ function Article({ article }) {
           <div>
             <h1 className={styles.title}>{article.title}</h1>
             <div className={styles.subtitle}>
-              <p>{convertDate(article.date)}</p> <span>|</span>{" "}
+              <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
               <p>{article.category}</p>
             </div>
           </div>
-          <AppImage className={styles.headerImage} src={article.image_src} />
-          <div className={styles.content}>
-            {parser(article.content)}
-            <ul>
-              <li>lorem</li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-          </div>
+          <AppImage
+            className={styles.headerImage}
+            src={article.coverPhoto.url}
+          />
+          <div className={styles.content}>{parser(article.content.html)}</div>
         </div>
       </div>
     </PageContainer>
@@ -54,11 +49,10 @@ function Article({ article }) {
 export default Article;
 
 export async function getStaticPaths() {
-  const res = await fetch("http://localhost");
-  const articles = await res.json();
+  const { posts } = await graphcms.request(SLUGLIST);
 
-  const paths = articles.map((article) => {
-    return { params: { slug: article.slug } };
+  const paths = posts.map((post) => {
+    return { params: { slug: post.slug } };
   });
 
   return {
@@ -70,11 +64,12 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const slug = params.slug;
 
-  const res = await fetch(`http://localhost/${slug}`);
+  const data = await graphcms.request(ARTICLE_QUERY, { slug });
 
-  const data = await res.json();
+  const post = data.post;
 
   return {
-    props: { article: data[0] }
+    props: { post: post },
+    revalidate: 10
   };
 }

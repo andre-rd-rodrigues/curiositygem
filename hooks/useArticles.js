@@ -3,6 +3,10 @@ import { useContext } from "react";
 import { CATEGORY } from "utils";
 
 function useArticles(articles) {
+  if (!articles) {
+    return null;
+  }
+
   /**
    *  Function that filters articles and returns the ones with isTopArticle
    */
@@ -40,7 +44,7 @@ function useArticles(articles) {
     )[0];
   };
 
-  return { articles, getArticlesByCategory, getArticleByTitle };
+  return { getArticlesByCategory, getArticleByTitle };
 }
 
 export default useArticles;

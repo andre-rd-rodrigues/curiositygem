@@ -1,0 +1,39 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+  h1 {
+    font-family: Italiana;
+    font-size: clamp(10rem, 50vw, 20rem);
+    margin-bottom: -15px;
+  }
+  img {
+    max-width: 90px;
+    min-width: 60px;
+    width: 15vw;
+    height: auto;
+    margin-bottom: 20px;
+  }
+}
+
+.backButton {
+  text-transform: uppercase;
+  background-color: transparent;
+  margin: auto;
+  margin-top: 60px;
+  border: none;
+  display: flex;
+  align-items: center;
+  transition: 0.4s ease;
+  background-image: none;
+  font-size: var(--fs-m);
+  letter-spacing: 2px;
+  @include hover_underline($dark);
+
+  &:hover {
+    letter-spacing: 4px;
+  }
+}
