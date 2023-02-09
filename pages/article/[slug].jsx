@@ -70,7 +70,8 @@ function Article({ post: articleAPI }) {
 export default Article;
 
 export async function getStaticPaths() {
-  const { posts } = await graphcms.request(SLUGLIST);
+  const res = await fetch(baseURL);
+  const posts = await res.json();
 
   const paths = posts.map((post) => {
     return { params: { slug: post.slug } };
@@ -85,12 +86,11 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const slug = params.slug;
 
-  const data = await graphcms.request(ARTICLE_QUERY, { slug });
-
-  const post = data.post;
+  const res = await fetch(`${baseURL}/article/${slug}`);
+  const post = await res.json();
 
   return {
-    props: { post: post },
+    props: { post: post[0] },
     revalidate: 10
   };
 }

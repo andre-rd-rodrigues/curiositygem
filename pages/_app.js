@@ -1,8 +1,9 @@
-import ArticlesProvider from "context/articles-context";
-import Layout from "../components/Layout/Layout";
-import "styles/global.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Provider } from "use-http";
+import ArticlesProvider, { ArticlesContext } from "context/articles-context";
+import { useContext, useEffect } from "react";
+import "styles/global.scss";
+import Layout from "../components/Layout/Layout";
+import baseURL from "./api/baseURL";
 
 export default function App({ Component, pageProps }) {
   return (

@@ -10,6 +10,7 @@ const CategorySection = ({ category }) => {
 
   // Create title according to category type
   const title = CATEGORIES.find(({ type }) => type === category).name;
+  const articles = getArticlesByCategory(category);
 
   const articles = getArticlesByCategory(category);
 
