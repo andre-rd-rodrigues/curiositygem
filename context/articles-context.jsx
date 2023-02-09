@@ -1,19 +1,24 @@
-import { ARTICLES_QUERY } from "pages/api/graphQL/main";
+import baseURL from "pages/api/baseURL";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
-import { Provider, useFetch } from "use-http";
 
-const INITIAL_CONTEXT = {
-  data: null,
-  loading: undefined,
-  error: undefined
-};
-
-export const ArticlesContext = createContext({ ...INITIAL_CONTEXT });
+export const ArticlesContext = createContext();
 
 function ArticlesProvider({ children }) {
+  const [articles, setArticles] = useState();
+
+  const getArticles = async () => {
+    const res = await fetch(baseURL);
+    const posts = await res.json();
+    setArticles(posts);
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, []);
+
   return (
-    <ArticlesContext.Provider value={{ ...INITIAL_CONTEXT }}>
+    <ArticlesContext.Provider value={{ articles }}>
       {children}
     </ArticlesContext.Provider>
   );

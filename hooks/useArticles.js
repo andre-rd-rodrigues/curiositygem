@@ -2,9 +2,13 @@ import { ArticlesContext } from "context/articles-context";
 import { useContext } from "react";
 import { CATEGORY } from "utils";
 
-function useArticles(articles) {
+function useArticles() {
+  const { articles } = useContext(ArticlesContext);
+
   if (!articles) {
-    return null;
+    return {
+      articles: null
+    };
   }
 
   /**
@@ -44,7 +48,7 @@ function useArticles(articles) {
     )[0];
   };
 
-  return { getArticlesByCategory, getArticleByTitle };
+  return { getArticlesByCategory, getArticleByTitle, articles };
 }
 
 export default useArticles;

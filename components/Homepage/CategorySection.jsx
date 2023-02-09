@@ -1,12 +1,16 @@
 import { fadeInVariant, motion } from "assets/motion/motionVariants";
 import ArticlesGrid from "components/Articles/ArticlesGrid/ArticlesGrid";
+import useArticles from "hooks/useArticles";
 import PropTypes from "prop-types";
 import { CATEGORIES } from "utils";
 import styles from "./homepageComponents.module.scss";
 
-const CategorySection = ({ category, articles }) => {
+const CategorySection = ({ category }) => {
+  const { getArticlesByCategory } = useArticles();
+
   // Create title according to category type
   const title = CATEGORIES.find(({ type }) => type === category).name;
+  const articles = getArticlesByCategory(category);
 
   return (
     <motion.div
