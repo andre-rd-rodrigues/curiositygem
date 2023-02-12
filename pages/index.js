@@ -21,7 +21,7 @@ export default function Homepage() {
       return <ErrorMessage className={styles.errorMessage} />;
     }
 
-    if (articles) {
+    if (articles.length) {
       return (
         <div className={styles.wrapper}>
           <CategorySection category={CATEGORY.recent} />
