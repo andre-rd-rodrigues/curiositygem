@@ -1,6 +1,6 @@
 import { containerVariant, motion } from "assets/motion/motionVariants";
 import Button from "components/AppButton/AppButton";
-import { useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { ARTICLES_VISIBLE_LIMIT } from "utils";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import styles from "./articlesgrid.module.scss";
@@ -30,6 +30,13 @@ const ArticlesGrid = ({ articles: articlesProps }) => {
     }
   };
 
+  useEffect(() => {
+    setArticlesState({
+      articles: articlesProps.slice(0, ARTICLES_VISIBLE_LIMIT),
+      limit: ARTICLES_VISIBLE_LIMIT
+    });
+  }, [articlesProps]);
+
   return (
     <div className={styles.container}>
       <motion.div
@@ -49,4 +56,4 @@ const ArticlesGrid = ({ articles: articlesProps }) => {
   );
 };
 
-export default ArticlesGrid;
+export default memo(ArticlesGrid);

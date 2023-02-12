@@ -28,7 +28,7 @@ const CategorySection = ({ category }) => {
 };
 
 CategorySection.propTypes = {
-  categoryType: PropTypes.string
+  categoryType: PropTypes.string.isRequired
 };
 
 export default CategorySection;
