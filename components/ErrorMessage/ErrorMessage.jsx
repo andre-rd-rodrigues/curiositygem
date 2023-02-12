@@ -1,18 +1,25 @@
+import PropTypes from "prop-types";
 import AppButton from "components/AppButton/AppButton";
 import React from "react";
 import styles from "./errormessage.module.scss";
+import AppIcon from "components/AppIcon/AppIcon";
 
-const ErrorMessage = () => {
+const ErrorMessage = ({ className }) => {
   return (
-    <div className={styles.container}>
-      <h2>Upsss...</h2>
-      <p>Something went really wrong</p>
+    <div className={`${styles.container} ${className || ""}`}>
+      <AppIcon icon="alert-circle" size={70} />
+      <h2>Ohhh no...</h2>
+      <p>Something went wrong while getting the articles</p>
       <AppButton
         label="Refresh page"
         onClick={() => window.location.reload()}
       />
     </div>
   );
+};
+
+ErrorMessage.propTypes = {
+  className: PropTypes.string
 };
 
 export default ErrorMessage;

@@ -1,16 +1,37 @@
+import ErrorMessage from "components/ErrorMessage/ErrorMessage";
 import CategorySection from "components/Homepage/CategorySection";
 import Introduction from "components/Homepage/Introduction";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import useArticles from "hooks/useArticles";
 import Head from "next/head";
-import { ARTICLES_CARD_QUERY, graphcms } from "pages/api/graphQL/main";
+import { useEffect } from "react";
 import styles from "styles/homepage.module.scss";
 import { CATEGORY } from "utils";
 
-export default function Homepage({ articles }) {
-  const { getArticlesByCategory } = useArticles(articles);
-  console.log(articles);
+export default function Homepage() {
+  const { articles } = useArticles();
+
+  const renderContent = () => {
+    if (articles === undefined) {
+      return <Loading />;
+    }
+
+    if (articles === null) {
+      return <ErrorMessage className={styles.errorMessage} />;
+    }
+
+    if (articles) {
+      return (
+        <div className={styles.wrapper}>
+          <CategorySection category={CATEGORY.recent} />
+          <CategorySection category={CATEGORY.tech} />
+          <CategorySection category={CATEGORY.wellbeing} />
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <Head>
@@ -18,33 +39,8 @@ export default function Homepage({ articles }) {
       </Head>
       <PageContainer>
         <Introduction />
-        {articles ? (
-          <div className={styles.wrapper}>
-            <CategorySection
-              articles={getArticlesByCategory(CATEGORY.recent)}
-              category={CATEGORY.recent}
-            />
-            <CategorySection
-              articles={getArticlesByCategory(CATEGORY.tech)}
-              category={CATEGORY.tech}
-            />
-            <CategorySection
-              articles={getArticlesByCategory(CATEGORY.wellbeing)}
-              category={CATEGORY.wellbeing}
-            />
-          </div>
-        ) : (
-          <Loading />
-        )}
+        {renderContent()}
       </PageContainer>
     </>
   );
-}
-
-export async function getStaticProps() {
-  const { posts } = await graphcms.request(ARTICLES_CARD_QUERY);
-
-  return {
-    props: { articles: posts }
-  };
 }

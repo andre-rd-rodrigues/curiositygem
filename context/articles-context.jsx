@@ -1,19 +1,27 @@
-import { ARTICLES_QUERY } from "pages/api/graphQL/main";
+import { ARTICLES_CARD_QUERY, graphcms } from "pages/api/graphQL/main";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
-import { Provider, useFetch } from "use-http";
 
-const INITIAL_CONTEXT = {
-  data: null,
-  loading: undefined,
-  error: undefined
-};
-
-export const ArticlesContext = createContext({ ...INITIAL_CONTEXT });
+export const ArticlesContext = createContext();
 
 function ArticlesProvider({ children }) {
+  const [articles, setArticles] = useState([]);
+
+  const getArticles = async () => {
+    await graphcms.request(ARTICLES_CARD_QUERY).then(
+      (data) => setArticles(data["posts"]),
+      (e) => {
+        setArticles([null]);
+      }
+    );
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, []);
+
   return (
-    <ArticlesContext.Provider value={{ ...INITIAL_CONTEXT }}>
+    <ArticlesContext.Provider value={[...articles]}>
       {children}
     </ArticlesContext.Provider>
   );

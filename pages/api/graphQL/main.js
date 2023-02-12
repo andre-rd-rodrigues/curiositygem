@@ -40,6 +40,7 @@ export const ARTICLES_QUERY = gql`
     }
   }
 `;
+
 export const ARTICLE_QUERY = gql`
   query Post($slug: String!) {
     post(where: { slug: $slug }) {
