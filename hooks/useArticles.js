@@ -38,6 +38,20 @@ function useArticles() {
   };
 
   /**
+   *  Function to get articles by input query string
+   *  @param {string} input - The input query string
+   */
+  const getArticlesByInput = (input) => {
+    const filteredArticles = articles.filter(
+      (item) =>
+        item.title.toLowerCase().includes(input) ||
+        item.category.includes(input)
+    );
+
+    return filteredArticles;
+  };
+
+  /**
    * Function to get the article according to title
    * @param title title string
    */
@@ -48,7 +62,12 @@ function useArticles() {
     )[0];
   };
 
-  return { getArticlesByCategory, getArticleByTitle, articles };
+  return {
+    getArticlesByCategory,
+    getArticleByTitle,
+    articles,
+    getArticlesByInput
+  };
 }
 
 export default useArticles;

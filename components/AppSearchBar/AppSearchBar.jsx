@@ -1,10 +1,12 @@
-import AppIcon from "components/AppIcon/AppIcon";
+import Icon from "components/AppIcon/AppIcon";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import { useState } from "react";
 import styles from "./appsearchbar.module.scss";
 
 const AppSearchBar = ({ className = "" }) => {
   const [searchValue, setSearchValue] = useState("");
+  const router = useRouter();
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -17,7 +19,11 @@ const AppSearchBar = ({ className = "" }) => {
       return navigate(`/article/search?input=${inputTrimed}`);
     }
 
-    return setSearchQuery({ input: inputTrimed });
+    router.query.input = inputTrimed;
+
+    router.replace({
+      query: { input: inputTrimed }
+    });
   };
   return (
     <form
@@ -25,7 +31,7 @@ const AppSearchBar = ({ className = "" }) => {
       onSubmit={handleSearch}
     >
       <label>
-        <AppIcon icon="search" size={19} role="button" type="submit" />
+        <Icon icon="search" size={19} role="button" type="submit" />
         <input
           name="search"
           id="search"
@@ -40,7 +46,7 @@ const AppSearchBar = ({ className = "" }) => {
 };
 
 AppSearchBar.propTypes = {
-  className: PropTypes.style
+  className: PropTypes.string
 };
 
 export default AppSearchBar;

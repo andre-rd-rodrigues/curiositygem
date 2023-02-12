@@ -1,0 +1,45 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.title {
+  display: flex;
+  align-items: baseline;
+  margin-bottom: 68px;
+
+  h1 {
+    font-weight: 400;
+    font-family: Jost;
+    font-size: var(--fs-l);
+    opacity: 0.5;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-family: Jost;
+    font-size: var(--fs-l-s);
+    margin-left: 15px;
+    color: $dark;
+  }
+}
+.notFound {
+  text-align: center;
+
+  span {
+    font-weight: 400;
+    font-style: italic;
+  }
+  p {
+    font-size: var(--fs-m);
+    &:last-of-type {
+      color: $grey;
+      font-size: var(--fs-s);
+    }
+  }
+}
+
+//Responsive
+@media only screen and (max-width: $breaking-point-sm) {
+  .title {
+    margin-bottom: 30px;
+  }
+}

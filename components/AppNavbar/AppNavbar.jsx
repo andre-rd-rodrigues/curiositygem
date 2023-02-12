@@ -12,14 +12,14 @@ const BREAKING_POINT = "lg";
 
 const AppNavbar = () => {
   const [show, setShow] = useState(false);
-
+  /* 
   const handleClick = (category) => {
     ReactGA.event({
       category: "nav_link",
       action: "click",
       label: `category: ${category}`
     });
-  };
+  }; */
 
   const navLinks = CATEGORIES.map(({ type, name }, index) => {
     // Remove categories: All, Recent and Top
@@ -29,7 +29,7 @@ const AppNavbar = () => {
     if (!isInvalidCategory) {
       return (
         <Nav.Link
-          onClick={() => handleClick(type)}
+          /*  onClick={() => handleClick(type)} */
           as={Link}
           href={`/article/search?category=${type}`}
           key={index}
