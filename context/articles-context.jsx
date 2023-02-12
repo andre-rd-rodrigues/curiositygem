@@ -5,12 +5,16 @@ import { createContext, useEffect, useState } from "react";
 export const ArticlesContext = createContext();
 
 function ArticlesProvider({ children }) {
-  const [articles, setArticles] = useState();
+  const [articles, setArticles] = useState([]);
 
   const getArticles = async () => {
-    const res = await fetch(baseURL);
-    const posts = await res.json();
-    setArticles(posts);
+    try {
+      const res = await fetch(baseURL);
+      const posts = await res.json();
+      setArticles(posts);
+    } catch (e) {
+      setArticles([null]);
+    }
   };
 
   useEffect(() => {

@@ -5,7 +5,7 @@ import { CATEGORY } from "utils";
 function useArticles() {
   const { articles } = useContext(ArticlesContext);
 
-  if (!articles) {
+  if (!articles || articles[0] === null) {
     return {
       articles: null
     };

@@ -1,3 +1,4 @@
+import ErrorMessage from "components/ErrorMessage/ErrorMessage";
 import CategorySection from "components/Homepage/CategorySection";
 import Introduction from "components/Homepage/Introduction";
 import Loading from "components/Loading/Loading";
@@ -10,6 +11,26 @@ import { CATEGORY } from "utils";
 export default function Homepage() {
   const { articles } = useArticles();
 
+  const renderContent = () => {
+    if (articles === undefined) {
+      return <Loading />;
+    }
+
+    if (articles === null) {
+      return <ErrorMessage className={styles.errorMessage} />;
+    }
+
+    if (articles) {
+      return (
+        <div className={styles.wrapper}>
+          <CategorySection category={CATEGORY.recent} />
+          <CategorySection category={CATEGORY.tech} />
+          <CategorySection category={CATEGORY.wellbeing} />
+        </div>
+      );
+    }
+  };
+
   return (
     <>
       <Head>
@@ -17,15 +38,7 @@ export default function Homepage() {
       </Head>
       <PageContainer>
         <Introduction />
-        {articles ? (
-          <div className={styles.wrapper}>
-            <CategorySection category={CATEGORY.recent} />
-            <CategorySection category={CATEGORY.tech} />
-            <CategorySection category={CATEGORY.wellbeing} />
-          </div>
-        ) : (
-          <Loading />
-        )}
+        {renderContent()}
       </PageContainer>
     </>
   );

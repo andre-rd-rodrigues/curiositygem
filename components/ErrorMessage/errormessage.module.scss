@@ -1,4 +1,8 @@
 @import "assets/styles/mixins";
 
 .container {
+  text-align: center;
+  h2 {
+    margin-bottom: 20px;
+  }
 }
