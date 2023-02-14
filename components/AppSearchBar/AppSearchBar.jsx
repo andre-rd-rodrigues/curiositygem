@@ -15,15 +15,7 @@ const AppSearchBar = ({ className = "" }) => {
 
     if (!inputTrimed.length) return;
 
-    if (!location.pathname.includes("search")) {
-      return navigate(`/article/search?input=${inputTrimed}`);
-    }
-
-    router.query.input = inputTrimed;
-
-    router.replace({
-      query: { input: inputTrimed }
-    });
+    return router.replace(`/article/search?input=${inputTrimed}`);
   };
   return (
     <form
