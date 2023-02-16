@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { CLIENT_AD } from "utils/googleAds";
+import { CLIENT_AD, IN_ARTICLE_SLOT } from "utils/googleAds";
 
 const GoogleAd = ({ slot }) => {
   useEffect(() => {
@@ -16,7 +16,7 @@ const GoogleAd = ({ slot }) => {
         className="adsbygoogle"
         style={{ display: "block" }}
         data-ad-client={CLIENT_AD}
-        data-ad-slot={slot}
+        data-ad-slot={IN_ARTICLE_SLOT}
         data-ad-format="auto"
         data-full-width-responsive="true"
       ></ins>

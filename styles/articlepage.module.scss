@@ -66,6 +66,11 @@
   text-align: justify;
   margin: auto;
   margin-top: 60px;
+
+  li {
+    font-size: var(--fs-m);
+    margin-bottom: 10px;
+  }
 }
 
 //Responsive
