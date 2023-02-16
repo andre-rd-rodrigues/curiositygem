@@ -2,11 +2,12 @@
 @import "assets/styles/variables.module.scss";
 
 .container {
+  h1,
   h2 {
     font-family: Jost, sans-serif;
     font-size: var(--fs-l-s);
     font-weight: 500;
-    margin: 50px 0 20px;
+    margin: 20px 0;
     text-align: start;
   }
 
@@ -22,7 +23,6 @@
 
 .arrowBack {
   & svg {
-    margin-bottom: 25px;
     &:hover {
       color: $dark;
     }
