@@ -1,21 +1,34 @@
+import AppIcon from "components/AppIcon/AppIcon";
+import AppImage from "components/AppImage/AppImage";
+import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
-import React from "react";
-import { convertDate } from "utils";
+import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
+import { useEffect, useState } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
-import AppImage from "components/AppImage/AppImage";
-import AppIcon from "components/AppIcon/AppIcon";
-import {
-  ARTICLES_QUERY,
-  ARTICLE_QUERY,
-  graphcms,
-  SLUGLIST
-} from "pages/api/graphQL/main";
+import { convertDate } from "utils";
+import { getArticleWithGoogleAds } from "utils/helpers/googleAds";
 
-function Article({ post: article }) {
-  if (!article) {
+function Article({ post: articleAPI }) {
+  const [article, setArticle] = useState();
+
+  if (!articleAPI) {
     return <p>Not found</p>;
   }
+
+  useEffect(() => {
+    const articleConverted = getArticleWithGoogleAds(articleAPI);
+
+    setArticle(articleConverted);
+  }, [articleAPI]);
+
+  useEffect(() => {
+    try {
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
+    } catch (e) {
+      return console.log(e);
+    }
+  }, []);
 
   return (
     <PageContainer>
@@ -28,18 +41,26 @@ function Article({ post: article }) {
           onClick={() => window.history.back()}
         />
         <div>
-          <div>
-            <h1 className={styles.title}>{article.title}</h1>
-            <div className={styles.subtitle}>
-              <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
-              <p>{article.category}</p>
-            </div>
-          </div>
-          <AppImage
-            className={styles.headerImage}
-            src={article.coverPhoto.url}
-          />
-          <div className={styles.content}>{parser(article.content.html)}</div>
+          {article ? (
+            <>
+              <div>
+                <h1 className={styles.title}>{article.title}</h1>
+                <div className={styles.subtitle}>
+                  <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
+                  <p>{article.category}</p>
+                </div>
+              </div>
+              <AppImage
+                className={styles.headerImage}
+                src={article.coverPhoto.url}
+              />
+              <div className={styles.content}>
+                {parser(article.content.html)}
+              </div>
+            </>
+          ) : (
+            <Loading />
+          )}
         </div>
       </div>
     </PageContainer>
