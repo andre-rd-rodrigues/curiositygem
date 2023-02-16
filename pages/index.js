@@ -17,7 +17,7 @@ export default function Homepage() {
       return <Loading />;
     }
 
-    if (articles === null) {
+    if (articles === null || !articles.length) {
       return <ErrorMessage className={styles.errorMessage} />;
     }
 
