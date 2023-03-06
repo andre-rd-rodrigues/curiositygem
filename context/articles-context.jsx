@@ -1,28 +1,18 @@
+import { useQuery } from "@tanstack/react-query";
 import baseURL from "pages/api/baseURL";
 import PropTypes from "prop-types";
-import { createContext, useEffect, useState } from "react";
+import { createContext } from "react";
+import axios from "axios";
 
 export const ArticlesContext = createContext();
 
 function ArticlesProvider({ children }) {
-  const [articles, setArticles] = useState([]);
-
-  const getArticles = async () => {
-    try {
-      const res = await fetch(baseURL);
-      const posts = await res.json();
-      setArticles(posts);
-    } catch (e) {
-      setArticles([null]);
-    }
-  };
-
-  useEffect(() => {
-    getArticles();
-  }, []);
+  const { data: articles, isError } = useQuery(["articles"], () =>
+    axios.get(baseURL).then((res) => res.data)
+  );
 
   return (
-    <ArticlesContext.Provider value={{ articles }}>
+    <ArticlesContext.Provider value={{ articles, isError }}>
       {children}
     </ArticlesContext.Provider>
   );

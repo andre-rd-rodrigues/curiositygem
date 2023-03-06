@@ -1,10 +1,10 @@
 import { useRouter } from "next/router";
 
-function useQuery() {
+function useRouteQuery() {
   const router = useRouter();
   const { input, category } = router.query;
 
   return { input, category, router };
 }
 
-export default useQuery;
+export default useRouteQuery;

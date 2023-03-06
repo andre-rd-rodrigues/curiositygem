@@ -3,9 +3,9 @@ import { useContext } from "react";
 import { CATEGORY } from "utils";
 
 function useArticles() {
-  const { articles } = useContext(ArticlesContext);
+  const { articles, isError } = useContext(ArticlesContext);
 
-  if (!articles || articles[0] === null) {
+  if (isError || !articles || articles[0] === null) {
     return {
       articles: null
     };

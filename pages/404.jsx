@@ -6,7 +6,7 @@ import styles from "styles/404.module.scss";
 function NotFound() {
   return (
     <PageContainer>
-      <div className={styles.container}>
+      <div className={styles.container} style={styles.jost}>
         <h1>404</h1>
         <h2>Page not found.</h2>
         <p>

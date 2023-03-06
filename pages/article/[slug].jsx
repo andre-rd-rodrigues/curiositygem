@@ -7,7 +7,7 @@ import { convertDate } from "utils";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import baseURL from "pages/api/baseURL";
-import { getArticleWithGoogleAds } from "utils/helpers/googleAds";
+import { getArticleWithGoogleAds } from "utils/googleAds";
 import { jost } from "assets/fonts/nextFonts";
 
 function Article({ post: articleAPI }) {
