@@ -10,8 +10,8 @@ function NotFound() {
         <h1>404</h1>
         <h2>Page not found.</h2>
         <p>
-          The page you're looking for could be removed or the provided link does
-          not match any current existing page.
+          The page you&apos;re looking for could be removed or the provided link
+          does not match any current existing page.
         </p>
         <button
           className={styles.backButton}

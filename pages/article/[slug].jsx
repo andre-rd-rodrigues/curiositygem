@@ -6,19 +6,12 @@ import React, { createElement, useEffect, useState } from "react";
 import { convertDate } from "utils";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
-import AppImage from "components/AppImage/AppImage";
-import AppIcon from "components/AppIcon/AppIcon";
 import baseURL from "pages/api/baseURL";
-import Loading from "components/Loading/Loading";
 import { getArticleWithGoogleAds } from "utils/helpers/googleAds";
 import { jost } from "assets/fonts/nextFonts";
 
 function Article({ post: articleAPI }) {
   const [article, setArticle] = useState();
-
-  if (!articleAPI) {
-    return <p>Not found</p>;
-  }
 
   useEffect(() => {
     const articleConverted = getArticleWithGoogleAds(articleAPI);
@@ -33,6 +26,10 @@ function Article({ post: articleAPI }) {
       return console.log(e);
     }
   }, []);
+
+  if (!articleAPI) {
+    return <p>Not found</p>;
+  }
 
   return (
     <PageContainer>

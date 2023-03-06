@@ -1,5 +1,6 @@
 import { jost } from "assets/fonts/nextFonts";
 import styles from "./homepageComponents.module.scss";
+import { jost } from "assets/fonts/nextFonts";
 
 const Introduction = () => {
   return (

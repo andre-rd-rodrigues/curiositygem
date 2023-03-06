@@ -1,9 +1,12 @@
+export const CLIENT_AD = "ca-pub-7060164950879253";
+
+// SLOTS
+export const IN_ARTICLE_SLOT = "3731769980";
+
 /**
  *  Function to replace GOOGLE_AD with Google Ad tag
  *  @param {object} article - The article
  */
-
-import { CLIENT_AD, IN_ARTICLE_SLOT } from "utils/googleAds";
 
 export const getArticleWithGoogleAds = (article) => {
   const contentHTML = article.content.html.split("GOOGLE_AD_HERE");

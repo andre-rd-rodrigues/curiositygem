@@ -2,8 +2,10 @@
 @import "assets/styles/variables.module.scss";
 
 .article-container {
+  h1 {
+    font-family: Jost;
+  }
   h2 {
-    font-family: Jost, sans-serif;
     font-size: var(--fs-l-s);
     font-weight: 500;
     margin: 50px 0 20px;
@@ -61,16 +63,17 @@
 
 //Blog design patterns
 .title {
-  font-family: Jost, sans-serif;
+  font-family: Jost;
   font-size: var(--fs-l);
   font-weight: 500;
 }
 .section-title {
-  font-family: Jost, sans-serif;
+  font-family: Jost;
   font-size: var(--fs-l-s);
   font-weight: 400;
   margin: 50px 0 20px;
 }
+
 .section-points {
   li {
     margin-top: 35px;

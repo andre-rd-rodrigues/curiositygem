@@ -14,11 +14,6 @@ body {
   margin: 0;
 }
 
-h1,
-h2 {
-  font-family: Blacker;
-}
-
 p,
 a {
   font-weight: 300;
@@ -38,6 +33,7 @@ a {
   li {
     @include hover_underline($white);
     font-weight: 300;
+    color: $white;
   }
 }
 

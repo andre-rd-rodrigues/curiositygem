@@ -8,6 +8,7 @@ import { Nav, Navbar, Offcanvas } from "react-bootstrap";
 import ReactGA from "react-ga4";
 import { CATEGORIES } from "utils";
 import styles from "./appnavbar.module.scss";
+import { jost } from "assets/fonts/nextFonts";
 
 const BREAKING_POINT = "lg";
 
