@@ -11,6 +11,7 @@ import AppIcon from "components/AppIcon/AppIcon";
 import baseURL from "pages/api/baseURL";
 import Loading from "components/Loading/Loading";
 import { getArticleWithGoogleAds } from "utils/helpers/googleAds";
+import { jost } from "assets/fonts/nextFonts";
 
 function Article({ post: articleAPI }) {
   const [article, setArticle] = useState();
