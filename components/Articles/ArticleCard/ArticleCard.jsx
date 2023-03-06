@@ -5,7 +5,6 @@ import { convertDate } from "utils/helpers/date";
 import styles from "./articlecard.module.scss";
 
 const ArticleCard = ({ article }) => {
-  console.log(article);
   return (
     <motion.div variants={fadeInVariant} className={styles.container}>
       <div className={styles.wrapper}>
