@@ -6,7 +6,7 @@ export const graphcms = new GraphQLClient(baseURL);
 
 export const ARTICLES_CARD_QUERY = gql`
   {
-    posts(orderBy: createdAt_ASC) {
+    posts(orderBy: createdAt_ASC, first: 100) {
       id
       title
       category
@@ -23,7 +23,7 @@ export const ARTICLES_CARD_QUERY = gql`
 
 export const ARTICLES_QUERY = gql`
   {
-    posts(orderBy: createdAt_ASC) {
+    posts(orderBy: createdAt_ASC, first: 100) {
       id
       title
       category

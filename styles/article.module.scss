@@ -2,12 +2,10 @@
 @import "assets/styles/variables.module.scss";
 
 .article-container {
-  h1 {
-  }
   h2 {
     font-size: var(--fs-l-s);
     font-weight: 500;
-    margin: 50px 0 20px;
+    margin: 40px 0 20px;
     text-align: start;
   }
 
@@ -27,6 +25,7 @@
     color: $dark;
   }
 }
+
 .header-image {
   min-height: 200px;
   max-height: 300px;

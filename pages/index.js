@@ -25,6 +25,7 @@ export default function Homepage() {
       return (
         <div className={styles.wrapper}>
           <CategorySection category={CATEGORY.recent} />
+          <CategorySection category={CATEGORY.finance} />
           <CategorySection category={CATEGORY.tech} />
           <CategorySection category={CATEGORY.wellbeing} />
         </div>
