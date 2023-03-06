@@ -2,7 +2,7 @@ import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
-import React, { createElement, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { convertDate } from "utils";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";

@@ -1,4 +1,3 @@
-import { jost } from "assets/fonts/nextFonts";
 import AppIcon from "components/AppIcon/AppIcon";
 import SearchBar from "components/AppSearchBar/AppSearchBar";
 import FeatherIcon from "feather-icons-react";
