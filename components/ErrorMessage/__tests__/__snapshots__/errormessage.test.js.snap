@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error message renders component unchanged 1`] = `
+<div>
+  <div
+    class="container "
+  >
+    <div
+      role="button"
+      style="cursor: pointer; display: inline;"
+      tabindex="0"
+    >
+      <svg
+        class="feather feather-alert-circle "
+        color="primary"
+        fill="none"
+        height="80"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        style="stroke-width: 1;"
+        viewBox="0 0 24 24"
+        width="80"
+      >
+        <g>
+          <circle
+            cx="12"
+            cy="12"
+            r="10"
+          />
+          <line
+            x1="12"
+            x2="12"
+            y1="8"
+            y2="12"
+          />
+          <line
+            x1="12"
+            x2="12.01"
+            y1="16"
+            y2="16"
+          />
+        </g>
+      </svg>
+    </div>
+    <h2>
+      Ohhh no...
+    </h2>
+    <p>
+      Something went wrong while getting the articles
+    </p>
+    <button
+      class="container"
+    >
+      Refresh page
+    </button>
+  </div>
+</div>
+`;
