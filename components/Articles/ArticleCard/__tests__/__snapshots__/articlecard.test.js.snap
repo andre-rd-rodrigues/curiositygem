@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article Card renders component unchanged 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <div
+      class="wrapper"
+    >
+      <a
+        href="/article/transform-your-home-into-a-smart-home-5-ways-to-automate-your-house"
+      >
+        <div
+          class="container image"
+          style="background-image: url(https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80); height: 30vw;"
+        />
+        <div
+          class="subtitle"
+        >
+          <p>
+            technology
+          </p>
+          <p />
+        </div>
+        <div
+          class="body"
+        >
+          <h5>
+            Transform Your Home into a Smart Home: 5 Ways to Automate Your House
+          </h5>
+          <p>
+            Are you tired of constantly forgetting to turn off the lights or adjust the thermostat when you leave the house? It might be time to consider automating your home. In this blog post, we&apos;ll give you five ways to transform your home into a smart home, including using smart thermostats, smart lighting, smart appliances, smart security systems, and smart home hubs. Automating your home can make your life easier, save you energy and money, and give you peace of mind. Learn how to get started with home automation today.
+          </p>
+        </div>
+      </a>
+      <div
+        class="footer"
+      >
+        <a
+          class="readMore"
+          href="/article/transform-your-home-into-a-smart-home-5-ways-to-automate-your-house"
+        >
+          Read more
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
