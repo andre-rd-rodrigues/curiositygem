@@ -5,6 +5,7 @@ import { convertDate } from "utils/helpers/date";
 import styles from "./articlecard.module.scss";
 
 const ArticleCard = ({ article }) => {
+  console.log(article);
   return (
     <motion.div variants={fadeInVariant} className={styles.container}>
       <div className={styles.wrapper}>
@@ -12,7 +13,7 @@ const ArticleCard = ({ article }) => {
           <AppImage src={article.coverPhoto.url} className={styles.image} />
           <div className={styles.subtitle}>
             <p>{article.category}</p>
-            <p>{convertDate(article.date)}</p>
+            <p>{convertDate(article.createdAt)}</p>
           </div>
           <div className={styles.body}>
             <h5>{article.title}</h5>

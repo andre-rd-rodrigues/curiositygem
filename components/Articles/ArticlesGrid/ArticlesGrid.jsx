@@ -4,6 +4,7 @@ import { memo, useEffect, useState } from "react";
 import { ARTICLES_VISIBLE_LIMIT } from "utils";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import styles from "./articlesgrid.module.scss";
+import { jost } from "assets/fonts/nextFonts";
 
 const ArticlesGrid = ({ articles: articlesProps }) => {
   const [articlesState, setArticlesState] = useState({
@@ -44,6 +45,7 @@ const ArticlesGrid = ({ articles: articlesProps }) => {
         initial="hidden"
         animate="visible"
         className={styles.grid}
+        style={jost.style}
       >
         {articles.map((article) => (
           <ArticleCard key={article.slug} article={article} />

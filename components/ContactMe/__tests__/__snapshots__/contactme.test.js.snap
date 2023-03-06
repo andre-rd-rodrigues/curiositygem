@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Contact me renders component unchanged 1`] = `
+<div>
+  <p>
+    If you have any futher questions or doubts about this topic,
+     
+    <a
+      href="mailto:andrerodrigo.web@gmail.com"
+    >
+      send me a message
+    </a>
+     and I'll be happy to help!
+  </p>
+</div>
+`;

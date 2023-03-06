@@ -6,6 +6,7 @@ import NoResults from "components/NoResults/NoResults";
 import styles from "styles/resultspage.module.scss";
 import useArticles from "hooks/useArticles";
 import Loading from "components/Loading/Loading";
+import { jost } from "assets/fonts/nextFonts";
 
 const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState();
@@ -15,7 +16,16 @@ const ResultsPage = () => {
 
   //Lifecycle
   useEffect(() => {
-    handleArticlesSearch();
+    if (!articles) {
+      return;
+    }
+
+    if (input) {
+      setArticlesMatched(getArticlesByInput(input));
+    }
+    if (category) {
+      setArticlesMatched(getArticlesByCategory(category));
+    }
   }, [router.asPath, input, category, articles]);
 
   if (!articles) {
@@ -23,15 +33,6 @@ const ResultsPage = () => {
   }
 
   const searchedValue = input || category;
-
-  const handleArticlesSearch = () => {
-    if (input) {
-      setArticlesMatched(getArticlesByInput(input));
-    }
-    if (category) {
-      setArticlesMatched(getArticlesByCategory(category));
-    }
-  };
 
   const renderContent = () => {
     if (!articlesMatched) {
@@ -52,7 +53,7 @@ const ResultsPage = () => {
       className={styles.container}
     >
       <div className={styles.results}>
-        <div className={styles.title}>
+        <div className={styles.title} style={jost.style}>
           <h1>Results for:</h1>
           <h2>{searchedValue}</h2>
         </div>
