@@ -3,6 +3,11 @@
 .container {
   text-align: center;
   h2 {
+    font-family: Blacker;
     margin-bottom: 20px;
+    font-size: var(--fs-l);
+  }
+  p {
+    font-size: var(--fs-m-s);
   }
 }

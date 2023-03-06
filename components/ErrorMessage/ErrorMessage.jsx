@@ -7,7 +7,7 @@ import AppIcon from "components/AppIcon/AppIcon";
 const ErrorMessage = ({ className }) => {
   return (
     <div className={`${styles.container} ${className || ""}`}>
-      <AppIcon icon="alert-circle" size={70} />
+      <AppIcon icon="alert-circle" size={80} />
       <h2>Ohhh no...</h2>
       <p>Something went wrong while getting the articles</p>
       <AppButton

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ArticlesGrid from "components/Articles/ArticlesGrid/ArticlesGrid";
 import PageContainer from "components/PageContainer/PageContainer";
-import useQuery from "hooks/useQuery";
+import useRouteQuery from "hooks/useRouteQuery";
 import NoResults from "components/NoResults/NoResults";
 import styles from "styles/resultspage.module.scss";
 import useArticles from "hooks/useArticles";
@@ -11,7 +11,7 @@ const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState();
   const { articles, getArticlesByInput, getArticlesByCategory } = useArticles();
 
-  const { input, category, router } = useQuery();
+  const { input, category, router } = useRouteQuery();
 
   //Lifecycle
   useEffect(() => {

@@ -3,7 +3,6 @@
 
 .article-container {
   h1 {
-    font-family: Jost;
   }
   h2 {
     font-size: var(--fs-l-s);
@@ -63,12 +62,10 @@
 
 //Blog design patterns
 .title {
-  font-family: Jost;
   font-size: var(--fs-l);
   font-weight: 500;
 }
 .section-title {
-  font-family: Jost;
   font-size: var(--fs-l-s);
   font-weight: 400;
   margin: 50px 0 20px;

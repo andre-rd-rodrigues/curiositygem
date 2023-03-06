@@ -10,6 +10,8 @@
     "prod": "npm run build && npm run start"
   },
   "dependencies": {
+    "@tanstack/react-query": "^4.26.0",
+    "@tanstack/react-query-devtools": "^4.26.0",
     "@next/font": "13.1.5",
     "bootstrap": "^5.2.3",
     "eslint": "8.32.0",
