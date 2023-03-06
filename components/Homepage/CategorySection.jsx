@@ -1,3 +1,4 @@
+import { jost } from "assets/fonts/nextFonts";
 import { fadeInVariant, motion } from "assets/motion/motionVariants";
 import ArticlesGrid from "components/Articles/ArticlesGrid/ArticlesGrid";
 import useArticles from "hooks/useArticles";
@@ -18,6 +19,7 @@ const CategorySection = ({ category }) => {
   return (
     <motion.div
       className={styles.categoryContainer}
+      style={jost.style}
       variants={fadeInVariant}
       initial="hidden"
       whileInView="visible"

@@ -8,6 +8,7 @@ import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
 import { getArticleWithGoogleAds } from "utils/helpers/googleAds";
+import { jost } from "assets/fonts/nextFonts";
 
 function Article({ post: articleAPI }) {
   const [article, setArticle] = useState();
@@ -32,7 +33,7 @@ function Article({ post: articleAPI }) {
 
   return (
     <PageContainer>
-      <div className={styles.container}>
+      <div className={styles.container} style={jost.style}>
         <AppIcon
           icon="arrow-left"
           size={30}
