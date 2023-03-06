@@ -7,6 +7,7 @@ import { Nav, Navbar, Offcanvas } from "react-bootstrap";
 import ReactGA from "react-ga4";
 import { CATEGORIES } from "utils";
 import styles from "./appnavbar.module.scss";
+import { jost } from "assets/fonts/nextFonts";
 
 const BREAKING_POINT = "lg";
 
@@ -41,7 +42,12 @@ const AppNavbar = () => {
   });
 
   return (
-    <Navbar expand={BREAKING_POINT} fixed="top" className={styles.nav}>
+    <Navbar
+      expand={BREAKING_POINT}
+      fixed="top"
+      className={styles.nav}
+      style={jost.style}
+    >
       <Navbar.Brand as={Link} href="/">
         <div className={styles.brand}>
           <div id={styles.logo} />

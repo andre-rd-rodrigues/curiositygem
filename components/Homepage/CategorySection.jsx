@@ -4,6 +4,7 @@ import useArticles from "hooks/useArticles";
 import PropTypes from "prop-types";
 import { CATEGORIES } from "utils";
 import styles from "./homepageComponents.module.scss";
+import { jost } from "assets/fonts/nextFonts";
 
 const CategorySection = ({ category }) => {
   const { getArticlesByCategory } = useArticles();
@@ -16,6 +17,7 @@ const CategorySection = ({ category }) => {
   return (
     <motion.div
       className={styles.categoryContainer}
+      style={jost.style}
       variants={fadeInVariant}
       initial="hidden"
       whileInView="visible"

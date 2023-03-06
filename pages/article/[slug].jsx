@@ -7,14 +7,11 @@ import { useEffect, useState } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
-import { getArticleWithGoogleAds } from "utils/helpers/googleAds";
+import { getArticleWithGoogleAds } from "utils/googleAds";
+import { jost } from "assets/fonts/nextFonts";
 
 function Article({ post: articleAPI }) {
   const [article, setArticle] = useState();
-
-  if (!articleAPI) {
-    return <p>Not found</p>;
-  }
 
   useEffect(() => {
     const articleConverted = getArticleWithGoogleAds(articleAPI);
@@ -30,9 +27,13 @@ function Article({ post: articleAPI }) {
     }
   }, []);
 
+  if (!articleAPI) {
+    return <p>Not found</p>;
+  }
+
   return (
     <PageContainer>
-      <div className={styles.container}>
+      <div className={styles.container} style={jost.style}>
         <AppIcon
           icon="arrow-left"
           size={30}

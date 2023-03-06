@@ -11,11 +11,16 @@ const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState();
   const { articles, getArticlesByInput, getArticlesByCategory } = useArticles();
 
+  const { input, category, router } = useQuery();
+
+  //Lifecycle
+  useEffect(() => {
+    handleArticlesSearch();
+  }, [router.asPath, input, category, articles]);
+
   if (!articles) {
     return <Loading />;
   }
-
-  const { input, category, router } = useQuery();
 
   const searchedValue = input || category;
 
@@ -39,11 +44,6 @@ const ResultsPage = () => {
 
     return <ArticlesGrid articles={articlesMatched} />;
   };
-
-  //Lifecycle
-  useEffect(() => {
-    handleArticlesSearch();
-  }, [router.asPath, input, category, articles]);
 
   return (
     <PageContainer

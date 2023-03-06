@@ -7,20 +7,11 @@ html {
   scroll-behavior: auto !important;
 }
 
-* {
-  font-family: Jost, sans-serif;
-}
-
 body {
   &::-webkit-scrollbar {
     display: none;
   }
   margin: 0;
-}
-
-h1,
-h2 {
-  font-family: Blacker;
 }
 
 p,
@@ -42,6 +33,7 @@ a {
   li {
     @include hover_underline($white);
     font-weight: 300;
+    color: $white;
   }
 }
 
