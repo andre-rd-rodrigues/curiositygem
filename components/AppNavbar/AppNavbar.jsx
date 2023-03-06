@@ -1,3 +1,4 @@
+import { jost } from "assets/fonts/nextFonts";
 import AppIcon from "components/AppIcon/AppIcon";
 import SearchBar from "components/AppSearchBar/AppSearchBar";
 import FeatherIcon from "feather-icons-react";
@@ -41,7 +42,12 @@ const AppNavbar = () => {
   });
 
   return (
-    <Navbar expand={BREAKING_POINT} fixed="top" className={styles.nav}>
+    <Navbar
+      expand={BREAKING_POINT}
+      fixed="top"
+      className={styles.nav}
+      style={jost.style}
+    >
       <Navbar.Brand as={Link} href="/">
         <div className={styles.brand}>
           <div id={styles.logo} />

@@ -1,3 +1,6 @@
+import AppIcon from "components/AppIcon/AppIcon";
+import AppImage from "components/AppImage/AppImage";
+import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import React, { createElement, useEffect, useState } from "react";
 import { convertDate } from "utils";
@@ -32,7 +35,7 @@ function Article({ post: articleAPI }) {
 
   return (
     <PageContainer>
-      <div className={styles.container}>
+      <div className={styles.container} style={jost.style}>
         <AppIcon
           icon="arrow-left"
           size={30}

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import AppButton from "components/AppButton/AppButton";
 import AppIcon from "components/AppIcon/AppIcon";
 import React from "react";
@@ -15,6 +16,10 @@ const ErrorMessage = ({ className }) => {
       />
     </div>
   );
+};
+
+ErrorMessage.propTypes = {
+  className: PropTypes.string
 };
 
 export default ErrorMessage;
