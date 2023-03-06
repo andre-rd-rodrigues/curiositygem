@@ -14,8 +14,6 @@ const CategorySection = ({ category }) => {
 
   const articles = getArticlesByCategory(category);
 
-  const articles = getArticlesByCategory(category);
-
   return (
     <motion.div
       className={styles.categoryContainer}

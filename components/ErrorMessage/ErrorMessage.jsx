@@ -3,7 +3,6 @@ import AppButton from "components/AppButton/AppButton";
 import AppIcon from "components/AppIcon/AppIcon";
 import React from "react";
 import styles from "./errormessage.module.scss";
-import AppIcon from "components/AppIcon/AppIcon";
 
 const ErrorMessage = ({ className }) => {
   return (
