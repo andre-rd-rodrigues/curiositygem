@@ -26,7 +26,7 @@ In order to develop new features, you need to:
 
 ## New articles
 
-In orde to add new content you need to:
+In order to add new content you need to:
 
 ##### 1. Add new content in **Hygraph**
 
