@@ -9,11 +9,16 @@ import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
 import { getArticleWithGoogleAds } from "utils/googleAds";
 import { jost } from "assets/fonts/nextFonts";
+import NotFound from "pages/404";
 
 function Article({ post: articleAPI }) {
   const [article, setArticle] = useState();
 
   useEffect(() => {
+    if (!articleAPI) {
+      return;
+    }
+
     const articleConverted = getArticleWithGoogleAds(articleAPI);
 
     setArticle(articleConverted);
@@ -28,7 +33,7 @@ function Article({ post: articleAPI }) {
   }, []);
 
   if (!articleAPI) {
-    return <p>Not found</p>;
+    return <NotFound />;
   }
 
   return (

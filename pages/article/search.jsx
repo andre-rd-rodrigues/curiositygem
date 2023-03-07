@@ -10,19 +10,20 @@ import styles from "styles/resultspage.module.scss";
 
 const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState();
-  const { articles, getArticlesByInput, getArticlesByCategory } = useArticles();
+  const { articles, isError, getArticlesByInput, getArticlesByCategory } =
+    useArticles();
 
   const { input, category, router } = useRouteQuery();
 
   const searchedValue = input || category;
 
   const renderContent = () => {
-    if (articles === null || !articlesMatched.length) {
-      return <NoResults searchValue={searchedValue} />;
+    if (!articles) {
+      return <Loading />;
     }
 
-    if (articles === undefined || !articlesMatched) {
-      return <Loading />;
+    if (isError || !articlesMatched) {
+      return <NoResults searchValue={searchedValue} />;
     }
 
     return <ArticlesGrid articles={articlesMatched} />;
@@ -34,12 +35,16 @@ const ResultsPage = () => {
       return;
     }
 
+    let articlesSearched;
+
     if (input) {
-      setArticlesMatched(getArticlesByInput(input));
+      articlesSearched = getArticlesByInput(input);
     }
     if (category) {
-      setArticlesMatched(getArticlesByCategory(category));
+      articlesSearched = getArticlesByCategory(category);
     }
+
+    setArticlesMatched(articlesSearched || null);
   }, [router.asPath, input, category, articles]);
 
   return (

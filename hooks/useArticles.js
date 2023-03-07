@@ -6,7 +6,7 @@ function useArticles() {
   const { articles, isError } = useContext(ArticlesContext);
 
   if (isError || !articles || !articles.length) {
-    return { articles: null };
+    return { articles: null, isError };
   }
 
   /**
@@ -64,7 +64,8 @@ function useArticles() {
     getArticlesByCategory,
     getArticleByTitle,
     articles,
-    getArticlesByInput
+    getArticlesByInput,
+    isError
   };
 }
 

@@ -63,7 +63,7 @@ export const ARTICLE_QUERY = gql`
 
 export const SLUGLIST = gql`
   {
-    posts {
+    posts(first: 100) {
       slug
     }
   }
