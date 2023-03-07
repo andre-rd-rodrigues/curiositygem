@@ -10,6 +10,7 @@ import baseURL from "pages/api/baseURL";
 import { getArticleWithGoogleAds } from "utils/googleAds";
 import { jost } from "assets/fonts/nextFonts";
 import NotFound from "pages/404";
+import Head from "components/AppHead/AppHead";
 
 function Article({ post: articleAPI }) {
   const [article, setArticle] = useState();
@@ -37,39 +38,44 @@ function Article({ post: articleAPI }) {
   }
 
   return (
-    <PageContainer>
-      <div className={styles.container} style={jost.style}>
-        <AppIcon
-          icon="arrow-left"
-          size={30}
-          color="grey"
-          className={styles.arrowBack}
-          onClick={() => window.history.back()}
-        />
-        <div>
-          {article ? (
-            <>
-              <div>
-                <h1 className={styles.title}>{article.title}</h1>
-                <div className={styles.subtitle}>
-                  <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
-                  <p>{article.category}</p>
+    <>
+      {article && (
+        <Head title={article.title} description={article.description} />
+      )}
+      <PageContainer>
+        <div className={styles.container} style={jost.style}>
+          <AppIcon
+            icon="arrow-left"
+            size={30}
+            color="grey"
+            className={styles.arrowBack}
+            onClick={() => window.history.back()}
+          />
+          <div>
+            {article ? (
+              <>
+                <div>
+                  <h1 className={styles.title}>{article.title}</h1>
+                  <div className={styles.subtitle}>
+                    <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
+                    <p>{article.category}</p>
+                  </div>
                 </div>
-              </div>
-              <AppImage
-                className={styles.headerImage}
-                src={article.coverPhoto.url}
-              />
-              <div className={styles.content}>
-                {parser(article.content.html)}
-              </div>
-            </>
-          ) : (
-            <Loading />
-          )}
+                <AppImage
+                  className={styles.headerImage}
+                  src={article.coverPhoto.url}
+                />
+                <div className={styles.content}>
+                  {parser(article.content.html)}
+                </div>
+              </>
+            ) : (
+              <Loading />
+            )}
+          </div>
         </div>
-      </div>
-    </PageContainer>
+      </PageContainer>
+    </>
   );
 }
 
