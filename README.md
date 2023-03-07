@@ -24,6 +24,16 @@ In order to develop new features, you need to:
 
 ##### 3. Compare manually or do `git cherry-pick commit` into **main**
 
+## New articles
+
+In orde to add new content you need to:
+
+##### 1. Add new content in **Hygraph**
+
+##### 2. Run `npm run build` in **main**
+
+##### 3. Commit and push
+
 ## Deployment
 
 After following the previous steps, you can run the following command to send the changes to production:
