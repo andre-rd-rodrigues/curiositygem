@@ -10,7 +10,7 @@ function AppHead({ title, description }) {
       <meta property="og:description" content={description} />
       <meta
         property="og:image"
-        content="assets/images/socialMediaPreview.png"
+        content="https://media.graphassets.com/m3c024qER0udkPRLgxOI"
       />
       <title>{title}</title>
     </Head>
