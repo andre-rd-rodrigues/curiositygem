@@ -40,7 +40,11 @@ function Article({ post: articleAPI }) {
   return (
     <>
       {article && (
-        <Head title={article.title} description={article.description} />
+        <Head
+          title={article.title}
+          description={article.description}
+          image={article.coverPhoto.url}
+        />
       )}
       <PageContainer>
         <div className={styles.container} style={jost.style}>
