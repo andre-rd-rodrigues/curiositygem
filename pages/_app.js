@@ -6,7 +6,7 @@ import Script from "next/script";
 
 export default function App({ Component, pageProps }) {
   return (
-    <ArticlesProvider>
+    <>
       <Script
         strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-XTDYFCW8JD"
@@ -24,9 +24,11 @@ gtag('config', 'G-XTDYFCW8JD', {page_path: window.location.pathname,
 `
         }}
       />
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </ArticlesProvider>
+      <ArticlesProvider>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </ArticlesProvider>
+    </>
   );
 }
