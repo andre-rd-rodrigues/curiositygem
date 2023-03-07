@@ -1,5 +1,10 @@
 {
-  "name": "nextjs-blog",
+  "name": "curiosity-gem",
+  "homepage": "https://www.curiositygem.com",
+  "author": {
+    "name": "Andre Rodrigues",
+    "url": "https://www.andrerodrigo.com"
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
