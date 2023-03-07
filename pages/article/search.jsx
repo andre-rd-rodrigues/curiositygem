@@ -9,41 +9,38 @@ import Loading from "components/Loading/Loading";
 
 const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState();
-  const { articles, getArticlesByInput, getArticlesByCategory } = useArticles();
+  const { articles, isError, getArticlesByInput, getArticlesByCategory } =
+    useArticles();
 
   const { input, category, router } = useRouteQuery();
 
-  //Lifecycle
-  useEffect(() => {
-    handleArticlesSearch();
-  }, [router.asPath, input, category, articles]);
-
-  if (!articles) {
-    return <Loading />;
-  }
-
   const searchedValue = input || category;
 
-  const handleArticlesSearch = () => {
-    if (input) {
-      setArticlesMatched(getArticlesByInput(input));
-    }
-    if (category) {
-      setArticlesMatched(getArticlesByCategory(category));
-    }
-  };
-
   const renderContent = () => {
-    if (!articlesMatched) {
+    if (!articles) {
       return <Loading />;
     }
 
-    if (!articlesMatched.length) {
+    if (isError || !articlesMatched) {
       return <NoResults searchValue={searchedValue} />;
     }
 
     return <ArticlesGrid articles={articlesMatched} />;
   };
+
+  //Lifecycle
+  useEffect(() => {
+    let articlesSearched;
+
+    if (input) {
+      articlesSearched = getArticlesByInput(input);
+    }
+    if (category) {
+      articlesSearched = getArticlesByCategory(category);
+    }
+
+    setArticlesMatched(articlesSearched || null);
+  }, [router.asPath, input, category, articles]);
 
   return (
     <PageContainer

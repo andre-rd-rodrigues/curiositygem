@@ -1,4 +1,3 @@
-import AppIcon from "components/AppIcon/AppIcon";
 import SearchBar from "components/AppSearchBar/AppSearchBar";
 import Link from "next/link";
 import { useState } from "react";
@@ -7,6 +6,7 @@ import ReactGA from "react-ga4";
 import { CATEGORIES } from "utils";
 import styles from "./appnavbar.module.scss";
 import { jost } from "assets/fonts/nextFonts";
+import FeatherIcon from "feather-icons-react/build/FeatherIcon";
 
 const BREAKING_POINT = "lg";
 
@@ -58,7 +58,7 @@ const AppNavbar = () => {
         aria-controls="offcanvas-container"
         onClick={() => setShow(true)}
       >
-        <AppIcon icon="menu" />
+        <FeatherIcon icon="menu" color="white" />
       </Navbar.Toggle>
       <Navbar.Offcanvas
         show={show}

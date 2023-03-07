@@ -5,10 +5,8 @@ import { CATEGORY } from "utils";
 function useArticles() {
   const { articles, isError } = useContext(ArticlesContext);
 
-  if (isError || !articles || articles[0] === null) {
-    return {
-      articles: null
-    };
+  if (isError || !articles || !articles.length) {
+    return { articles: null, isError };
   }
 
   /**
@@ -66,7 +64,8 @@ function useArticles() {
     getArticlesByCategory,
     getArticleByTitle,
     articles,
-    getArticlesByInput
+    getArticlesByInput,
+    isError
   };
 }
 
