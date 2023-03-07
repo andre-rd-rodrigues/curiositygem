@@ -1,17 +1,35 @@
-import { useQuery } from "@tanstack/react-query";
 import { ARTICLES_CARD_QUERY, graphcms } from "pages/api/graphQL/main";
 import PropTypes from "prop-types";
-import { createContext } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const ArticlesContext = createContext();
 
 function ArticlesProvider({ children }) {
-  const { data: articles, isError } = useQuery(["articles"], () =>
-    graphcms.request(ARTICLES_CARD_QUERY).then((data) => data["posts"])
-  );
+  const [responseData, setResponseData] = useState({
+    isError: false,
+    articles: undefined
+  });
+
+  const getArticles = async () => {
+    await graphcms.request(ARTICLES_CARD_QUERY).then(
+      (data) =>
+        setResponseData((prevState) => {
+          return { ...prevState, articles: data["posts"] };
+        }),
+      (e) => {
+        setResponseData((prevState) => {
+          return { ...prevState, isError: true };
+        });
+      }
+    );
+  };
+
+  useEffect(() => {
+    getArticles();
+  }, []);
 
   return (
-    <ArticlesContext.Provider value={{ articles, isError }}>
+    <ArticlesContext.Provider value={responseData}>
       {children}
     </ArticlesContext.Provider>
   );

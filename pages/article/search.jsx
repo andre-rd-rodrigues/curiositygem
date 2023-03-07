@@ -1,18 +1,32 @@
-import React, { useState, useEffect } from "react";
-import ArticlesGrid from "components/Articles/ArticlesGrid/ArticlesGrid";
-import PageContainer from "components/PageContainer/PageContainer";
-import useRouteQuery from "hooks/useRouteQuery";
-import NoResults from "components/NoResults/NoResults";
-import styles from "styles/resultspage.module.scss";
-import useArticles from "hooks/useArticles";
-import Loading from "components/Loading/Loading";
 import { jost } from "assets/fonts/nextFonts";
+import ArticlesGrid from "components/Articles/ArticlesGrid/ArticlesGrid";
+import Loading from "components/Loading/Loading";
+import NoResults from "components/NoResults/NoResults";
+import PageContainer from "components/PageContainer/PageContainer";
+import useArticles from "hooks/useArticles";
+import useRouteQuery from "hooks/useRouteQuery";
+import { useEffect, useState } from "react";
+import styles from "styles/resultspage.module.scss";
 
 const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState();
   const { articles, getArticlesByInput, getArticlesByCategory } = useArticles();
 
   const { input, category, router } = useRouteQuery();
+
+  const searchedValue = input || category;
+
+  const renderContent = () => {
+    if (articles === null || !articlesMatched.length) {
+      return <NoResults searchValue={searchedValue} />;
+    }
+
+    if (articles === undefined || !articlesMatched) {
+      return <Loading />;
+    }
+
+    return <ArticlesGrid articles={articlesMatched} />;
+  };
 
   //Lifecycle
   useEffect(() => {
@@ -27,24 +41,6 @@ const ResultsPage = () => {
       setArticlesMatched(getArticlesByCategory(category));
     }
   }, [router.asPath, input, category, articles]);
-
-  if (!articles) {
-    return <Loading />;
-  }
-
-  const searchedValue = input || category;
-
-  const renderContent = () => {
-    if (!articlesMatched) {
-      return <Loading />;
-    }
-
-    if (!articlesMatched.length) {
-      return <NoResults searchValue={searchedValue} />;
-    }
-
-    return <ArticlesGrid articles={articlesMatched} />;
-  };
 
   return (
     <PageContainer
