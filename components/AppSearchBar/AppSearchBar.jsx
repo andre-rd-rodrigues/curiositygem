@@ -17,6 +17,7 @@ const AppSearchBar = ({ className = "" }) => {
 
     return router.replace(`/article/search?input=${inputTrimed}`);
   };
+
   return (
     <form
       className={`${className} ${styles.container}`}
