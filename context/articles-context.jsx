@@ -1,3 +1,4 @@
+import baseURL from "pages/api/baseURL";
 import { ARTICLES_CARD_QUERY, graphcms } from "pages/api/graphQL/main";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
