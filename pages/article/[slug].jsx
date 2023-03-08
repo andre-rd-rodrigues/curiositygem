@@ -10,10 +10,10 @@ import { convertDate } from "utils";
 import { getArticleWithGoogleAds } from "utils/googleAds";
 import { jost } from "assets/fonts/nextFonts";
 import NotFound from "pages/404";
+import Head from "components/AppHead/AppHead";
 import { useRouter } from "next/router";
-import Head from "next/head";
 
-function Article({ post: articleAPI, pageHeader }) {
+function Article({ post: articleAPI }) {
   const router = useRouter();
 
   const [article, setArticle] = useState();
@@ -50,12 +50,11 @@ function Article({ post: articleAPI, pageHeader }) {
 
   return (
     <>
-      <Head>
-        <title>{pageHeader.title}</title>
-        {pageHeader.metas.map((attributes, index) => (
-          <meta {...attributes} key={index} />
-        ))}
-      </Head>
+      <Head
+        title={article.title}
+        description={article.description}
+        image={article.coverPhoto.url}
+      />
 
       <PageContainer>
         <div className={styles.container} style={jost.style}>
@@ -117,27 +116,7 @@ export async function getStaticProps({ params }) {
   const post = data.post;
 
   return {
-    props: {
-      post: post,
-      pageHeader: {
-        title: post.title,
-        metas: [
-          {
-            name: "description",
-            content: post.description
-          },
-          { property: "og:title", content: post.title },
-          {
-            property: "og:image",
-            content: post.coverPhoto.url
-          },
-          {
-            property: "og:description",
-            content: post.description
-          }
-        ]
-      }
-    },
+    props: { post: post },
     revalidate: 10
   };
 }
