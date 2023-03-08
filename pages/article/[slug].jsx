@@ -11,8 +11,11 @@ import { getArticleWithGoogleAds } from "utils/googleAds";
 import { jost } from "assets/fonts/nextFonts";
 import NotFound from "pages/404";
 import Head from "components/AppHead/AppHead";
+import { useRouter } from "next/router";
 
 function Article({ post: articleAPI }) {
+  const router = useRouter();
+
   const [article, setArticle] = useState();
 
   useEffect(() => {
@@ -33,19 +36,26 @@ function Article({ post: articleAPI }) {
     }
   }, []);
 
-  if (!articleAPI) {
+  if (!article) {
+    return (
+      <PageContainer>
+        <Loading />
+      </PageContainer>
+    );
+  }
+
+  if (!articleAPI || !router.isFallback) {
     return <NotFound />;
   }
 
   return (
     <>
-      {article && (
-        <Head
-          title={article.title}
-          description={article.description}
-          image={article.coverPhoto.url}
-        />
-      )}
+      <Head
+        title={article.title}
+        description={article.description}
+        image={article.coverPhoto.url}
+      />
+
       <PageContainer>
         <div className={styles.container} style={jost.style}>
           <AppIcon

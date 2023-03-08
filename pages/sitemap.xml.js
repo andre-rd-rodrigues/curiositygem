@@ -19,7 +19,7 @@ function generateSiteMap(posts) {
 }
 
 function SiteMap() {
-  // getServerSideProps will do the heavy lifting
+  return null;
 }
 
 export async function getServerSideProps({ res }) {
@@ -30,6 +30,7 @@ export async function getServerSideProps({ res }) {
   // We generate the XML sitemap with the posts data
   const sitemap = generateSiteMap(posts);
 
+  res.setHeader("Cache-Control", "s-maxage=30, stale-while-revalidate");
   res.setHeader("Content-Type", "text/xml");
   // we send the XML to the browser
   res.write(sitemap);

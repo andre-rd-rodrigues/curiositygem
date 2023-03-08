@@ -1,3 +1,8 @@
+# Block all crawlers for search page
+User-agent: *
+Disallow: /article/search
+
+
 # Allow all crawlers
 User-agent: *
 Allow: /
