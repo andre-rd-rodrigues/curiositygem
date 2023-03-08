@@ -12,6 +12,7 @@ import { jost } from "assets/fonts/nextFonts";
 import NotFound from "pages/404";
 import Head from "components/AppHead/AppHead";
 import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 
 function Article({ post: articleAPI }) {
   const router = useRouter();
@@ -50,10 +51,10 @@ function Article({ post: articleAPI }) {
 
   return (
     <>
-      <Head
-        title={article.title}
-        description={article.description}
-        image={article.coverPhoto.url}
+      <NextSeo
+        title={articleAPI.title}
+        description={articleAPI.description}
+        image={articleAPI.coverPhoto.url}
       />
 
       <PageContainer>
