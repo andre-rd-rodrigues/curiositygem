@@ -5,14 +5,15 @@ import NoResults from "components/NoResults/NoResults";
 import PageContainer from "components/PageContainer/PageContainer";
 import useArticles from "hooks/useArticles";
 import useRouteQuery from "hooks/useRouteQuery";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import styles from "styles/resultspage.module.scss";
 import Head from "components/AppHead/AppHead";
+import { ArticlesContext } from "context/articles-context";
 
 const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState();
-  const { articles, isError, getArticlesByInput, getArticlesByCategory } =
-    useArticles();
+  const { articles, isError } = useContext(ArticlesContext);
+  const { getArticlesByInput, getArticlesByCategory } = useArticles(articles);
 
   const { input, category, router } = useRouteQuery();
 
@@ -23,7 +24,7 @@ const ResultsPage = () => {
       return <Loading />;
     }
 
-    if (isError || !articlesMatched) {
+    if (isError || !articlesMatched.length) {
       return <NoResults searchValue={searchedValue} />;
     }
 

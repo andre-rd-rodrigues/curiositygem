@@ -7,26 +7,23 @@ import PageContainer from "components/PageContainer/PageContainer";
 import useArticles from "hooks/useArticles";
 import styles from "styles/homepage.module.scss";
 import { CATEGORY } from "utils";
+import { ARTICLES_CARD_QUERY, graphcms } from "./api/graphQL/main";
 
-export default function Homepage() {
-  const { articles } = useArticles();
+export default function Homepage({ posts }) {
+  /* const { articles } = useArticles(); */
 
   const renderContent = () => {
-    if (articles === undefined) {
+    if (!posts) {
       return <Loading />;
     }
 
-    if (articles === null || !articles.length) {
-      return <ErrorMessage className={styles.errorMessage} />;
-    }
-
-    if (articles) {
+    if (posts) {
       return (
         <div className={styles.wrapper}>
-          <CategorySection category={CATEGORY.recent} />
-          <CategorySection category={CATEGORY.finance} />
-          <CategorySection category={CATEGORY.tech} />
-          <CategorySection category={CATEGORY.wellbeing} />
+          <CategorySection category={CATEGORY.recent} posts={posts} />
+          <CategorySection category={CATEGORY.finance} posts={posts} />
+          <CategorySection category={CATEGORY.tech} posts={posts} />
+          <CategorySection category={CATEGORY.wellbeing} posts={posts} />
         </div>
       );
     }
@@ -44,4 +41,15 @@ export default function Homepage() {
       </PageContainer>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const data = await graphcms.request(ARTICLES_CARD_QUERY);
+
+  const posts = data.posts;
+
+  return {
+    props: { posts: posts },
+    revalidate: 10
+  };
 }

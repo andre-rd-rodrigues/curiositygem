@@ -6,8 +6,8 @@ import { CATEGORIES } from "utils";
 import styles from "./homepageComponents.module.scss";
 import { jost } from "assets/fonts/nextFonts";
 
-const CategorySection = ({ category }) => {
-  const { getArticlesByCategory } = useArticles();
+const CategorySection = ({ category, posts }) => {
+  const { getArticlesByCategory } = useArticles(posts);
 
   // Create title according to category type
   const title = CATEGORIES.find(({ type }) => type === category).name;

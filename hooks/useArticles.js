@@ -2,11 +2,9 @@ import { ArticlesContext } from "context/articles-context";
 import { useContext } from "react";
 import { CATEGORY } from "utils";
 
-function useArticles() {
-  const { articles, isError } = useContext(ArticlesContext);
-
-  if (isError || !articles || !articles.length) {
-    return { articles: null, isError };
+function useArticles(articles) {
+  if (!articles || !articles.length) {
+    return { articles: null };
   }
 
   /**
@@ -64,8 +62,7 @@ function useArticles() {
     getArticlesByCategory,
     getArticleByTitle,
     articles,
-    getArticlesByInput,
-    isError
+    getArticlesByInput
   };
 }
 
