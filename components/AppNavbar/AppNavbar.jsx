@@ -31,7 +31,7 @@ const AppNavbar = () => {
         <Nav.Link
           /*  onClick={() => handleClick(type)} */
           as={Link}
-          href={`/articles/search?category=${type}`}
+          href={`/article/search?category=${type}`}
           key={index}
         >
           <li>{name}</li>
