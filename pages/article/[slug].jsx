@@ -15,7 +15,17 @@ function Article({ post: article }) {
       <NextSeo
         title={article.title}
         description={article.description}
-        image={article.coverPhoto.url}
+        openGraph={{
+          url: `https://www.curiositygem.com/article/${article.title}`,
+          title: article.title,
+          description: article.description,
+          images: [
+            {
+              url: article.coverPhoto.url,
+              alt: `${article.title} article`
+            }
+          ]
+        }}
       />
 
       <PageContainer>
