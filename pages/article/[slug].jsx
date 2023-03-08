@@ -44,7 +44,7 @@ function Article({ post: articleAPI }) {
     );
   }
 
-  if (!articleAPI || !router.isFallback) {
+  if (!articleAPI && router.isFallback) {
     return <NotFound />;
   }
 
