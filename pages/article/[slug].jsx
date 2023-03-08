@@ -1,60 +1,21 @@
+import { jost } from "assets/fonts/nextFonts";
 import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
+import { NextSeo } from "next-seo";
 import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
-import { useEffect, useState } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
-import { getArticleWithGoogleAds } from "utils/googleAds";
-import { jost } from "assets/fonts/nextFonts";
-import NotFound from "pages/404";
-import Head from "components/AppHead/AppHead";
-import { useRouter } from "next/router";
-import { NextSeo } from "next-seo";
 
-function Article({ post: articleAPI }) {
-  const router = useRouter();
-
-  const [article, setArticle] = useState();
-
-  useEffect(() => {
-    if (!articleAPI) {
-      return;
-    }
-
-    const articleConverted = getArticleWithGoogleAds(articleAPI);
-
-    setArticle(articleConverted);
-  }, [articleAPI]);
-
-  useEffect(() => {
-    try {
-      (window.adsbygoogle = window.adsbygoogle || []).push({});
-    } catch (e) {
-      return console.log(e);
-    }
-  }, []);
-
-  if (!article) {
-    return (
-      <PageContainer>
-        <Loading />
-      </PageContainer>
-    );
-  }
-
-  if (!articleAPI && router.isFallback) {
-    return <NotFound />;
-  }
-
+function Article({ post: article }) {
   return (
     <>
       <NextSeo
-        title={articleAPI.title}
-        description={articleAPI.description}
-        image={articleAPI.coverPhoto.url}
+        title={article.title}
+        description={article.description}
+        image={article.coverPhoto.url}
       />
 
       <PageContainer>
