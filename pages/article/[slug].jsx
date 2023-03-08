@@ -22,7 +22,9 @@ function Article({ post: article }) {
           images: [
             {
               url: article.coverPhoto.url,
-              alt: `${article.title} article`
+              alt: `${article.title} article`,
+              width: 1200,
+              height: 630
             }
           ]
         }}

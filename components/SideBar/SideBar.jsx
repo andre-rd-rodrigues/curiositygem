@@ -28,7 +28,7 @@ function SideBar() {
             <Link
               onClick={() => setShow(false)}
               key={index}
-              to={`/article/search?category=${category.type}`}
+              to={`/articles/search?category=${category.type}`}
             >
               <li>{category.name}</li>
             </Link>
