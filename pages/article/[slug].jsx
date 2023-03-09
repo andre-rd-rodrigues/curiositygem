@@ -15,7 +15,6 @@ function Article({ post: article }) {
       <NextSeo
         title={article.title}
         description={article.description}
-        canonical={`https://www.curiositygem.com/article/${article.title}`}
         openGraph={{
           url: `https://www.curiositygem.com/article/${article.title}`,
           title: article.title,
