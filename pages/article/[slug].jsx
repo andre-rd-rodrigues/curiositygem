@@ -10,7 +10,6 @@ import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
 
 function Article({ post: article }) {
-  // TODO: remove this after deploying
   return (
     <>
       <NextSeo
