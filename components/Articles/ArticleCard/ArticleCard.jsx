@@ -15,7 +15,7 @@ const ArticleCard = ({ article }) => {
             <p>{convertDate(article.createdAt)}</p>
           </div>
           <div className={styles.body}>
-            <h5>{article.title}</h5>
+            <h3>{article.title}</h3>
             <p>{article.description}</p>
           </div>
         </Link>

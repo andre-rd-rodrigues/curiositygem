@@ -50,7 +50,7 @@ const AppNavbar = () => {
       <Navbar.Brand as={Link} href="/">
         <div className={styles.brand}>
           <div id={styles.logo} />
-          <h1>CG</h1>
+          <h5>CG</h5>
           <p>Curiosity Gem</p>
         </div>
       </Navbar.Brand>

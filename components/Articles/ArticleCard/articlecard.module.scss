@@ -13,7 +13,7 @@
     text-align: justify;
   }
 
-  h5 {
+  h3 {
     display: initial;
     text-align: start;
     letter-spacing: 0.5px;
@@ -26,13 +26,14 @@
     background-size: 0 100%;
     background-repeat: no-repeat;
     transition: background 0.5s;
+    font-size: 20px;
   }
 
   &:hover {
     & .image {
       transform: scale(0.95);
     }
-    & h5 {
+    & h3 {
       background-size: 100% 100%;
     }
   }

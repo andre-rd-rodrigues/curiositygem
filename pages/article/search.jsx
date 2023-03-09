@@ -12,7 +12,9 @@ import { ArticlesContext } from "context/articles-context";
 
 const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState();
+
   const { articles, isError } = useContext(ArticlesContext);
+
   const { getArticlesByInput, getArticlesByCategory } = useArticles(articles);
 
   const { input, category, router } = useRouteQuery();
