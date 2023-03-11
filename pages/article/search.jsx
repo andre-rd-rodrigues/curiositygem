@@ -11,7 +11,7 @@ import Head from "components/AppHead/AppHead";
 import { ArticlesContext } from "context/articles-context";
 
 const ResultsPage = () => {
-  const [articlesMatched, setArticlesMatched] = useState();
+  const [articlesMatched, setArticlesMatched] = useState([]);
 
   const { articles, isError } = useContext(ArticlesContext);
 
@@ -48,7 +48,7 @@ const ResultsPage = () => {
       articlesSearched = getArticlesByCategory(category);
     }
 
-    setArticlesMatched(articlesSearched || null);
+    setArticlesMatched(articlesSearched || []);
   }, [router.asPath, input, category, articles]);
 
   return (
