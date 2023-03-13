@@ -22,6 +22,10 @@ gtag('config', 'G-XTDYFCW8JD', {page_path: window.location.pathname,
 `
         }}
       />
+      <Script
+        strategy="afterInteractive"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7060164950879253"
+      />
       <AppNavbar />
       {children}
       <Footer />
