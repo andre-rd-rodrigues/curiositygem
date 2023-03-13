@@ -20,6 +20,10 @@ export default function Homepage({ posts }) {
           <CategorySection category={CATEGORY.finance} posts={posts} />
           <CategorySection category={CATEGORY.tech} posts={posts} />
           <CategorySection category={CATEGORY.wellbeing} posts={posts} />
+          <CategorySection category={CATEGORY.career} posts={posts} />
+          <CategorySection category={CATEGORY.nutrition} posts={posts} />
+          <CategorySection category={CATEGORY.games} posts={posts} />
+          <CategorySection category={CATEGORY.top} posts={posts} />
         </div>
       );
     }

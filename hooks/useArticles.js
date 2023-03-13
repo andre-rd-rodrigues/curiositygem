@@ -11,7 +11,7 @@ function useArticles(articles) {
    *  Function that filters articles and returns the ones with isTopArticle
    */
   const getTopArticles = () => {
-    return articles.filter((item) => item.isTopArticle);
+    return articles.filter((item) => item.isTopPick);
   };
 
   /**
@@ -24,7 +24,7 @@ function useArticles(articles) {
       return getTopArticles();
     }
 
-    if (category === CATEGORY.recent) {
+    if (category === CATEGORY.recent || category === CATEGORY.all) {
       return articles;
     }
 
