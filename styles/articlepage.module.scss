@@ -42,24 +42,33 @@
   font-weight: 500;
 }
 
-.subtitle {
+.header {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
   color: $grey;
-  margin: 13px 0 20px;
+  margin: 13px 0 30px;
 
-  span {
-    margin: 0 15px;
-    opacity: 0.7;
-  }
+  .subtitle {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    span {
+      margin: 0 15px;
+      opacity: 0.7;
+    }
 
-  & p:last-child {
-    text-transform: uppercase;
-  }
-  a,
-  span,
-  p {
-    font-size: var(--fs-m-s);
-    font-weight: 400;
+    & p:last-child {
+      text-transform: uppercase;
+    }
+    a,
+    span,
+    p {
+      font-size: var(--fs-m-s);
+      font-weight: 400;
+      margin-bottom: 0;
+    }
   }
 }
 

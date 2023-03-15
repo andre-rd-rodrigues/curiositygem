@@ -3,6 +3,7 @@ import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
+import ShareLinks from "components/ShareLinks/ShareLinks";
 import { NextSeo } from "next-seo";
 import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
 import parser from "react-html-parser";
@@ -20,6 +21,8 @@ function Article({ post: article }) {
           url: `https://www.curiositygem.com/article/${article.slug}`,
           title: article.title,
           description: article.description,
+          datePublished: article.createdAt,
+          authorName: "André Rodrigues",
           images: [
             {
               url: article.coverPhoto.url,
@@ -43,9 +46,16 @@ function Article({ post: article }) {
               <>
                 <div>
                   <h1 className={styles.title}>{article.title}</h1>
-                  <div className={styles.subtitle}>
-                    <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
-                    <p>{article.category}</p>
+                  <div className={styles.header}>
+                    <div className={styles.subtitle}>
+                      <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
+                      <p>{article.category}</p>
+                    </div>
+                    <ShareLinks
+                      slug={article.slug}
+                      image={article.coverPhoto.url}
+                      description={article.description}
+                    />
                   </div>
                 </div>
                 <AppImage
