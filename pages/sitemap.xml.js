@@ -1,4 +1,4 @@
-import { graphcms, SLUGLIST } from "./api/graphQL/main";
+import getData from "./api/getData";
 
 function generateSiteMap(posts) {
   return `<?xml version="1.0" encoding="UTF-8"?>
@@ -24,8 +24,7 @@ function SiteMap() {
 
 export async function getServerSideProps({ res }) {
   // We make an API call to gather the URLs for our site
-  const data = await graphcms.request(SLUGLIST);
-  const posts = data["posts"];
+  const posts = await getData();
 
   // We generate the XML sitemap with the posts data
   const sitemap = generateSiteMap(posts);

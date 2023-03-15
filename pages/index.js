@@ -5,7 +5,7 @@ import PageContainer from "components/PageContainer/PageContainer";
 import { NextSeo } from "next-seo";
 import styles from "styles/homepage.module.scss";
 import { CATEGORY } from "utils";
-import { ARTICLES_CARD_QUERY, graphcms } from "./api/graphQL/main";
+import getData from "./api/getData";
 
 export default function Homepage({ posts }) {
   const renderContent = () => {
@@ -57,9 +57,7 @@ export default function Homepage({ posts }) {
 }
 
 export async function getStaticProps() {
-  const data = await graphcms.request(ARTICLES_CARD_QUERY);
-
-  const posts = data.posts;
+  const posts = await getData();
 
   return {
     props: { posts: posts },

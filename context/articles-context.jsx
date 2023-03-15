@@ -1,4 +1,4 @@
-import { ARTICLES_CARD_QUERY, graphcms } from "pages/api/graphQL/main";
+import getData from "pages/api/getData";
 import PropTypes from "prop-types";
 import { createContext, useEffect, useState } from "react";
 
@@ -10,18 +10,18 @@ function ArticlesProvider({ children }) {
     articles: undefined
   });
 
-  const getArticles = async () => {
-    await graphcms.request(ARTICLES_CARD_QUERY).then(
-      (data) =>
+  const getArticles = () => {
+    getData()
+      .then((data) =>
         setResponseData((prevState) => {
-          return { ...prevState, articles: data["posts"] };
-        }),
-      (e) => {
+          return { ...prevState, articles: data };
+        })
+      )
+      .catch((e) =>
         setResponseData((prevState) => {
           return { ...prevState, isError: true };
-        });
-      }
-    );
+        })
+      );
   };
 
   useEffect(() => {

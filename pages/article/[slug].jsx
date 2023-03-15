@@ -4,7 +4,8 @@ import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import { NextSeo } from "next-seo";
-import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
+import baseURL from "pages/api/baseURL";
+import getData from "pages/api/getData";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
@@ -28,7 +29,6 @@ function Article({ post: article }) {
           ]
         }}
       />
-
       <PageContainer>
         <div className={styles.container} style={jost.style}>
           <AppIcon
@@ -69,7 +69,7 @@ function Article({ post: article }) {
 export default Article;
 
 export async function getStaticPaths() {
-  const { posts } = await graphcms.request(SLUGLIST);
+  const posts = await getData();
 
   const paths = posts.map((post) => {
     return { params: { slug: post.slug } };
@@ -84,12 +84,11 @@ export async function getStaticPaths() {
 export async function getStaticProps({ params }) {
   const slug = params.slug;
 
-  const data = await graphcms.request(ARTICLE_QUERY, { slug });
-
-  const post = data.post;
+  const response = await fetch(`${baseURL}article/${slug}`);
+  const post = await response.json();
 
   return {
-    props: { post: post },
+    props: { post: post[0] },
     revalidate: 10
   };
 }
