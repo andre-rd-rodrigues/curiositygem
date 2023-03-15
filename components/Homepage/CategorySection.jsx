@@ -23,7 +23,9 @@ const CategorySection = ({ category, posts }) => {
       whileInView="visible"
       viewport={{ once: true }}
     >
-      <motion.h2 className={styles.categoryTitle}>{title}:</motion.h2>
+      {category !== "recent" && (
+        <motion.h2 className={styles.categoryTitle}>{title}:</motion.h2>
+      )}
       <ArticlesGrid articles={articles} />
     </motion.div>
   );
