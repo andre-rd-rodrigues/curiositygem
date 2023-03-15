@@ -1,0 +1,41 @@
+@import "assets/styles/variables.module.scss";
+
+.container {
+  button {
+    margin-left: 10px;
+    filter: saturate(80%);
+  }
+}
+
+.copyUrl {
+  background-color: $yellow;
+  border: none;
+  border-radius: 50%;
+  padding: 2px 6px 3px;
+}
+
+.alert {
+  position: absolute;
+  top: 90px;
+  right: 10px;
+}
+
+@media only screen and (max-width: $breaking-point-sm) {
+  .container {
+    svg {
+      max-width: 24px;
+    }
+  }
+
+  .copyUrl {
+    transform: scale(0.93);
+    padding: 0px 5px 3px;
+  }
+}
+@media only screen and (max-width: 439px) {
+  .container {
+    button {
+      margin: 10px 10px 0 0;
+    }
+  }
+}
