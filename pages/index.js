@@ -1,3 +1,4 @@
+import ArticleHighlight from "components/Articles/ArticleHighlight/ArticleHighlight";
 import CategorySection from "components/Homepage/CategorySection";
 import Introduction from "components/Homepage/Introduction";
 import Loading from "components/Loading/Loading";
@@ -16,6 +17,7 @@ export default function Homepage({ posts }) {
     if (posts) {
       return (
         <div className={styles.wrapper}>
+          <ArticleHighlight post={posts[0]} />
           <CategorySection category={CATEGORY.recent} posts={posts} />
           <CategorySection category={CATEGORY.finance} posts={posts} />
           <CategorySection category={CATEGORY.tech} posts={posts} />
@@ -48,10 +50,7 @@ export default function Homepage({ posts }) {
           ]
         }}
       />
-      <PageContainer>
-        <Introduction />
-        {renderContent()}
-      </PageContainer>
+      <PageContainer>{renderContent()}</PageContainer>
     </>
   );
 }

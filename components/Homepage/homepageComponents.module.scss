@@ -3,36 +3,16 @@
 
 .intro {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  min-height: 60vh;
-  flex-direction: column;
-  color: $dark;
 
   h1 {
-    font-size: var(--fs-xxl);
+    font-size: var(--fs-l);
     font-family: Blacker;
+    color: $blue;
   }
-
-  button {
-    margin-top: 20px;
-    @include button($dark);
-    background-color: $dark;
-    color: white;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-}
-
-.logo {
-  background: url("https://images.unsplash.com/photo-1597589827703-f4b68eafa0ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1544&q=80")
-    center center no-repeat;
-  background-size: cover !important;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
 }
 
 .wrapper {

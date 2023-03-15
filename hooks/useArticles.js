@@ -24,7 +24,11 @@ function useArticles(articles) {
       return getTopArticles();
     }
 
-    if (category === CATEGORY.recent || category === CATEGORY.all) {
+    if (category === CATEGORY.recent) {
+      return articles.slice(1);
+    }
+
+    if (category === CATEGORY.all) {
       return articles;
     }
 
