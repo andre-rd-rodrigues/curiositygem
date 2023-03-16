@@ -8,7 +8,7 @@ import styles from "./footer.module.scss";
 
 const Footer = () => {
   return (
-    <footer className={styles.container} style={jost.styles}>
+    <footer className={styles.container} style={jost.style}>
       <Row className={styles.wrapper}>
         <Col className={styles.brand}>
           <div className={styles.logo}>

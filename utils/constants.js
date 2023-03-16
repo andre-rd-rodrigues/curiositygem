@@ -30,15 +30,15 @@ const CATEGORY = {
 const PAGES = [
   {
     title: "About Us",
-    link_title: "about-us"
+    link_title: "about"
   },
   {
     title: "Contact Us",
-    link_title: "contact-us"
+    link_title: "contact"
   },
   {
     title: "Terms",
-    link_title: "terms-and-conditions"
+    link_title: "terms"
   },
   {
     title: "Privacy",

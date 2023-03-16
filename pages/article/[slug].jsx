@@ -1,4 +1,3 @@
-import { jost } from "assets/fonts/nextFonts";
 import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
@@ -37,7 +36,7 @@ function Article({ post: article }) {
       />
 
       <PageContainer>
-        <div className={styles.container} style={jost.style}>
+        <div className={styles.container}>
           <AppIcon
             icon="arrow-left"
             size={30}
