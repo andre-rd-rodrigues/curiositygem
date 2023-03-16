@@ -20,11 +20,7 @@ const ArticleCard = ({ article }) => {
           </div>
         </Link>
         <div className={styles.footer}>
-          <Link
-            className={styles.readMore}
-            href={`/article/${article.slug}`}
-            onClick={() => (scrollTop ? window.scrollTo(0, 0) : null)}
-          >
+          <Link className={styles.readMore} href={`/article/${article.slug}`}>
             Read more
           </Link>
         </div>

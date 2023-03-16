@@ -70,6 +70,12 @@
       margin-bottom: 0;
     }
   }
+
+  .socialMedia {
+    button {
+      margin-right: 10px;
+    }
+  }
 }
 
 .content {
@@ -92,5 +98,25 @@
 
   .container {
     margin-top: 40px;
+  }
+}
+
+@media only screen and (max-width: $breaking-point-sm) {
+  .container {
+    svg {
+      max-width: 24px;
+    }
+  }
+
+  .copyUrl {
+    transform: scale(0.93);
+    padding: 0px 5px 3px;
+  }
+}
+@media only screen and (max-width: 439px) {
+  .container {
+    button {
+      margin: 10px 10px 0 0;
+    }
   }
 }

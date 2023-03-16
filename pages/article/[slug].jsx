@@ -7,11 +7,15 @@ import ShareLinks from "components/ShareLinks/ShareLinks";
 import { NextSeo } from "next-seo";
 import baseURL from "pages/api/baseURL";
 import getData from "pages/api/getData";
+import { useEffect } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
 
 function Article({ post: article }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <NextSeo
@@ -55,6 +59,7 @@ function Article({ post: article }) {
                       slug={article.slug}
                       image={article.coverPhoto.url}
                       description={article.description}
+                      className={styles.socialMedia}
                     />
                   </div>
                 </div>
