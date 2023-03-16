@@ -22,6 +22,7 @@
     "eslint-config-next": "13.1.5",
     "feather-icons-react": "^0.6.2",
     "framer-motion": "^8.5.4",
+    "fs": "0.0.1-security",
     "graphql": "^16.6.0",
     "graphql-request": "^5.1.0",
     "moment": "^2.29.4",
@@ -35,6 +36,7 @@
     "react-html-parser": "^2.0.2",
     "react-loader-spinner": "^5.3.4",
     "react-share": "^4.4.1",
+    "rss": "^1.2.2",
     "sass-loader": "^13.2.0",
     "use-http": "^1.0.27"
   },

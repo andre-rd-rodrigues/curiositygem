@@ -1,11 +1,11 @@
+import Head from "components/AppHead/AppHead";
 import ArticleHighlight from "components/Articles/ArticleHighlight/ArticleHighlight";
 import CategorySection from "components/Homepage/CategorySection";
-import Introduction from "components/Homepage/Introduction";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
-import { NextSeo } from "next-seo";
 import styles from "styles/homepage.module.scss";
 import { CATEGORY } from "utils";
+import generateRssFeed from "utils/generateRSSFeed";
 import getData from "./api/getData";
 
 export default function Homepage({ posts }) {
@@ -33,31 +33,15 @@ export default function Homepage({ posts }) {
 
   return (
     <>
-      <NextSeo
-        description="Curiosity Gem is a blog that shares hidden gems of knowledge on a wide range of topics. From personal development to technology and science, this blog is dedicated to providing you with informative, engaging, and thought-provoking content. Join us on a journey of exploration and discovery and find the knowledge you've been seeking. We're excited to share this latest findings with you and explore new ideas together!"
-        title="Curiosity Gem &bull; Discover hidden gems of knowledge"
-        canonical="https://www.curiositygem.com"
-        openGraph={{
-          url: "https://www.curiositygem.com",
-          title: "Curiosity Gem - Discover hidden gems of knowledge",
-          description:
-            "Curiosity Gem is your go-to destination for knowledge sharing. Explore our diverse categories and discover the latest insights on technology, wellbeing, finance, and more. Join our community of curious minds today!",
-          images: [
-            {
-              url: "https://media.graphassets.com/m3c024qER0udkPRLgxOI",
-              alt: `Curiosity Gem - Blog`
-            }
-          ]
-        }}
-      />
+      <Head />
       <PageContainer>{renderContent()}</PageContainer>
     </>
   );
 }
 
 export async function getStaticProps() {
+  await generateRssFeed();
   const posts = await getData();
-
   return {
     props: { posts: posts },
     revalidate: 10

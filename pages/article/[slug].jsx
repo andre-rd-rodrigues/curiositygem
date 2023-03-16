@@ -1,10 +1,10 @@
+import Head from "components/AppHead/AppHead";
 import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import ShareLinks from "components/ShareLinks/ShareLinks";
 import { RouterContext } from "context/route-context";
-import { NextSeo } from "next-seo";
 import Link from "next/link";
 import baseURL from "pages/api/baseURL";
 import getData from "pages/api/getData";
@@ -23,7 +23,7 @@ function Article({ post: article }) {
 
   return (
     <>
-      <NextSeo
+      <Head
         title={article.title}
         description={article.description}
         canonical={`https://www.curiositygem.com/article/${article.slug}`}
