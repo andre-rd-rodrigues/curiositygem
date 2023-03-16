@@ -1,0 +1,78 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.pageContainer {
+  display: flex;
+}
+
+.container {
+  h1 {
+    font-size: var(--fs-xxl);
+  }
+  h3 {
+    font-size: var(--fs-s);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1.4px;
+    margin-bottom: 15px;
+  }
+  a[id="contact_email"] {
+    color: $yellow;
+    &:hover {
+      color: $white;
+    }
+  }
+  div[class="row"] {
+    width: 100%;
+  }
+
+  ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+  }
+  ul li {
+    list-style: none;
+    @include hover_scale(1.3, 0.2s);
+    & svg {
+      font-size: 23px;
+    }
+  }
+}
+
+.social {
+  transform: translateY(5px);
+}
+.col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+}
+
+//Responsive
+@media only screen and (max-width: 767px) {
+  .container {
+    text-align: center;
+  }
+  .social {
+    transform: translateY(0px);
+  }
+
+  .col {
+    margin-bottom: 40px;
+  }
+}
+
+@media only screen and (max-width: $breaking-point-sm) {
+  .container {
+    h1 {
+      font-size: 3.7rem;
+    }
+    h3 {
+      font-size: 1rem;
+    }
+  }
+}

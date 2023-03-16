@@ -15,12 +15,7 @@
   }
 
   a {
-    color: $salmon;
-    font-weight: 500;
-    &:hover {
-      opacity: 0.8;
-      color: $salmon;
-    }
+    @include link;
   }
 }
 
@@ -94,10 +89,6 @@
 @media only screen and (max-width: $breaking-point-md) {
   .subtitle {
     margin-bottom: 10px;
-  }
-
-  .container {
-    margin-top: 40px;
   }
 }
 

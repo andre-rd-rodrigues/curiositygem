@@ -10,10 +10,3 @@
   max-width: var(--page-max-width);
   margin: auto;
 }
-
-//Responsive
-@media only screen and (max-width: $breaking-point-md) {
-  .container {
-    padding: 50px var(--padding-y) 100px;
-  }
-}
