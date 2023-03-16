@@ -37,18 +37,13 @@ const Footer = () => {
           </div>
         </Col>
         <Col className={styles.categories}>
+          <h5>Categories</h5>
           <div>
-            <h5>Categories</h5>
-            <div>
-              {CATEGORIES.map((category, i) => (
-                <Link
-                  key={i}
-                  href={`/article/search?category=${category.type}`}
-                >
-                  {category.name}
-                </Link>
-              ))}
-            </div>
+            {CATEGORIES.map((category, i) => (
+              <Link key={i} href={`/article/search?category=${category.type}`}>
+                {category.name}
+              </Link>
+            ))}
           </div>
         </Col>
       </Row>

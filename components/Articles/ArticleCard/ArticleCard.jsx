@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
           <AppImage src={article.coverPhoto.url} className={styles.image} />
           <div className={styles.subtitle}>
             <p>{article.category}</p>
-            <p>{convertDate(article.createdAt)}</p>
+            <p>{convertDate(article.publishedDate)}</p>
           </div>
           <div className={styles.body}>
             <h3>{article.title}</h3>

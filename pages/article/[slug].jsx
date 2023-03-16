@@ -30,7 +30,7 @@ function Article({ post: article }) {
           url: `https://www.curiositygem.com/article/${article.slug}`,
           title: article.title,
           description: article.description,
-          datePublished: article.createdAt,
+          datePublished: article.publishedDate,
           authorName: "André Rodrigues",
           images: [
             {
@@ -58,7 +58,7 @@ function Article({ post: article }) {
                   <h1 className={styles.title}>{article.title}</h1>
                   <div className={styles.header}>
                     <div className={styles.subtitle}>
-                      <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
+                      <p>{convertDate(article.publishedDate)}</p> <span>|</span>{" "}
                       <p>{article.category}</p>
                     </div>
                     <ShareLinks

@@ -4,7 +4,7 @@ const articleMock = {
   description:
     "Are you tired of constantly forgetting to turn off the lights or adjust the thermostat when you leave the house? It might be time to consider automating your home. In this blog post, we&apos;ll give you five ways to transform your home into a smart home, including using smart thermostats, smart lighting, smart appliances, smart security systems, and smart home hubs. Automating your home can make your life easier, save you energy and money, and give you peace of mind. Learn how to get started with home automation today.",
   category: "technology",
-  createdAt: "11/25/2022",
+  publishedDate: "11/25/2022",
   isTopArticle: false,
   coverPhoto: {
     url: "https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2940&q=80"

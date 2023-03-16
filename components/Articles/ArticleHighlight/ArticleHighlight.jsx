@@ -16,7 +16,7 @@ const ArticleHighlight = ({ post: article }) => {
     >
       <div className={styles.content}>
         <div className={styles.subtitle}>
-          <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
+          <p>{convertDate(article.publishedDate)}</p> <span>|</span>{" "}
           <p>{article.category}</p>
         </div>
         <div className={styles.body}>

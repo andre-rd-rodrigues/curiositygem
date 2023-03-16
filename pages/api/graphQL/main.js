@@ -6,11 +6,11 @@ export const graphcms = new GraphQLClient(baseURL);
 
 export const ARTICLES_CARD_QUERY = gql`
   {
-    posts(orderBy: createdAt_ASC, first: 100) {
+    posts(orderBy: createdAt_DESC, first: 100) {
       id
       title
       category
-      createdAt
+      publishedDate
       description
       isTopPick
       slug
@@ -23,11 +23,11 @@ export const ARTICLES_CARD_QUERY = gql`
 
 export const ARTICLES_QUERY = gql`
   {
-    posts(orderBy: createdAt_ASC, first: 100) {
+    posts(orderBy: createdAt_DESC, first: 100) {
       id
       title
       category
-      createdAt
+      publishedDate
       description
       isTopPick
       slug
@@ -47,7 +47,7 @@ export const ARTICLE_QUERY = gql`
       id
       title
       category
-      createdAt
+      publishedDate
       description
       isTopPick
       slug
