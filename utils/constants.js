@@ -60,11 +60,14 @@ const CATEGORIES = [
 
 const ARTICLES_VISIBLE_LIMIT = 6;
 
+const COOKIES_NAMING = "curiosity_gem_cookies";
+
 export {
   SEARCH_TYPE,
   CATEGORIES,
   CATEGORY,
   SOCIAL_MEDIA,
   ARTICLES_VISIBLE_LIMIT,
-  PAGES
+  PAGES,
+  COOKIES_NAMING
 };

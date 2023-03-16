@@ -1,4 +1,5 @@
 import AppNavbar from "components/AppNavbar/AppNavbar";
+import CookieBanner from "components/CookieBanner/CookieBanner";
 import Footer from "components/Footer/Footer";
 import Script from "next/script";
 
@@ -28,6 +29,7 @@ gtag('config', 'G-XTDYFCW8JD', {page_path: window.location.pathname,
       />
       <AppNavbar />
       {children}
+      <CookieBanner />
       <Footer />
     </>
   );
