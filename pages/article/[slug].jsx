@@ -6,11 +6,15 @@ import PageContainer from "components/PageContainer/PageContainer";
 import ShareLinks from "components/ShareLinks/ShareLinks";
 import { NextSeo } from "next-seo";
 import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
+import { useEffect } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
 
 function Article({ post: article }) {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <NextSeo
@@ -55,6 +59,7 @@ function Article({ post: article }) {
                       slug={article.slug}
                       image={article.coverPhoto.url}
                       description={article.description}
+                      className={styles.socialMedia}
                     />
                   </div>
                 </div>

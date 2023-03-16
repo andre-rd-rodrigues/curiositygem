@@ -15,15 +15,22 @@ import {
 import CopyUrl from "./CopyUrl";
 import styles from "./sharelinks.module.scss";
 
-const ShareLinks = ({ slug, image, description }) => {
-  const URL = `https://curiositygem.com/article/${slug}`;
+const ShareLinks = ({ slug, image, description, className }) => {
+  const URL = slug
+    ? `https://curiositygem.com/article/${slug}`
+    : `https://curiositygem.com`;
+
   const ICON_PROPS = {
     size: 28,
     round: true
   };
 
+  const containerStyles = className
+    ? `${styles.container} ${className}`
+    : `${styles.container}`;
+
   return (
-    <div className={styles.container}>
+    <div className={containerStyles}>
       <FacebookShareButton url={URL}>
         <FacebookIcon size={ICON_PROPS.size} round={ICON_PROPS.round} />
       </FacebookShareButton>

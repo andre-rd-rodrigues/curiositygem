@@ -27,16 +27,35 @@ const CATEGORY = {
   all: "all"
 };
 
+const PAGES = [
+  {
+    title: "About Us",
+    link_title: "about-us"
+  },
+  {
+    title: "Contact Us",
+    link_title: "contact-us"
+  },
+  {
+    title: "Terms",
+    link_title: "terms-and-conditions"
+  },
+  {
+    title: "Privacy",
+    link_title: "privacy"
+  }
+];
+
 const CATEGORIES = [
-  { name: "Top picks", type: CATEGORY.top },
+  { name: "Top", type: CATEGORY.top },
   { name: "Latest", type: CATEGORY.recent },
   { name: "Wellbeing", type: CATEGORY.wellbeing },
   { name: "Finance", type: CATEGORY.finance },
   { name: "Career", type: CATEGORY.career },
   { name: "Technology", type: CATEGORY.tech },
   { name: "Gaming", type: CATEGORY.games },
-  { name: "Nutrition", type: CATEGORY.nutrition },
-  { name: "All", type: CATEGORY.all }
+  { name: "Nutrition", type: CATEGORY.nutrition }
+  /*   { name: "All", type: CATEGORY.all } */
 ];
 
 const ARTICLES_VISIBLE_LIMIT = 6;
@@ -46,5 +65,6 @@ export {
   CATEGORIES,
   CATEGORY,
   SOCIAL_MEDIA,
-  ARTICLES_VISIBLE_LIMIT
+  ARTICLES_VISIBLE_LIMIT,
+  PAGES
 };
