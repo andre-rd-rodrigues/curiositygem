@@ -62,6 +62,13 @@ const ARTICLES_VISIBLE_LIMIT = 6;
 
 const COOKIES_NAMING = "curiosity_gem_cookies";
 
+const META = {
+  title: "Curiosity Gem - Discover hidden gems of knowledge",
+  description:
+    "Curiosity Gem is your go-to destination for knowledge sharing. Explore our diverse categories and discover the latest insights on technology, wellbeing, finance, and more. Join our community of curious minds today!",
+  homepage_img_url: "https://media.graphassets.com/m3c024qER0udkPRLgxOI"
+};
+
 export {
   SEARCH_TYPE,
   CATEGORIES,
@@ -69,5 +76,6 @@ export {
   SOCIAL_MEDIA,
   ARTICLES_VISIBLE_LIMIT,
   PAGES,
-  COOKIES_NAMING
+  COOKIES_NAMING,
+  META
 };

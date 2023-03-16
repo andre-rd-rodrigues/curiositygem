@@ -3,7 +3,7 @@ import ShareLinks from "components/ShareLinks/ShareLinks";
 import Image from "next/image";
 import Link from "next/link";
 import { Col, Row } from "react-bootstrap";
-import { CATEGORIES, PAGES } from "utils/constants";
+import { CATEGORIES, META, PAGES } from "utils/constants";
 import styles from "./footer.module.scss";
 
 const Footer = () => {
@@ -21,8 +21,8 @@ const Footer = () => {
             <p>Curiosity Gem</p>
           </div>
           <ShareLinks
-            image="https://media.graphassets.com/m3c024qER0udkPRLgxOI"
-            description="Curiosity Gem is your go-to destination for knowledge sharing. Explore our diverse categories and discover the latest insights on technology, wellbeing, finance, and more. Join our community of curious minds today!"
+            image={META.homepage_img_url}
+            description={META.description}
             className={styles.socialMedia}
           />
         </Col>

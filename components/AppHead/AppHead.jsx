@@ -1,38 +1,37 @@
 import PropTypes from "prop-types";
 import Head from "next/head";
 import React from "react";
+import { META } from "utils";
+import { NextSeo } from "next-seo";
 
-function AppHead({
-  title,
-  description,
-  image = "https://media.graphassets.com/m3c024qER0udkPRLgxOI",
-  slug
-}) {
+function AppHead(props) {
+  const {
+    title = META.title,
+    description = META.description,
+    openGraph
+  } = props;
+
   return (
-    <Head>
-      <meta name="description" content={description} key="desc" />
-      <meta property="og:title" content={title} />
-      <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
-      <meta name="robots" content="/robots.txt" />
-      {slug && (
-        <>
-          <meta
-            property="og:url"
-            content={`https://curiositygem.com/article/${slug}`}
-          />
-          <link
-            rel="canonical"
-            href={`https://curiositygem.com/article/${slug}`}
-          />
-        </>
-      )}
-      <meta property="og:site_name" content="curiositygem.com" />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:title" content={title} />
-      <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <title>{title}</title>
-    </Head>
+    <NextSeo
+      title={title}
+      description={description}
+      openGraph={
+        openGraph
+          ? openGraph
+          : {
+              url: `https://www.curiositygem.com`,
+              title,
+              description,
+              images: [
+                {
+                  url: META.homepage_img_url,
+                  alt: META.title
+                }
+              ]
+            }
+      }
+      {...props}
+    />
   );
 }
 
