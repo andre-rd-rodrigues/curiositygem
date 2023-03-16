@@ -3,17 +3,23 @@ import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import ShareLinks from "components/ShareLinks/ShareLinks";
+import { RouterContext } from "context/route-context";
 import { NextSeo } from "next-seo";
+import Link from "next/link";
 import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
+import { getPreviousRoute } from "utils/helpers/navigation";
 
 function Article({ post: article }) {
+  const { previousRoute } = useContext(RouterContext);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <>
       <NextSeo
@@ -37,13 +43,14 @@ function Article({ post: article }) {
 
       <PageContainer>
         <div className={styles.container}>
-          <AppIcon
-            icon="arrow-left"
-            size={30}
-            color="grey"
-            className={styles.arrowBack}
-            onClick={() => window.history.back()}
-          />
+          <Link href={getPreviousRoute(previousRoute)}>
+            <AppIcon
+              icon="arrow-left"
+              size={30}
+              color="grey"
+              className={styles.arrowBack}
+            />
+          </Link>
           <div>
             {article ? (
               <>

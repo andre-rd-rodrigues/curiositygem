@@ -1,0 +1,41 @@
+@import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
+
+.wrapper {
+  padding: 25px 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: white;
+  max-width: 600px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 10px 3px #00000022;
+  max-width: 1000px;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  h6 {
+    margin: 0 0 0 10px;
+  }
+}
+
+.body {
+  display: flex;
+  p {
+    margin: 0 20px 0 0;
+  }
+
+  button {
+    @include button($dark);
+    padding: 0px 10px;
+    border-radius: 0;
+    font-size: var(--fs-s);
+  }
+
+  a {
+    @include link;
+  }
+}
