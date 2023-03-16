@@ -35,11 +35,4 @@ function AppHead(props) {
   );
 }
 
-AppHead.propTypes = {
-  description: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  image: PropTypes.string,
-  slug: PropTypes.string
-};
-
 export default AppHead;

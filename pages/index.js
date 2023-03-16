@@ -5,9 +5,8 @@ import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import styles from "styles/homepage.module.scss";
 import { CATEGORY } from "utils";
-import { ARTICLES_CARD_QUERY, graphcms } from "./api/graphQL/main";
 import generateRssFeed from "utils/generateRSSFeed";
-import getData from "./api/getData";
+import { ARTICLES_CARD_QUERY, graphcms } from "./api/graphQL/main";
 
 export default function Homepage({ posts }) {
   const renderContent = () => {
