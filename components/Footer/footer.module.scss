@@ -2,29 +2,61 @@
 @import "assets/styles/variables.module.scss";
 
 .container {
-  display: flex;
-  justify-content: space-between;
   background-color: $dark;
-  padding: 15px var(--padding-y);
+  padding: 25px var(--padding-y);
   color: $white;
-  font-size: var(--fs-m);
+  font-size: var(--fs-m-s);
 
-  div {
-    font-weight: 300;
-  }
-  div[id="footer-copyright"] {
+  h5 {
+    text-transform: uppercase;
     font-size: var(--fs-s);
+  }
+  a {
+    font-size: var(--fs-s);
+    margin: 0 20px 10px 0;
+  }
+}
+
+.wrapper {
+  display: flex;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    p {
+      margin: 0 0 0 10px;
+      font-family: Blacker;
+      font-size: var(--fs-m);
+    }
+
+    img {
+      filter: grayscale(1) invert(1);
+    }
+  }
+  .sections {
+    display: flex;
+  }
+
+  .categories {
+    div {
+      display: flex;
+      flex-wrap: wrap;
+    }
   }
 }
 
 .socialMedia {
-  margin-right: 20px;
-  position: relative;
-  & a {
-    color: $white;
-    padding-bottom: 2px;
-    @include hover_underline($white);
+  button {
+    margin: 0 10px 5px 0;
+    filter: grayscale(100%);
   }
+}
+
+.copyright {
+  font-size: var(--fs-s);
+  text-align: center;
+  margin-top: 20px;
 }
 
 //Responsive

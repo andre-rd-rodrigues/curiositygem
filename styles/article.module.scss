@@ -10,12 +10,7 @@
   }
 
   a {
-    color: $salmon;
-    font-weight: 500;
-    &:hover {
-      opacity: 0.8;
-      color: $salmon;
-    }
+    @include link;
   }
 }
 

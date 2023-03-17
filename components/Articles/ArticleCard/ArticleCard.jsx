@@ -12,7 +12,7 @@ const ArticleCard = ({ article }) => {
           <AppImage src={article.coverPhoto.url} className={styles.image} />
           <div className={styles.subtitle}>
             <p>{article.category}</p>
-            <p>{convertDate(article.createdAt)}</p>
+            <p>{convertDate(article.publishedDate)}</p>
           </div>
           <div className={styles.body}>
             <h3>{article.title}</h3>
@@ -20,11 +20,7 @@ const ArticleCard = ({ article }) => {
           </div>
         </Link>
         <div className={styles.footer}>
-          <Link
-            className={styles.readMore}
-            href={`/article/${article.slug}`}
-            onClick={() => (scrollTop ? window.scrollTo(0, 0) : null)}
-          >
+          <Link className={styles.readMore} href={`/article/${article.slug}`}>
             Read more
           </Link>
         </div>

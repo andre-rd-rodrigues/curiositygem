@@ -27,24 +27,55 @@ const CATEGORY = {
   all: "all"
 };
 
+const PAGES = [
+  {
+    title: "About Us",
+    link_title: "about"
+  },
+  {
+    title: "Contact Us",
+    link_title: "contact"
+  },
+  {
+    title: "Terms",
+    link_title: "terms"
+  },
+  {
+    title: "Privacy",
+    link_title: "privacy"
+  }
+];
+
 const CATEGORIES = [
-  { name: "Top picks", type: CATEGORY.top },
+  { name: "Top", type: CATEGORY.top },
   { name: "Latest", type: CATEGORY.recent },
   { name: "Wellbeing", type: CATEGORY.wellbeing },
   { name: "Finance", type: CATEGORY.finance },
   { name: "Career", type: CATEGORY.career },
   { name: "Technology", type: CATEGORY.tech },
   { name: "Gaming", type: CATEGORY.games },
-  { name: "Nutrition", type: CATEGORY.nutrition },
-  { name: "All", type: CATEGORY.all }
+  { name: "Nutrition", type: CATEGORY.nutrition }
+  /*   { name: "All", type: CATEGORY.all } */
 ];
 
 const ARTICLES_VISIBLE_LIMIT = 6;
+
+const COOKIES_NAMING = "curiosity_gem_cookies";
+
+const META = {
+  title: "Curiosity Gem - Discover hidden gems of knowledge",
+  description:
+    "Curiosity Gem is your go-to destination for knowledge sharing. Explore our diverse categories and discover the latest insights on technology, wellbeing, finance, and more. Join our community of curious minds today!",
+  homepage_img_url: "https://media.graphassets.com/m3c024qER0udkPRLgxOI"
+};
 
 export {
   SEARCH_TYPE,
   CATEGORIES,
   CATEGORY,
   SOCIAL_MEDIA,
-  ARTICLES_VISIBLE_LIMIT
+  ARTICLES_VISIBLE_LIMIT,
+  PAGES,
+  COOKIES_NAMING,
+  META
 };

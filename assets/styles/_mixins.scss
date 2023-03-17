@@ -15,6 +15,15 @@
   }
 }
 
+@mixin link {
+  color: $salmon;
+
+  &:hover {
+    opacity: 0.8;
+    color: $salmon;
+  }
+}
+
 //Hover
 @mixin hover_underline($color) {
   background-image: linear-gradient($color, $color);

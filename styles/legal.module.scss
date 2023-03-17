@@ -1,0 +1,22 @@
+@import "assets/styles/variables.module.scss";
+@import "assets/styles/mixins";
+.container {
+  color: $dark;
+  h1 {
+    font-size: var(--fs-l);
+    margin: 30px 0 20px;
+  }
+  h2 {
+    font-size: var(--fs-l-s);
+    font-weight: 500;
+    margin: 40px 0 20px;
+    text-align: start;
+  }
+  p {
+    font-size: var(--fs-m-s);
+    font-weight: 300;
+  }
+  a {
+    @include link;
+  }
+}

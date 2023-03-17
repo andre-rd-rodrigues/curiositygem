@@ -1,4 +1,5 @@
 @import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
 
 .container {
   padding: 90px var(--padding-y) 100px;

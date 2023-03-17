@@ -1,18 +1,28 @@
-import { jost } from "assets/fonts/nextFonts";
+import Head from "components/AppHead/AppHead";
 import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
-import { NextSeo } from "next-seo";
+import ShareLinks from "components/ShareLinks/ShareLinks";
+import { RouterContext } from "context/route-context";
+import Link from "next/link";
 import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
+import { useContext, useEffect } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
+import { getPreviousRoute } from "utils/helpers/navigation";
 
 function Article({ post: article }) {
+  const { previousRoute } = useContext(RouterContext);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <NextSeo
+      <Head
         title={article.title}
         description={article.description}
         canonical={`https://www.curiositygem.com/article/${article.slug}`}
@@ -20,6 +30,8 @@ function Article({ post: article }) {
           url: `https://www.curiositygem.com/article/${article.slug}`,
           title: article.title,
           description: article.description,
+          datePublished: article.publishedDate,
+          authorName: "André Rodrigues",
           images: [
             {
               url: article.coverPhoto.url,
@@ -30,22 +42,31 @@ function Article({ post: article }) {
       />
 
       <PageContainer>
-        <div className={styles.container} style={jost.style}>
-          <AppIcon
-            icon="arrow-left"
-            size={30}
-            color="grey"
-            className={styles.arrowBack}
-            onClick={() => window.history.back()}
-          />
+        <div className={styles.container}>
+          <Link href={getPreviousRoute(previousRoute)}>
+            <AppIcon
+              icon="arrow-left"
+              size={30}
+              color="grey"
+              className={styles.arrowBack}
+            />
+          </Link>
           <div>
             {article ? (
               <>
                 <div>
                   <h1 className={styles.title}>{article.title}</h1>
-                  <div className={styles.subtitle}>
-                    <p>{convertDate(article.createdAt)}</p> <span>|</span>{" "}
-                    <p>{article.category}</p>
+                  <div className={styles.header}>
+                    <div className={styles.subtitle}>
+                      <p>{convertDate(article.publishedDate)}</p> <span>|</span>{" "}
+                      <p>{article.category}</p>
+                    </div>
+                    <ShareLinks
+                      slug={article.slug}
+                      image={article.coverPhoto.url}
+                      description={article.description}
+                      className={styles.socialMedia}
+                    />
                   </div>
                 </div>
                 <AppImage
