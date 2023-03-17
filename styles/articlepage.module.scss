@@ -2,6 +2,7 @@
 @import "assets/styles/variables.module.scss";
 
 .container {
+  font-weight: 300;
   h1,
   h2 {
     font-size: var(--fs-l-s);
@@ -14,8 +15,16 @@
     margin-top: 70px;
   }
 
+  h3 {
+    margin: 40px 0 20px;
+  }
+
   a {
     @include link;
+  }
+
+  strong {
+    font-weight: 500;
   }
 }
 
@@ -83,7 +92,10 @@
   }
   li {
     font-size: var(--fs-m);
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    &::marker {
+      font-weight: 500;
+    }
   }
 }
 
