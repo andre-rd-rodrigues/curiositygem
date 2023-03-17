@@ -5,7 +5,7 @@ import { META } from "./constants";
 
 export default async function generateRssFeed() {
   const site_url = "localhost:3000";
-  const allPosts = await getData();
+  const posts = await getData();
 
   const feedOptions = {
     title: META.title,
@@ -18,12 +18,16 @@ export default async function generateRssFeed() {
 
   const feed = new RSS(feedOptions);
 
-  allPosts.map((post) => {
+  posts.map((post) => {
     feed.item({
       title: post.title,
       description: post.description,
       url: `${site_url}/article/${post.slug}`,
-      date: post.createdAt
+      date: post.createdAt,
+      enclosure: {
+        url: post.coverPhoto.url,
+        type: "image/jpeg"
+      }
     });
   });
 
