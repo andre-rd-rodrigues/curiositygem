@@ -3,6 +3,7 @@ import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
+import RelatedArticles from "components/RelatedArticles/RelatedArticles";
 import ShareLinks from "components/ShareLinks/ShareLinks";
 import { RouterContext } from "context/route-context";
 import Link from "next/link";
@@ -70,8 +71,9 @@ function Article({ post: article }) {
                   </div>
                 </div>
                 <AppImage
-                  className={styles.headerImage}
+                  containerClassName={styles.headerImage}
                   src={article.coverPhoto.url}
+                  alt={article.title}
                 />
                 <div className={styles.content}>
                   {parser(article.content.html)}
@@ -82,6 +84,7 @@ function Article({ post: article }) {
             )}
           </div>
         </div>
+        <RelatedArticles currentArticle={article} />
       </PageContainer>
     </>
   );

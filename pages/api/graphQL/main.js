@@ -15,7 +15,12 @@ export const ARTICLES_CARD_QUERY = gql`
       isTopPick
       slug
       coverPhoto {
-        url
+        url(
+          transformation: {
+            image: { resize: { width: 1200, height: 1200 } }
+            document: { output: { format: png } }
+          }
+        )
       }
     }
   }
@@ -35,7 +40,12 @@ export const ARTICLES_QUERY = gql`
         html
       }
       coverPhoto {
-        url
+        url(
+          transformation: {
+            image: { resize: { width: 1200, height: 1200 } }
+            document: { output: { format: png } }
+          }
+        )
       }
     }
   }
@@ -55,7 +65,12 @@ export const ARTICLE_QUERY = gql`
         html
       }
       coverPhoto {
-        url
+        url(
+          transformation: {
+            image: { resize: { width: 1200, height: 1200 } }
+            document: { output: { format: png } }
+          }
+        )
       }
     }
   }

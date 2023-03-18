@@ -1,0 +1,10 @@
+@import "assets/styles/mixins";
+
+.container {
+  margin-top: 60px;
+  h5 {
+    font-family: Blacker;
+    font-size: var(--fs-l-s);
+    margin-bottom: 40px;
+  }
+}

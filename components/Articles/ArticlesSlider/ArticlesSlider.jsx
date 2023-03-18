@@ -4,27 +4,27 @@ import { SLIDER_SETTINGS } from "utils";
 import ArticleCard from "../ArticleCard/ArticleCard";
 import styles from "./articlesslider.module.scss";
 
-const ArticlesSlider = ({ weeklyArticles }) => {
+const ArticlesSlider = ({ articles }) => {
   const settings = {
     ...SLIDER_SETTINGS,
     dotsClass: `${styles.dots} slick-dots`
   };
 
-  const articles = weeklyArticles.map((article) => (
-    <div id="articles-card-container" key={article.id}>
+  const renderArticles = articles.map((article) => (
+    <div className={styles.cardContainer} key={article.id}>
       <ArticleCard article={article} />
     </div>
   ));
 
   return (
-    <Slider {...settings} className={styles.sliderContainer}>
-      {articles}
+    <Slider {...settings} className={styles.container}>
+      {renderArticles}
     </Slider>
   );
 };
 
 ArticlesSlider.propTypes = {
-  weeklyArticles: PropTypes.array
+  articles: PropTypes.array.isRequired
 };
 
 export default ArticlesSlider;

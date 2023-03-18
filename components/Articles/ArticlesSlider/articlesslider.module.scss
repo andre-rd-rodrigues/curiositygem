@@ -1,6 +1,7 @@
 @import "assets/styles/mixins";
+@import "assets/styles/variables.module.scss";
 
-.sliderContainer {
+.container {
   button[class="slick-arrow slick-prev"]::before {
     color: $dark !important;
     @include fade-in;
@@ -11,13 +12,8 @@
     @include fade-in;
     animation-delay: 0.5s;
   }
-
-  div[id="articles-card-container"] {
-    div {
-      margin: 0 7px;
-    }
-  }
 }
 
-@media only screen and (max-width: $breaking-point-sm) {
+.cardContainer {
+  padding: 0 10px;
 }

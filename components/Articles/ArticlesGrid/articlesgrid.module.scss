@@ -2,12 +2,14 @@
 @import "assets/styles/variables.module.scss";
 
 .container {
-  text-align: center;
   margin-bottom: 60px;
-  button {
-    margin-top: 50px;
-  }
 }
+
+.button {
+  margin-top: 50px;
+  text-align: center;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(390px, 1fr));
