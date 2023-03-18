@@ -36,8 +36,10 @@
     "react-html-parser": "^2.0.2",
     "react-loader-spinner": "^5.3.4",
     "react-share": "^4.4.1",
+    "react-slick": "^0.29.0",
     "rss": "^1.2.2",
     "sass-loader": "^13.2.0",
+    "slick-carousel": "^1.8.1",
     "use-http": "^1.0.27"
   },
   "devDependencies": {

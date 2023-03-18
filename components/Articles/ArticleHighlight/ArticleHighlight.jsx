@@ -30,14 +30,11 @@ const ArticleHighlight = ({ post: article }) => {
           </Link>
         </div>
       </div>
-      <div className={styles.image}>
-        <Image
-          src={article.coverPhoto.url}
-          alt={article.title}
-          fill
-          objectFit="cover"
-        />
-      </div>
+      <AppImage
+        containerClassName={styles.containerImage}
+        src={article.coverPhoto.url}
+        alt={article.title}
+      />
     </motion.div>
   );
 };

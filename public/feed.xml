@@ -9,7 +9,7 @@
             <link>localhost:3000</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 17 Mar 2023 18:33:09 GMT</lastBuildDate>
+        <lastBuildDate>Sat, 18 Mar 2023 02:17:20 GMT</lastBuildDate>
         <atom:link href="localhost:3000/feed.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[All rights reserved 2022, André Rodrigues]]></copyright>
         <item>
@@ -18,7 +18,7 @@
             <link>localhost:3000/article/transform-your-home-into-a-smart-home-5-ways-to-automate-your-house</link>
             <guid isPermaLink="true">localhost:3000/article/transform-your-home-into-a-smart-home-5-ways-to-automate-your-house</guid>
             <pubDate>Fri, 25 Nov 2022 00:00:00 GMT</pubDate>
-            <enclosure url="/cookie.png" length="0" type="image/png"/>
+            <enclosure url="https://images.unsplash.com/photo-1558002038-1055907df827?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2940&amp;q=80" length="0" type="image/jpeg"/>
         </item>
         <item>
             <title><![CDATA[Navigating Team Conflicts in Programming: Strategies for Maintaining Mental Well-being]]></title>
@@ -26,7 +26,7 @@
             <link>localhost:3000/article/navigating-team-conflicts-in-programming-strategies-for-maintaining-mental-well-being</link>
             <guid isPermaLink="true">localhost:3000/article/navigating-team-conflicts-in-programming-strategies-for-maintaining-mental-well-being</guid>
             <pubDate>Sun, 20 Nov 2022 00:00:00 GMT</pubDate>
-            <enclosure url="/cookie.png" length="0" type="image/png"/>
+            <enclosure url="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2070&amp;q=80" length="0" type="image/jpeg"/>
         </item>
         <item>
             <title><![CDATA[Passive Income Ideas for Beginners: How to Get Started]]></title>
@@ -34,7 +34,7 @@
             <link>localhost:3000/article/passive-income-ideas-for-beginners-how-to-get-started</link>
             <guid isPermaLink="true">localhost:3000/article/passive-income-ideas-for-beginners-how-to-get-started</guid>
             <pubDate>Mon, 23 Jan 2023 00:00:00 GMT</pubDate>
-            <enclosure url="/cookie.png" length="0" type="image/png"/>
+            <enclosure url="https://images.unsplash.com/photo-1606191104230-eb69171eaf15?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=2340&amp;q=80" length="0" type="image/jpeg"/>
         </item>
         <item>
             <title><![CDATA[Breaking the Cycle: Understanding and Mitigating the Effects of Prolonged Screen Time on Mental Health]]></title>
@@ -42,7 +42,7 @@
             <link>localhost:3000/article/breaking-the-cycle-understanding-and-mitigating-the-effects-of-prolonged-screen-time-on-mental-health</link>
             <guid isPermaLink="true">localhost:3000/article/breaking-the-cycle-understanding-and-mitigating-the-effects-of-prolonged-screen-time-on-mental-health</guid>
             <pubDate>Wed, 14 Dec 2022 00:00:00 GMT</pubDate>
-            <enclosure url="/cookie.png" length="0" type="image/png"/>
+            <enclosure url="https://images.unsplash.com/photo-1555963153-11ff60182d08?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1548&amp;q=80" length="0" type="image/jpeg"/>
         </item>
         <item>
             <title><![CDATA[Become a Pro: Secrets to Dominating in CS:GO]]></title>
@@ -50,7 +50,7 @@
             <link>localhost:3000/article/become-a-pro-secrets-to-dominating-in-csgo</link>
             <guid isPermaLink="true">localhost:3000/article/become-a-pro-secrets-to-dominating-in-csgo</guid>
             <pubDate>Thu, 01 Dec 2022 00:00:00 GMT</pubDate>
-            <enclosure url="/cookie.png" length="0" type="image/png"/>
+            <enclosure url="https://images.unsplash.com/photo-1637594439872-44d1b1fe0a0b?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&amp;auto=format&amp;fit=crop&amp;w=1770&amp;q=80" length="0" type="image/jpeg"/>
         </item>
     </channel>
 </rss>

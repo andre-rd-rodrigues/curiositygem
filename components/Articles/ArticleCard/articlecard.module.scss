@@ -10,12 +10,14 @@
   p {
     color: $dark;
     font-size: var(--fs-m-s);
+  }
+
+  p {
     text-align: justify;
   }
 
   h3 {
     display: initial;
-    text-align: start;
     letter-spacing: 0.5px;
     background-image: linear-gradient(
       to right,
@@ -43,9 +45,13 @@
   transition: 0.2s ease;
 }
 
-.image {
+.containerImage {
+  position: relative;
   min-height: 220px;
   max-height: 300px;
+}
+
+.image {
   border-radius: 6px;
   transition: 0.2s ease;
 }

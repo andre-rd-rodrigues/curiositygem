@@ -12,7 +12,7 @@ const SLIDER_SETTINGS = {
       breakpoint: 1300,
       settings: {
         slidesToShow: 2,
-        arrows: false,
+        arrows: true,
         autoplaySpeed: 9000
       }
     },
