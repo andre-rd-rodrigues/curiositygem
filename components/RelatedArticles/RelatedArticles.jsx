@@ -18,6 +18,7 @@ const RelatedArticles = ({ currentArticle }) => {
     );
 
     if (!result.length) return null;
+    return result;
   };
 
   const relatedArticles = getRelatedArticles();
