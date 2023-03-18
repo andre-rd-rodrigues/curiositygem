@@ -1,6 +1,6 @@
 import ArticlesSlider from "components/Articles/ArticlesSlider/ArticlesSlider";
 import { ArticlesContext } from "context/articles-context";
-import React, { useContext } from "react";
+import { useContext } from "react";
 import styles from "./relatedarticles.module.scss";
 
 const RelatedArticles = ({ currentArticle }) => {

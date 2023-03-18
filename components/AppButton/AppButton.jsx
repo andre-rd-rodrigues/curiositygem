@@ -1,10 +1,12 @@
 import styles from "./appbutton.module.scss";
 
-const AppButton = ({ label, onClick }) => {
+const AppButton = ({ label, onClick, containerClassName }) => {
   return (
-    <button className={styles.container} onClick={onClick}>
-      {label}
-    </button>
+    <div className={containerClassName || null}>
+      <button className={styles.container} onClick={onClick}>
+        {label}
+      </button>
+    </div>
   );
 };
 

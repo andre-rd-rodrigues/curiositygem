@@ -13,6 +13,7 @@ const ArticleCard = ({ article }) => {
             src={article.coverPhoto.url}
             containerClassName={styles.containerImage}
             imageClassName={styles.image}
+            priority
           />
           <div className={styles.subtitle}>
             <p>{article.category}</p>

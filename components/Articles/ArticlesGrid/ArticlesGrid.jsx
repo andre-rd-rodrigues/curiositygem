@@ -52,7 +52,11 @@ const ArticlesGrid = ({ articles: articlesProps }) => {
         ))}
       </motion.div>
       {loadMoreButtonVisible && (
-        <Button onClick={handleLoadMoreArticles} label="load more" />
+        <Button
+          containerClassName={styles.button}
+          onClick={handleLoadMoreArticles}
+          label="load more"
+        />
       )}
     </div>
   );
