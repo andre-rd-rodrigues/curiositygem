@@ -19,7 +19,14 @@
   }
 }
 
+.backButtonContainer {
+  position: relative;
+  max-width: 130px;
+  margin: auto;
+}
+
 .backButton {
+  color: $dark;
   text-transform: uppercase;
   background-color: transparent;
   margin: auto;

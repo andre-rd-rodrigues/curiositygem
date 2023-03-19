@@ -1,3 +1,4 @@
+import AppHead from "components/AppHead/AppHead";
 import ArticlesGrid from "components/Articles/ArticlesGrid/ArticlesGrid";
 import Loading from "components/Loading/Loading";
 import NoResults from "components/NoResults/NoResults";
@@ -51,6 +52,10 @@ const ResultsPage = () => {
 
   return (
     <>
+      <AppHead
+        title="Search - Curiosity Gem"
+        description="Looking for fascinating articles? Search no further than Curiosity Gem! Our Search page allows you to explore a vast collection of curated content on science, history, culture, and more. Find the answers to your questions and satisfy your curiosity with ease. Start your search today!"
+      />
       <PageContainer
         color="dark"
         bgColor="grey-yellow"

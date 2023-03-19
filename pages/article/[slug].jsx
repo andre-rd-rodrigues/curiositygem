@@ -5,17 +5,15 @@ import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import RelatedArticles from "components/RelatedArticles/RelatedArticles";
 import ShareLinks from "components/ShareLinks/ShareLinks";
-import { RouterContext } from "context/route-context";
 import Link from "next/link";
 import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
-import { useContext, useEffect } from "react";
+import { useEffect } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
-import { getPreviousRoute } from "utils/helpers/navigation";
 
 function Article({ post: article }) {
-  const { previousRoute } = useContext(RouterContext);
+  const navigation = useNavigationn();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -44,7 +42,7 @@ function Article({ post: article }) {
 
       <PageContainer>
         <div className={styles.container}>
-          <Link href={getPreviousRoute(previousRoute)}>
+          <Link href={navigation.previousRoute}>
             <AppIcon
               icon="arrow-left"
               size={30}
