@@ -8,7 +8,7 @@ function Layout({ children }) {
     <>
       <Script
         strategy="afterInteractive"
-        src="https://www.googletagmanager.com/gtag/js?id=G-XTDYFCW8JD"
+        src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_ANALYTICS_ID}`}
       />
       <Script
         id="google-analytics"
@@ -18,7 +18,7 @@ function Layout({ children }) {
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-XTDYFCW8JD', {page_path: window.location.pathname,
+gtag('config', ${process.env.NEXT_PUBLIC_ANALYTICS_ID}, {page_path: window.location.pathname,
 });
 `
         }}
