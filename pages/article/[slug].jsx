@@ -5,6 +5,7 @@ import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import RelatedArticles from "components/RelatedArticles/RelatedArticles";
 import ShareLinks from "components/ShareLinks/ShareLinks";
+import { useNavigation } from "hooks/useNavigation";
 import Link from "next/link";
 import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
 import { useEffect } from "react";
@@ -13,7 +14,7 @@ import styles from "styles/articlepage.module.scss";
 import { convertDate } from "utils";
 
 function Article({ post: article }) {
-  const navigation = useNavigationn();
+  const navigation = useNavigation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
