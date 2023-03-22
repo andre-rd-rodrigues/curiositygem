@@ -83,6 +83,7 @@
 }
 
 .content {
+  position: relative;
   max-width: 840px;
   text-align: justify;
   margin: auto;
@@ -96,6 +97,11 @@
     &::marker {
       font-weight: 500;
     }
+  }
+  img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
   }
 }
 

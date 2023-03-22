@@ -5,26 +5,7 @@ const SLIDER_SETTINGS = {
   infinite: true,
   draggable: true,
   dots: false,
-  slidesToShow: 3,
-  pauseOnHover: true,
-  responsive: [
-    {
-      breakpoint: 1300,
-      settings: {
-        slidesToShow: 2,
-        arrows: true,
-        autoplaySpeed: 9000
-      }
-    },
-    {
-      breakpoint: 900,
-      settings: {
-        slidesToShow: 1,
-        arrows: false,
-        autoplaySpeed: 9000
-      }
-    }
-  ]
+  pauseOnHover: true
 };
 
 export { SLIDER_SETTINGS };
