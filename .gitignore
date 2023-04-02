@@ -29,6 +29,7 @@ build/Release
 # Local env
 .env.local
 .env.development
+.env.production
 
 # Dependency directories
 node_modules
