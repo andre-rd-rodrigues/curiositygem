@@ -1,5 +1,3 @@
-import { ArticlesContext } from "context/articles-context";
-import { useContext } from "react";
 import { CATEGORY } from "utils";
 
 function useArticles(articles) {

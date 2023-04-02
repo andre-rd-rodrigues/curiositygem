@@ -1,7 +1,7 @@
 import AppHead from "components/AppHead/AppHead";
 import ArticlesGrid from "components/Articles/ArticlesGrid/ArticlesGrid";
+import ErrorMessage from "components/ErrorMessage/ErrorMessage";
 import Loading from "components/Loading/Loading";
-import NoResults from "components/NoResults/NoResults";
 import PageContainer from "components/PageContainer/PageContainer";
 import { ArticlesContext } from "context/articles-context";
 import useArticles from "hooks/useArticles";
@@ -21,12 +21,12 @@ const ResultsPage = () => {
   const searchedValue = input || category;
 
   const renderContent = () => {
-    if (!articles) {
-      return <Loading />;
+    if (isError) {
+      return <ErrorMessage />;
     }
 
-    if (isError || !articlesMatched.length) {
-      return <NoResults searchValue={searchedValue} />;
+    if (!articles || !articlesMatched.length) {
+      return <Loading />;
     }
 
     return <ArticlesGrid articles={articlesMatched} />;

@@ -1,8 +1,5 @@
-import PropTypes from "prop-types";
-import Head from "next/head";
-import React from "react";
-import { META } from "utils";
 import { NextSeo } from "next-seo";
+import { META } from "utils";
 
 function AppHead(props) {
   const {

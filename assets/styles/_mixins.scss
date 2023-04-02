@@ -17,10 +17,10 @@
 
 @mixin link {
   color: $salmon;
-
+  font-weight: 400;
   &:hover {
     opacity: 0.8;
-    color: $salmon;
+    color: $salmon !important;
   }
 }
 

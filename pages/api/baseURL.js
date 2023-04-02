@@ -1,3 +1,3 @@
-const baseURL = process.env.HYGRAPHURL;
+const baseURL = process.env.NEXT_PUBLIC_HYGRAPHURL;
 
 export default baseURL;
