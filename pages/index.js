@@ -15,16 +15,21 @@ export default function Homepage({ posts }) {
     }
 
     if (posts) {
+      const articleHighlight = posts.filter((post) => {
+        const articleTopSlug =
+          "start-your-journey-to-becoming-a-web-developer-free-online-resources-to-learn-from";
+        return post.slug === articleTopSlug;
+      })[0];
+
       return (
         <div className={styles.wrapper}>
-          <ArticleHighlight post={posts[0]} />
+          <ArticleHighlight post={articleHighlight} />
           <CategorySection category={CATEGORY.recent} posts={posts} />
           <CategorySection category={CATEGORY.finance} posts={posts} />
           <CategorySection category={CATEGORY.tech} posts={posts} />
           <CategorySection category={CATEGORY.wellbeing} posts={posts} />
           <CategorySection category={CATEGORY.career} posts={posts} />
           <CategorySection category={CATEGORY.nutrition} posts={posts} />
-          <CategorySection category={CATEGORY.games} posts={posts} />
           <CategorySection category={CATEGORY.top} posts={posts} />
         </div>
       );

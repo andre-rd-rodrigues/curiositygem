@@ -5,7 +5,7 @@ import { META } from "./constants";
 import { ARTICLES_CARD_QUERY, graphcms } from "pages/api/graphQL/main";
 
 export default async function generateRssFeed() {
-  const site_url = "https://curiositygem.com";
+  const site_url = "https://blog.andrerodrigo.com";
   const data = await graphcms.request(ARTICLES_CARD_QUERY);
 
   const posts = data.posts;

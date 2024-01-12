@@ -17,7 +17,6 @@ const SOCIAL_MEDIA = [
 
 const CATEGORY = {
   tech: "technology",
-  games: "gaming",
   wellbeing: "wellbeing",
   finance: "finance",
   top: "top",
@@ -53,7 +52,6 @@ const CATEGORIES = [
   { name: "Finance", type: CATEGORY.finance },
   { name: "Career", type: CATEGORY.career },
   { name: "Technology", type: CATEGORY.tech },
-  { name: "Gaming", type: CATEGORY.games },
   { name: "Nutrition", type: CATEGORY.nutrition }
   /*   { name: "All", type: CATEGORY.all } */
 ];
