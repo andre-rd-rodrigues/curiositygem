@@ -15,11 +15,11 @@ export default function Homepage({ posts }) {
     }
 
     if (posts) {
-      const articleHighlight = posts.filter((post) => {
+      const articleHighlight = posts.find((post) => {
         const articleTopSlug =
           "start-your-journey-to-becoming-a-web-developer-free-online-resources-to-learn-from";
         return post.slug === articleTopSlug;
-      })[0];
+      });
 
       return (
         <div className={styles.wrapper}>

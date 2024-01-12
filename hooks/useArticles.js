@@ -23,7 +23,7 @@ function useArticles(articles) {
     }
 
     if (category === CATEGORY.recent) {
-      return articles.slice(1);
+      return articles;
     }
 
     if (category === CATEGORY.all) {
