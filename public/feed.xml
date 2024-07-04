@@ -9,9 +9,16 @@
             <link>https://blog.andrerodrigo.com</link>
         </image>
         <generator>RSS for Node</generator>
-        <lastBuildDate>Fri, 12 Jan 2024 14:59:20 GMT</lastBuildDate>
+        <lastBuildDate>Thu, 04 Jul 2024 17:10:12 GMT</lastBuildDate>
         <atom:link href="https://blog.andrerodrigo.com/feed.xml" rel="self" type="application/rss+xml"/>
         <copyright><![CDATA[All rights reserved 2022, André Rodrigues]]></copyright>
+        <item>
+            <title><![CDATA[Why Privacy and Security Matter: Addressing Common Misconceptions]]></title>
+            <description><![CDATA[Think you don't need privacy and security because you have "nothing to hide"? Explore why everyone's privacy matters and debunk common myths about online security.]]></description>
+            <link>https://blog.andrerodrigo.com/article/why-privacy-and-security-matter-addressing-common-misconceptions</link>
+            <guid isPermaLink="true">https://blog.andrerodrigo.com/article/why-privacy-and-security-matter-addressing-common-misconceptions</guid>
+            <pubDate>Thu, 04 Jul 2024 00:00:00 GMT</pubDate>
+        </item>
         <item>
             <title><![CDATA[5 Critical UX/UI Mistakes That Can Harm Your Business]]></title>
             <description><![CDATA[Explore 5 critical UX/UI mistakes that can harm your business and learn how a front-end developer specializing in UX/UI design can help you avoid these pitfalls, enhance user experience, and drive growth.]]></description>
