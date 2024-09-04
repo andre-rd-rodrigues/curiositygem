@@ -1,44 +1,27 @@
-# Curiosty Gem 📚
+# Personal Blog 📚
 
-Blog website that aims to spark curiosity in readers by providing a wide range of interesting and thought-provoking content.
+Welcome to my personal blog repository! This website is designed to **spark curiosity** in readers by providing a wide range of interesting and thought-provoking content across various topics. The blog leverages modern technologies, including **Hygraph CMS** (formerly known as GraphCMS) for content management, **GraphQL** for querying the content, and **Next.js** for building a high-performance frontend.
 
-## Environments
+## 🌟 Introduction
 
-This project has 2 environments, represented in 2 branches: `dev` and `prod - main`.
+This blog aims to:
 
-### dev
+- Provide engaging, thought-provoking content across a wide range of topics.
+- Encourage readers to explore new ideas and concepts.
+- Utilize modern technologies for a seamless user experience.
 
-- posts fetching - API served by **docker**
+## 🛠 Tech Stack
 
-### prod (main)
+The blog is built using the following technologies:
 
-- posts fetching - **Hygraph** API (GraphQL)
+- **Hygraph CMS** 📝: A powerful headless CMS for managing and publishing blog articles.
+- **GraphQL** 🧩: A query language to fetch dynamic content from the CMS.
+- **Next.js** ⚡: A fast and flexible React framework for building the frontend.
+- **Vercel** 🚀: Deployment and hosting platform for the website.
 
-## Development
+## 💡 Features
 
-In order to develop new features, you need to:
-
-##### 1. Create new branch from **dev**
-
-##### 2. Make the changes and merge with **dev**
-
-##### 3. Compare manually or do `git cherry-pick commit` into **main**
-
-## New articles
-
-In order to add new content you need to:
-
-##### 1. Add new content in **Hygraph**
-
-##### 2. Run `npm run build` in **main**
-
-##### 3. Commit and push
-
-## Deployment
-
-After following the previous steps, you can run the following command to send the changes to production:
-`npm run deploy`
-
-## Website
-
-https://curiositygem.com
+- **Dynamic Content** ✨: Content is pulled dynamically from Hygraph CMS via GraphQL.
+- **SEO Optimized** 🌐: Built-in SEO features for better search engine visibility.
+- **Responsive Design** 📱: Fully responsive and mobile-friendly design.
+- **High Performance** ⚡: Fast loading times with server-side rendering (SSR) and static site generation (SSG).
