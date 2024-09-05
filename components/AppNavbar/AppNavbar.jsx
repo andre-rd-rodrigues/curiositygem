@@ -47,11 +47,11 @@ const AppNavbar = () => {
       className={styles.nav}
       style={jost.style}
     >
-      <Navbar.Brand as={Link} href="/">
+      <Navbar.Brand as={Link} href="https://www.andrerodrigo.com">
         <div className={styles.brand}>
           <div id={styles.logo} />
-          <h5>CG</h5>
-          <p>Curiosity Gem</p>
+          <h5>AR</h5>
+          <p>Blog</p>
         </div>
       </Navbar.Brand>
       <Navbar.Toggle

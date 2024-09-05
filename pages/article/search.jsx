@@ -12,7 +12,7 @@ import styles from "styles/resultspage.module.scss";
 const ResultsPage = () => {
   const [articlesMatched, setArticlesMatched] = useState([]);
 
-  const { articles, isError } = useContext(ArticlesContext);
+  const { articles, isError, isLoading } = useContext(ArticlesContext);
 
   const { getArticlesByInput, getArticlesByCategory } = useArticles(articles);
 
@@ -25,8 +25,17 @@ const ResultsPage = () => {
       return <ErrorMessage />;
     }
 
-    if (!articles || !articlesMatched.length) {
+    if (isLoading) {
       return <Loading />;
+    }
+
+    if (!articles || !articlesMatched.length) {
+      return (
+        <p className="text-center">
+          The article you&apos;re looking for couldn&apos;t be found. Please try
+          searching with a different phrase.
+        </p>
+      );
     }
 
     return <ArticlesGrid articles={articlesMatched} />;
