@@ -4,7 +4,6 @@ import AppImage from "components/AppImage/AppImage";
 import Link from "next/link";
 import { convertDate } from "utils/helpers/date";
 import styles from "./articlehighlight.module.scss";
-import Image from "next/image";
 import { jost } from "assets/fonts/nextFonts";
 
 const ArticleHighlight = ({ post: article }) => {
