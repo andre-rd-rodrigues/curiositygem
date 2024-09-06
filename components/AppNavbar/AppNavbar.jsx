@@ -47,12 +47,12 @@ const AppNavbar = () => {
       className={styles.nav}
       style={jost.style}
     >
-      <Navbar.Brand as={Link} href="https://www.andrerodrigo.com">
-        <div className={styles.brand}>
-          <div id={styles.logo} />
+      <Navbar.Brand className={styles.brand}>
+        <Link id={styles.logo} href="https://www.andrerodrigo.com" />
+        <Link href="/" className="d-flex">
           <h5>AR</h5>
           <p>Blog</p>
-        </div>
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle
         aria-controls="offcanvas-container"

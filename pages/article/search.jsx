@@ -67,7 +67,7 @@ const ResultsPage = () => {
       />
       <PageContainer
         color="dark"
-        bgColor="grey-yellow"
+        bgColor="bg-color"
         className={styles.container}
       >
         <div className={styles.results}>
