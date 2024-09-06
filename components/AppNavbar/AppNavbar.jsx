@@ -63,7 +63,7 @@ const AppNavbar = () => {
             ease: "easeOut",
             duration: 0.3
           }}
-          className={styles.nav}
+          className={styles.outerNav}
         >
           <Navbar
             expand={BREAKING_POINT}

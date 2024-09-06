@@ -79,7 +79,7 @@ const ContentNavigator = ({ headings }) => {
       </AnimatePresence>
 
       <button onClick={toggleVisibility} className={styles.button}>
-        <Icon icon="mdi:format-list-bulleted" className="text-3xl text-white" />
+        <Icon icon="mdi:format-list-bulleted" className="text-3xl" />
       </button>
     </div>
   );
