@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { AnimatePresence, motion } from "framer-motion";
 import styles from "./contentnavigationpicker.module.scss";
@@ -7,11 +7,25 @@ import { NAVBAR_HEIGHT } from "utils";
 const ContentNavigationPicker = ({ headings }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeHeadingId, setActiveHeadingId] = useState();
+  const modalRef = useRef(null);
 
   useEffect(() => {
     if (headings?.length === 0 || !headings) return;
     setActiveHeadingId(headings[0]?.id);
   }, [headings]);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (modalRef.current && !modalRef.current.contains(event.target)) {
+        setIsVisible(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []); // Only bind once
 
   const toggleVisibility = () => {
     setIsVisible(!isVisible);
@@ -25,7 +39,6 @@ const ContentNavigationPicker = ({ headings }) => {
       const absoluteElementTop = elementRect.top + window.scrollY;
       const scrollToPosition = absoluteElementTop - NAVBAR_HEIGHT;
 
-      // Scroll to the calculated position
       window.scrollTo({
         top: scrollToPosition,
         behavior: "smooth"
@@ -41,6 +54,7 @@ const ContentNavigationPicker = ({ headings }) => {
       <AnimatePresence>
         {isVisible && (
           <motion.div
+            ref={modalRef}
             initial={{ opacity: 0, scale: 0.7 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.7 }}
