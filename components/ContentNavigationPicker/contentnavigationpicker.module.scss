@@ -1,0 +1,61 @@
+@import "assets/styles/mixins";
+
+.container {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  z-index: 100;
+}
+
+.button {
+  z-index: 100;
+  background-color: #0000007d;
+  backdrop-filter: blur(3px);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.picker {
+  margin-top: 0.5rem;
+  background-color: #000000ce;
+  backdrop-filter: blur(3px);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.list {
+  list-style-type: none;
+  padding: 0;
+  margin: 1rem;
+}
+
+.listItem {
+  color: white;
+  margin: 1rem 0;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.2s ease;
+
+  &:hover,
+  &.active {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    bottom: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .picker {
+    margin: 0 8px;
+  }
+}

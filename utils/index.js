@@ -5,4 +5,5 @@ export * from "./googleAds";
 export * from "./helpers/date";
 export * from "./settings";
 export * from "./test-utils";
+export * from "./article";
 // @endindex

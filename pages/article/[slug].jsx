@@ -1,6 +1,7 @@
 import Head from "components/AppHead/AppHead";
 import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
+import ContentNavigationPicker from "components/ContentNavigationPicker";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import RelatedArticles from "components/RelatedArticles/RelatedArticles";
@@ -8,17 +9,29 @@ import ShareLinks from "components/ShareLinks/ShareLinks";
 import { useNavigation } from "hooks/useNavigation";
 import Link from "next/link";
 import { ARTICLE_QUERY, graphcms, SLUGLIST } from "pages/api/graphQL/main";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import parser from "react-html-parser";
 import styles from "styles/articlepage.module.scss";
-import { convertDate } from "utils";
+import { convertDate, injectHeaderIds } from "utils";
 
 function Article({ post: article }) {
+  const [enhancedArticle, setEnhancedArticle] = useState({
+    html: undefined,
+    headings: undefined
+  });
+
   const navigation = useNavigation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
+  useEffect(() => {
+    if (article?.content?.html) {
+      const { html, headings } = injectHeaderIds(article.content.html);
+      setEnhancedArticle({ html, headings, ...article });
+    }
+  }, [article?.content?.html]);
 
   return (
     <>
@@ -75,8 +88,9 @@ function Article({ post: article }) {
                   alt={article.title}
                 />
                 <div className={styles.content}>
-                  {parser(article.content.html)}
+                  {parser(enhancedArticle.html)}
                 </div>
+                <ContentNavigationPicker headings={enhancedArticle.headings} />
               </>
             ) : (
               <Loading />

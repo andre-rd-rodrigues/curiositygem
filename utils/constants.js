@@ -67,6 +67,8 @@ const META = {
   homepage_img_url: "https://media.graphassets.com/m3c024qER0udkPRLgxOI"
 };
 
+const NAVBAR_HEIGHT = 90;
+
 export {
   SEARCH_TYPE,
   CATEGORIES,
@@ -75,5 +77,6 @@ export {
   ARTICLES_VISIBLE_LIMIT,
   PAGES,
   COOKIES_NAMING,
-  META
+  META,
+  NAVBAR_HEIGHT
 };
