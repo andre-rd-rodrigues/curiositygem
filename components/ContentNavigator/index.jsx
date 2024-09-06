@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import { Icon } from "@iconify/react";
 import { AnimatePresence, motion } from "framer-motion";
-import styles from "./contentnavigationpicker.module.scss";
+import styles from "./contentNavigator.module.scss";
 import { NAVBAR_HEIGHT } from "utils";
 
-const ContentNavigationPicker = ({ headings }) => {
+const ContentNavigator = ({ headings }) => {
   const [isVisible, setIsVisible] = useState(false);
   const [activeHeadingId, setActiveHeadingId] = useState();
   const modalRef = useRef(null);
@@ -85,4 +85,4 @@ const ContentNavigationPicker = ({ headings }) => {
   );
 };
 
-export default ContentNavigationPicker;
+export default ContentNavigator;

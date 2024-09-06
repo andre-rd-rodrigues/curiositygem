@@ -1,7 +1,7 @@
 import Head from "components/AppHead/AppHead";
 import AppIcon from "components/AppIcon/AppIcon";
 import AppImage from "components/AppImage/AppImage";
-import ContentNavigationPicker from "components/ContentNavigationPicker";
+import ContentNavigator from "components/ContentNavigator";
 import Loading from "components/Loading/Loading";
 import PageContainer from "components/PageContainer/PageContainer";
 import RelatedArticles from "components/RelatedArticles/RelatedArticles";
@@ -90,7 +90,7 @@ function Article({ post: article }) {
                 <div className={styles.content}>
                   {parser(enhancedArticle.html)}
                 </div>
-                <ContentNavigationPicker headings={enhancedArticle.headings} />
+                <ContentNavigator headings={enhancedArticle.headings} />
               </>
             ) : (
               <Loading />
