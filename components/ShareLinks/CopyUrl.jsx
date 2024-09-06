@@ -23,7 +23,7 @@ function CopyUrl({ size, url }) {
   return (
     <>
       <button className={styles.copyUrl} onClick={copyToClipboard}>
-        <FeatherIcon icon="link" color="white" size={size - 11} />
+        <FeatherIcon icon="link" color="white" size={size - 12} />
       </button>
 
       <Alert

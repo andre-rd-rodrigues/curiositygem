@@ -1,8 +1,6 @@
 import {
   FacebookIcon,
   FacebookShareButton,
-  InstapaperIcon,
-  InstapaperShareButton,
   LinkedinIcon,
   LinkedinShareButton,
   PinterestIcon,

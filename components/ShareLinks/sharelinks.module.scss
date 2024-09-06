@@ -3,7 +3,11 @@
 .container {
   position: relative;
   button {
-    filter: saturate(80%);
+    filter: saturate(50%);
+    transition: 0.2s ease;
+    &:hover {
+      filter: saturate(100%);
+    }
   }
 }
 
@@ -12,10 +16,22 @@
   border: none;
   border-radius: 50%;
   padding: 2px 6px 3px;
+  svg {
+    transform: translate(0.5px, -2px);
+  }
 }
 
 .alert {
   position: absolute;
   top: -150px;
   width: 100%;
+}
+
+@media (max-width: 449px) {
+  .copyUrl {
+    padding: 1px 5px 2px;
+    svg {
+      transform: translate(0.5px, -2px) scale(0.9);
+    }
+  }
 }

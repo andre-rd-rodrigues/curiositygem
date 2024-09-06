@@ -17,7 +17,11 @@ const ContentNavigator = ({ headings }) => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (modalRef.current && !modalRef.current.contains(event.target)) {
-        setIsVisible(false);
+        setTimeout(() => {
+          if (!modalRef.current.contains(event.target)) {
+            setIsVisible(false);
+          }
+        }, 100);
       }
     };
 
@@ -25,13 +29,13 @@ const ContentNavigator = ({ headings }) => {
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, []); // Only bind once
+  }, []);
 
   const toggleVisibility = () => {
-    setIsVisible(!isVisible);
+    setIsVisible((prevState) => !prevState);
   };
 
-  const handleNavigate = (id) => {
+  const handleNavigation = (id) => {
     const element = document.getElementById(id);
 
     if (element) {
@@ -68,7 +72,7 @@ const ContentNavigator = ({ headings }) => {
                   className={`${styles.listItem} ${
                     heading.id === activeHeadingId ? styles.active : ""
                   }`}
-                  onClick={() => handleNavigate(heading.id)}
+                  onClick={() => handleNavigation(heading.id)}
                 >
                   {heading.text}
                 </li>
