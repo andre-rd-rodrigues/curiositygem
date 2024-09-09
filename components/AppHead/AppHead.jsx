@@ -16,7 +16,7 @@ function AppHead(props) {
         openGraph
           ? openGraph
           : {
-              url: `https://www.curiositygem.com`,
+              url: `https://www.blog.andrerodrigo.com`,
               title,
               description,
               images: [

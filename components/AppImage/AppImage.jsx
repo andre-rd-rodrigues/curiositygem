@@ -5,7 +5,7 @@ const AppImage = ({
   src,
   containerClassName,
   imageClassName,
-  alt = "Curiosity Gem",
+  alt = "Blog",
   priority = false
 }) => {
   return (

@@ -12,8 +12,8 @@ function NotFound() {
   return (
     <>
       <Head
-        title="Not found - Curiosity Gem"
-        description="Oops! The page you're looking for isn't here. But don't worry, Curiosity Gem has plenty of other interesting articles to explore. Use our search bar or browse our categories to find the content you're looking for. We apologize for any inconvenience and invite you to continue your journey of curiosity with us."
+        title="Not found - Blog"
+        description="Oops! The page you're looking for isn't here. But don't worry, Blog has plenty of other interesting articles to explore. Use our search bar or browse our categories to find the content you're looking for. We apologize for any inconvenience and invite you to continue your journey of curiosity with us."
       />
       <PageContainer>
         <div className={styles.container}>

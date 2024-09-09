@@ -15,8 +15,8 @@ import styles from "./sharelinks.module.scss";
 
 const ShareLinks = ({ slug, image, description, className }) => {
   const URL = slug
-    ? `https://curiositygem.com/article/${slug}`
-    : `https://curiositygem.com`;
+    ? `https://blog.andrerodrigo.com/article/${slug}`
+    : `https://blog.andrerodrigo.com`;
 
   const ICON_PROPS = {
     size: 28,

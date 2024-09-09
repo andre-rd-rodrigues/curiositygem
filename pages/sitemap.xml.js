@@ -7,7 +7,7 @@ function generateSiteMap(posts) {
        .map(
          ({ slug }) => `
        <url>
-           <loc>${`https://curiositygem.com/article/${slug}`}</loc>
+           <loc>${`https://blog.andrerodrigo.com/article/${slug}`}</loc>
            <lastmod>${new Date().toISOString()}</lastmod>
            <changefreq>monthly</changefreq>
            <priority>1.0</priority>

@@ -8,8 +8,8 @@ const Contact = () => {
   return (
     <>
       <AppHead
-        title="Contact Us - Curiosity Gem"
-        description="Have a question, comment, or suggestion for Curiosity Gem? Get in touch with us today! Our Contact Us page provides various ways to connect with our team, including email. We welcome your feedback and are always happy to hear from our readers. Visit our page to reach out and start the conversation!"
+        title="Contact Us - Blog"
+        description="Have a question, comment, or suggestion? Get in touch today! The Contact Us page provides various ways to connect, including email. We welcome your feedback and are always happy to hear from our readers. Visit our page to reach out and start the conversation!"
       />
       <PageContainer
         className={styles.pageContainer}

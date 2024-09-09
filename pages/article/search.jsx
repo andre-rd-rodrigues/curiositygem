@@ -62,8 +62,8 @@ const ResultsPage = () => {
   return (
     <>
       <AppHead
-        title="Search - Curiosity Gem"
-        description="Looking for fascinating articles? Search no further than Curiosity Gem! Our Search page allows you to explore a vast collection of curated content on science, history, culture, and more. Find the answers to your questions and satisfy your curiosity with ease. Start your search today!"
+        title="Search - Blog"
+        description="Looking for fascinating articles? Search no further! Our Search page allows you to explore a vast collection of curated content on science, history, culture, and more. Find the answers to your questions and satisfy your curiosity with ease. Start your search today!"
       />
       <PageContainer
         color="dark"

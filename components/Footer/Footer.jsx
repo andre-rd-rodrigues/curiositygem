@@ -12,13 +12,8 @@ const Footer = () => {
       <Row className={styles.wrapper}>
         <Col className={styles.brand}>
           <div className={styles.logo}>
-            <Image
-              width={20}
-              height={20}
-              src="/favicon.ico"
-              alt="Curiosity Gem"
-            />
-            <p>Curiosity Gem</p>
+            <Image width={20} height={20} src="/favicon.ico" alt="Blog" />
+            <p>Blog</p>
           </div>
           <ShareLinks
             image={META.homepage_img_url}

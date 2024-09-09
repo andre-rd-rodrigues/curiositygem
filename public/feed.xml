@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title><![CDATA[Curiosity Gem - Discover hidden gems of knowledge]]></title>
-        <description><![CDATA[Curiosity Gem is your go-to destination for knowledge sharing. Explore our diverse categories and discover the latest insights on technology, wellbeing, finance, and more. Join our community of curious minds today!]]></description>
+        <title><![CDATA[Blog - Discover hidden gems of knowledge]]></title>
+        <description><![CDATA[Blog is your go-to destination for knowledge sharing. Explore our diverse categories and discover the latest insights on technology, wellbeing, finance, and more. Join our community of curious minds today!]]></description>
         <link>https://blog.andrerodrigo.com</link>
         <image>
             <url>https://media.graphassets.com/m3c024qER0udkPRLgxOI</url>
-            <title>Curiosity Gem - Discover hidden gems of knowledge</title>
+            <title>Blog - Discover hidden gems of knowledge</title>
             <link>https://blog.andrerodrigo.com</link>
         </image>
         <generator>RSS for Node</generator>

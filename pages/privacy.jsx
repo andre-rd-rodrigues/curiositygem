@@ -6,15 +6,15 @@ function Privacy() {
   return (
     <>
       <AppHead
-        title="Privacy Policy - Curiosity Gem"
-        description="Your privacy is important to us at Curiosity Gem! Our Privacy Policy page details how we collect, use, and protect your personal information when you use our blog. Trust us to keep your data secure and respect your privacy. Read more to learn about our practices and your rights."
+        title="Privacy Policy - Blog"
+        description="Your privacy is important to us! Our Privacy Policy page details how we collect, use, and protect your personal information when you use our blog. Trust us to keep your data secure and respect your privacy. Read more to learn about our practices and your rights."
       />
       <PageContainer className={styles.container}>
         <h1>Privacy Policy</h1>
         <p>
-          At Curiosity Gem, we take your privacy seriously. This privacy policy
-          explains how we collect, use, and protect your personal information
-          when you visit our website.
+          We take your privacy seriously. This privacy policy explains how we
+          collect, use, and protect your personal information when you visit our
+          website.
         </p>
         <h2>What personal data we collect and why we collect it</h2>
         <p>
