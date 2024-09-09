@@ -61,9 +61,9 @@ const ARTICLES_VISIBLE_LIMIT = 6;
 const COOKIES_NAMING = "curiosity_gem_cookies";
 
 const META = {
-  title: "Curiosity Gem - Discover hidden gems of knowledge",
+  title: "Blog • André Rodrigues",
   description:
-    "Curiosity Gem is your go-to destination for knowledge sharing. Explore our diverse categories and discover the latest insights on technology, wellbeing, finance, and more. Join our community of curious minds today!",
+    "Explore a rich blend of topics from tech innovations to wellness hacks and financial wisdom. Unearth practical tips and insightful trends that'll keep you in the know. Let's dive deep into these realms together and discover something new with every visit!",
   homepage_img_url: "https://media.graphassets.com/m3c024qER0udkPRLgxOI"
 };
 
